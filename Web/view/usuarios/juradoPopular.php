@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
     <head>
 
@@ -9,14 +9,12 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Elevator - Multipurpose Bootstrap Theme</title>
-
         <!-- Bootstrap Core CSS -->
         <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Font Awesome CSS -->
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
-
+		
 		<!-- Custom CSS -->
         <link href="../../css/animate.css" rel="stylesheet">
 
@@ -25,7 +23,8 @@
 
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        
+
+
         <!-- Template js -->
         <script src="../../js/jquery-2.1.1.min.js"></script>
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
@@ -35,17 +34,22 @@
         <script src="../../js/modernizr.custom.js"></script>
         <script src="../../js/script.js"></script>
 
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
     </head>
-
+    
     <body>
-
+        
         <!-- Start Logo Section -->
         <section id="logo-section" class="text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
 					<!-- Pricipio tipo usuario -->
-					<div align=left> <p><b><font size="3" color="#FFFFFF">Administrador: </font><a href="../../view/usuarios/modificacionORG.php" data-toggle="modal"><font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a></font></b></p>
+					<div align=left> <p><b><font size="3" color="#FFFFFF">Jurado Popular: </font><a href="../../view/usuarios/modificacionJPOP.php" data-toggle="modal"><font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a></font></b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>
@@ -55,33 +59,40 @@
             </div>
         </section>
         <!-- End Logo Section -->
-
-
+        
+        
         <!-- Start Main Body Section -->
         <div class="mainbody-section text-center">
             <div class="container">
                 <div class="row">
-
+                    
                     <div class="col-md-3">
-
+                        
+                        <div class="menu-item blue">
+                            <a href="#mensaje-modal" data-toggle="modal">
+                                <i class="fa fa-archive"></i>
+                                <p>Mensaje</p>
+                            </a>
+                        </div>
+                        
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
                                 <i class="fa fa-newspaper-o"></i>
                                 <p>Noticias</p>
                             </a>
                         </div>
-
+                        
                         <div class="menu-item red">
                             <a href="../../view/busqueda/busqueda.php" data-toggle="modal">
                                 <i class="fa fa-search"></i>
                                 <p>Busqueda</p>
                             </a>
                         </div>
-
+                        
                     </div>
-
+                    
                     <div class="col-md-6">
-
+                        
                         <!-- Start Carousel Section -->
                         <div class="home-slider">
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px;">
@@ -109,7 +120,7 @@
                             </div>
                         </div>
                         <!-- Start Carousel Section -->
-
+                        
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
@@ -119,7 +130,7 @@
                                     </a>
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
                                     <a href="../../view/pinchos/pinchosbreve.php" data-toggle="modal">
@@ -128,31 +139,48 @@
                                     </a>
                                 </div>
                             </div>
-
+							
+							<div class="col-md-6">
+								<div class="menu-item green">
+									<a href="#almacen-modal" data-toggle="modal">
+										<i class="fa fa-floppy-o"></i>
+										<p>Almacen codigo</p>
+									</a>
+								</div>
+							</div>
                         </div>
+                        
+						
 
                     </div>
-
+                    
                     <div class="col-md-3">
-
-                        <div class="menu-item color">
-                            <a href="#OrgJPRO-modal" data-toggle="modal">
-                                <i class="fa fa-users"></i>
-                                <p>Organizar Jurado Pro</p>
+                        
+                        <div class="menu-item light-red">
+                            <a href="../../view/usuarios/contacto.php" data-toggle="modal">
+                                <i class="fa fa-envelope-o"></i>
+                                <p>Contacto</p>
                             </a>
                         </div>
-
-                         <div class="menu-item blue">
+                        
+                        <div class="menu-item color">
+                            <a href="../../view/layouts/gastromapa.php" data-toggle="modal">
+                                <i class="fa fa-comment-o"></i>
+                                <p>Gastromapa</p>
+                            </a>
+                        </div>
+                        
+                        <div class="menu-item blue">
                             <a href="#establecimiento-modal" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>
                         </div>
-
+                        
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Main Body Section -->
-
+        
   </html>

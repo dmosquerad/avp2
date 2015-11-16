@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
     <head>
 
@@ -25,7 +25,7 @@
 
     <tbody>
       <!-- Start pinchos completa-->
-      <a href="pinchosbreve.php"><div class="section-modal" id="service-modal" tabindex="-1">
+      <a href="pinchosbreve.html"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -46,7 +46,7 @@
 
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <div class="testimonial">
-                                <center><img src="../../images/pburger.jpg" class="img-responsive tam" alt="burger"></center>
+                                <center><img src="../images/pburger.jpg" class="img-responsive tam" alt="burger"></center>
                                 <h4>Pincho Mini-Hamburguesa</h4>
                                 <div class="speech">
                                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
@@ -55,16 +55,22 @@
                         </div>
                       </div>
                   </div>
-                  <div class="col-md-6 "algin="left">
-                    <label for="name">Comentarios:</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Comentario" id="desc" required data-validation-required-message="Introduce Comentario">
-                        <p class="help-block text-danger"></p>
-                    </div>
+
+
+                <div class="col-md-6 "algin="left">
+                  <label for="name">Comentarios:</label>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Comentario" id="desc"
+                      required data-validation-required-message="Introduce Comentario">
+                      <p class="help-block text-danger"></p>
+                  </div>
                   <button type="submit" class="btn btn-primary">Introduce comentario</button>
                 </div>
-            <div class="row" style="padding-top: 100px;"></div>
-        </div>
+                <div class="row" style="padding-top: 100px;"></div>
+                </div>
+
+
+
     </tbody>
 
 </html>
