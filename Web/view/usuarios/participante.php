@@ -68,12 +68,12 @@
                     
                     <div class="col-md-3">
                         
-                        <div class="menu-item blue">
+<!--                         <div class="menu-item blue">
                             <a href="#mensaje-modal" data-toggle="modal">
                                 <i class="fa fa-archive"></i>
                                 <p>Mensaje</p>
                             </a>
-                        </div>
+                        </div> -->
                         
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
@@ -154,7 +154,7 @@
                         </div>
                                           
 						<div class="menu-item color">
-                            <a href="#Gastromapa-modal" data-toggle="modal">
+                            <a href="../../view/usuarios/generaCodigo.php" data-toggle="modal">
                                 <i class="fa fa-random"></i>
                                 <p>Genera Codigo</p>
                             </a>

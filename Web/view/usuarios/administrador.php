@@ -9,6 +9,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <title>Elevator - Multipurpose Bootstrap Theme</title>
+
         <!-- Bootstrap Core CSS -->
         <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

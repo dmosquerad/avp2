@@ -68,12 +68,12 @@
                     
                     <div class="col-md-3">
                         
-                        <div class="menu-item blue">
+<!--                         <div class="menu-item blue">
                             <a href="#mensaje-modal" data-toggle="modal">
                                 <i class="fa fa-archive"></i>
                                 <p>Mensaje</p>
                             </a>
-                        </div>
+                        </div> -->
                         
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
@@ -155,7 +155,7 @@
                         
                         <div class="menu-item color">
                             <a href="../../view/layouts/gastromapa.php" data-toggle="modal">
-                                <i class="fa fa-comment-o"></i>
+                                <i class="fa fa-map-marker"></i>
                                 <p>Gastromapa</p>
                             </a>
                         </div>
