@@ -26,7 +26,7 @@
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
     </head>
-<body>
+<tbody>
 
 
   <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
@@ -55,7 +55,7 @@
                                 <div class="row" >
                                     <div class="col-md-4 col-md-offset-4">
                                         <div class="menu-item blue">
-                                            <a href="../../registro_jurado.php" data-toggle="modal">
+                                            <a href="../../view/usuarios/registro_jurado.php" data-toggle="modal">
                                                 <i class="fa fa-users"></i>
                                                   <p>Jurado Popular</p>
                                             </a>
@@ -65,7 +65,7 @@
                                 <div class="row" >
                                     <div class="col-md-4 col-md-offset-4">
                                         <div class="menu-item color responsive">
-                                            <a href="../../registro_participante.php" data-toggle="modal">
+                                            <a href="../../view/usuarios/registro_participante.php" data-toggle="modal">
                                                 <i class="fa fa-cutlery"></i>
                                                 <p>Participante</p>
                                             </a>
@@ -75,5 +75,5 @@
                                   <div class="row" style="padding-top: 135px;">
                                   </div>
                                 </div>
-</body>
+</tbody>
 </html>

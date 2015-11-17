@@ -41,7 +41,7 @@
 </head>
 
 <body>
-  <a href="../plantillaRui/Prelogin.html"><div class="section-modal" id="service-modal" tabindex="-1">
+  <a href="../../view/usuarios/prelogin.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
