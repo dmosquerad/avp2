@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <head>
+<head>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,11 +24,14 @@
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
-    </head>
+</head>
+
+
 <tbody>
 
 
-  <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
+  <a href="../../index.php">
+    <div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -37,43 +39,51 @@
                     </div>
                 </div>
               </div>
-              </a>
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title text-center">
-                          <h1 style="text-align:center" >BIENVENIDO A AVP</h1>
-                          <h4 style="text-align:center"> ¿Que tipo de usuario desea ser?</h4>
-                        </div>
-                    </div>
-                    <div class="row" style="padding-top: 10px;">
-                        <div class="col-md-15">
-                                <div class="row">
-                                    <div class="col-md-6">
 
-                        <div class="mainbody-section text-center">
-                            <div class="container">
-                                <div class="row" >
-                                    <div class="col-md-4 col-md-offset-4">
-                                        <div class="menu-item blue">
-                                            <a href="../../view/usuarios/registro_jurado.php" data-toggle="modal">
-                                                <i class="fa fa-users"></i>
-                                                  <p>Jurado Popular</p>
-                                            </a>
-                                        </div>
-                                      </div>
-                                      </div>
-                                <div class="row" >
-                                    <div class="col-md-4 col-md-offset-4">
-                                        <div class="menu-item color responsive">
-                                            <a href="../../view/usuarios/registro_participante.php" data-toggle="modal">
-                                                <i class="fa fa-cutlery"></i>
-                                                <p>Participante</p>
-                                            </a>
-                                        </div>
-                                    </div>
+  </a>
+  <div class="container">
+    <div class="row">
+        <div class="section-title text-center">
+                <h1 style="text-align:center" >BIENVENIDO A AVP</h1>
+                <h4 style="text-align:center"> ¿Que tipo de usuario desea ser?</h4>
+        </div>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 10px;">
+      <div class="col-md-15">
+           <div class="row">
+              <div class="col-md-12">
+                  <div class="mainbody-section text-center">
+                      <div class="container">
+                          <div class="row" >
+                              <div class="col-md-4 col-md-offset-4">
+                                  <div class="menu-item blue">
+                                      <a href="../../view/usuarios/registro_jurado.php" data-toggle="modal">
+                                            <i class="fa fa-users"></i>
+                                            <p>Jurado Popular</p>
+                                      </a>
                                   </div>
-                                  <div class="row" style="padding-top: 135px;">
+                              </div>
+                          </div>
+                          <div class="row" >
+                              <div class="col-md-4 col-md-offset-4">
+                                  <div class="menu-item red">
+                                      <a href="../../view/usuarios/registro_participante.php" data-toggle="modal">
+                                             <i class="fa fa-cutlery"></i>
+                                             <p>Participante</p>
+                                      </a>
                                   </div>
-                                </div>
+                              </div>
+                          </div>
+                          <div class="row" style="padding-top: 135px;">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </tbody>
 </html>
