@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <head>
+<head>
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +23,7 @@
 
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-      </head>
+</head>
 
 <body>
 
@@ -48,31 +46,31 @@
               <div class="col-md-15">
                       <div class="row">
                           <div class="col-md-6">
-                            <label for="name">Usuario:</label>
-                            <div class="form-group">
+                            <form method= "post" action="../../controller/procesarLogin.php">
+                              <label for="name">Usuario:</label>
+                              <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Usuario" id="user" required data-validation-required-message="Introduce nombre">
                                 <p class="help-block text-danger"></p>
-                            </div>
-                            <label for="email">Contraseña:</label>
-                            <div class="form-group">
+                              </div>
+                              <label for="email">Contraseña:</label>
+                              <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Contraseña" id="pass" required data-validation-required-message="Introduce contraseña">
                                 <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
+                              </div>
+                              <div class="clearfix"></div>
+                              <div class="col-lg-12 text-center">
                                 <div id="success"></div>
                                 <button type="submit" class="btn btn-primary">ENTRAR</button>
-                            </div>
+                              </div>
+                            </form>
                             <div class="row" style="padding-top: 337px;">
-                        </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-</div>
+                            </div>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
 </body>
 </html>

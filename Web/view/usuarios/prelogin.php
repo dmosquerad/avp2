@@ -58,7 +58,7 @@
                           <div class="row" >
                               <div class="col-md-4 col-md-offset-4">
                                   <div class="menu-item blue">
-                                      <a href="../../view/usuarios/registro_jurado.php" data-toggle="modal">
+                                      <a href="../../view/usuarios/registroJurado.php" data-toggle="modal">
                                             <i class="fa fa-users"></i>
                                             <p>Jurado Popular</p>
                                       </a>
@@ -68,7 +68,7 @@
                           <div class="row" >
                               <div class="col-md-4 col-md-offset-4">
                                   <div class="menu-item red">
-                                      <a href="../../view/usuarios/registro_participante.php" data-toggle="modal">
+                                      <a href="../../view/usuarios/registroParticipante.php" data-toggle="modal">
                                              <i class="fa fa-cutlery"></i>
                                              <p>Participante</p>
                                       </a>

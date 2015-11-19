@@ -62,6 +62,13 @@
                           <div class="col-md-12">
                                   <div class="row">
                                       <div class="col-md-6">
+                                        <form method= "post" action="../../controller/procesarRegistroPOP.php">
+                                        <label for="name">Login:</label>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Login" id="login"
+                                            required data-validation-required-message="Introduce login">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
                                           <label for="name">Nombre:</label>
                                           <div class="form-group">
                                               <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Introduce nombre">
@@ -115,15 +122,15 @@
                                           </div>
 
                                       <div style="padding-top: 20px;">
-
                                       <div class="clearfix"></div>
                                       <div class="col-lg-12 text-center">
                                           <div id="success"></div>
                                           <button type="submit" class="btn btn-primary">REGISTRARSE</button>
                                       </div>
+                                      </form>
                                       <div class="row" style="padding-top: 200px;">
-                      </div>
-                          </div>
+                                      </div>
+                                    </div>
                       </div>
   							   </div>
                           </div>
