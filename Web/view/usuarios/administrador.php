@@ -25,7 +25,7 @@
 
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        
+
         <!-- Template js -->
         <script src="../../js/jquery-2.1.1.min.js"></script>
         <script src="../../bootstrap/js/bootstrap.min.js"></script>
@@ -78,6 +78,12 @@
                             </a>
                         </div>
 
+                        <div class="menu-item blue">
+                            <a href="../../view/administrar/administrar.php" data-toggle="modal">
+                                <i class="fa fa-search"></i>
+                                <p>Administrar</p>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="col-md-6">
