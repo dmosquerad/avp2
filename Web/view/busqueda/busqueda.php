@@ -51,15 +51,27 @@
 							  <div class ="col-md-4 col-md-offset-4">
 								 <section id="search">
 								 <form action="busqueda2.php" method="POST">
-								   <label for="search-input">
-									    <i class="fa fa-search"></i>
-								  </label>
-								  <input id="pincho" name="nomPIN" class="form-control input-lg" placeholder="Buscar pincho"  tabindex="1">
-								  <a id="search-clear" href="#" class="fa fa-times-circle hide"></a>
-  								<div class="col-lg-12 text-center">
-  									<div id="success"></div>
-  									<button id='button1' type="submit" value="Submit" class="btn btn-primary" style="margin-right:28px">Buscar</button>
-  								</div>
+  								   <label for="search-input">
+  									    <i class="fa fa-search"></i>
+  								  </label>
+                    <!--primer input PINCHO-->
+  								  <input id="pincho" name="nomPIN" class="form-control input-lg" placeholder="Buscar pincho"  tabindex="1">
+                    <a id="search-clear" href="#" class="fa fa-times-circle hide"></a>
+
+    								<div class="col-lg-12 text-center">
+    									<button id='button1' type="submit" value="Submit" class="btn btn-primary" style="margin-right:28px">Buscar Pincho</button>
+    								</div>
+                </form>
+                <form action=busquedaestab.php method="POST">
+                    <label for="search-input">
+                       <i class="fa fa-search"></i>
+                    </label>
+                    <!--primer input ESTABLECMIENTO-->
+                    <input id="establecimiento" name="estab" class="form-control input-lg" placeholder="Buscar establecimiento"  tabindex="1">
+                    <a id="search-clear" href="#" class="fa fa-times-circle hide"></a>
+                    <div class="col-lg-12 text-center">
+                      <button id='button1' type="submit" value="Submit" class="btn btn-primary" style="margin-right:28px">Buscar Establecimiento</button>
+                    </div>
                 </form>
 								</section>
 								<div class="row" style="padding-top: 403px;"></div>
