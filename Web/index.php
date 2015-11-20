@@ -35,7 +35,7 @@
         <script src="js/jqBootstrapValidation.js"></script>
         <script src="js/modernizr.custom.js"></script>
         <script src="js/script.js"></script>
-        
+
     </head>
 
     <body>
@@ -127,7 +127,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="#team-modal" data-toggle="modal">
+                                    <a href="view/establecimiento/establecimiento.php" data-toggle="modal">
                                         <i class="fa fa-home"></i>
                                         <p>Establecimentos</p>
                                     </a>
