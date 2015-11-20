@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,36 +37,37 @@
                 </div>
               </div>
               </a>
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title text-center">
-                            <h3>Busqueda</h3>
-                            <p>Busca los pinchos o establecimientos que desees</p>
-                        </div>
-                    </div>
-                    <div class="row" style="padding-top: 20px;">
-                            <div class="col-md-12">
-                                    <div class="row">
-                                          <h1 style="text-align:center"></h1>
-                                          <div class ="col-md-4 col-md-offset-4">
-                                            <section id="search">
-                                              <label for="search-input">
-                                                <i class="fa fa-search">
-                                                </i>
-                                              </label>
-                                              <input id="search-input" class="form-control input-lg"
-                                              placeholder="Buscar pinchos o establecimientos" autocomplete="off"
-                                              spellcheck="false" autocorrect="off" tabindex="1">
-                                              <a id="search-clear" href="#"
-                                              class="fa fa-times-circle hide"></a>
-                                            </section>
-                                            <div class="row" style="padding-top: 403px;">
-                                            </div>
-                                          </div>
-                                  </div>
-                             </div>
-                    </div>
-                  </div>
+        <div class="container">
+          <div class="row">
+            <div class="section-title text-center">
+              <h3>Busqueda</h3>
+              <p>Busca los pinchos o establecimientos que desees</p>
+            </div>
+          </div>
+        <div class="row" style="padding-top: 20px;">
+			   <div class="col-md-12">
+				   <div class="row">
+						  <h1 style="text-align:center"></h1>
+							  <div class ="col-md-4 col-md-offset-4">
+								 <section id="search">
+								 <form action="busqueda2.php" method="POST">
+								   <label for="search-input">
+									    <i class="fa fa-search"></i>
+								  </label>
+								  <input id="pincho" name="nomPIN" class="form-control input-lg" placeholder="Buscar pincho"  tabindex="1">
+								  <a id="search-clear" href="#" class="fa fa-times-circle hide"></a>
+  								<div class="col-lg-12 text-center">
+  									<div id="success"></div>
+  									<button id='button1' type="submit" value="Submit" class="btn btn-primary" style="margin-right:28px">Buscar</button>
+  								</div>
+                </form>
+								</section>
+								<div class="row" style="padding-top: 403px;"></div>
+							  </div>
+					  </div>
+				</div>
+			</div>
+		</div>
   </div>
 </body>
 </html>

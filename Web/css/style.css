@@ -11,10 +11,10 @@ body {
 }
 body.tbody {
   background-color: white;
-  /*background-attachment: fixed;
-  background-size: cover;
-  background-position: 50% 50%;
-  font-family: 'Open Sans', sans-serif;*/
+  /*background-attachment: fixed;*/
+  /*background-size: cover;*/
+  /*background-position: 50% 50%;*/
+  /*font-family: 'Open Sans', sans-serif;*/
 }
 
 a,
@@ -260,6 +260,14 @@ img.flotante_transp {
 img.tam {
   width:370px;
   height:270px;
+}
+
+img.tam2 {
+  /*width:300px;*/
+  max-width: 100%;
+  height: 100%;
+  margin-bottom: 100px;
+
 }
 
 .home-slider .carousel-indicators {
@@ -616,6 +624,13 @@ and (max-width : 991px) {
 		margin-bottom: 30px;
 	}
 
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
 }
 
 
