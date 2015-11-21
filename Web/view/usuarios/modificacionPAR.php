@@ -14,7 +14,7 @@
 
         <!-- Font Awesome CSS -->
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        
+
         <!-- Custom CSS -->
         <link href="../../css/animate.css" rel="stylesheet">
 
@@ -23,16 +23,6 @@
 
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-
-        <!-- Template js -->
-        <script src="../../js/jquery-2.1.1.min.js"></script>
-        <script src="../../bootstrap/js/bootstrap.min.js"></script>
-        <script src="../../js/jquery.appear.js"></script>
-        <script src="../../js/contact_me.js"></script>
-        <script src="../../js/jqBootstrapValidation.js"></script>
-        <script src="../../js/modernizr.custom.js"></script>
-        <script src="../../js/script.js"></script>
 
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -51,7 +41,7 @@
                     </div>
                   </div>
                   </a>
-                
+
                 <div class="container">
                     <div class="row">
                         <div class="section-title text-center">
@@ -59,81 +49,90 @@
                             <p>Participante</p>
                         </div>
                     </div>
-                        
+
 
                     <div class="row" style="padding-top: 80px;">
                         <div class="col-md-12">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label for="name">Nombre:</label>
+                                      <form method= "post" action="../../controller/procesarModificarPAR.php">
+                                        <label for="login">Login:</label>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Introduce nombre">
+                                            <input type="text" class="form-control" placeholder="Login" name="login"
+                                            required data-validation-required-message="Introduce tu login">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="email">Email:</label>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Introduce tu nuevo email">
+                                            <input type="email" class="form-control" placeholder="Email" name="email"
+                                            required data-validation-required-message="Introduce tu nuevo email">
                                             <p class="help-block text-danger"></p>
                                         </div>
-                                        <label for="password1">Clave:</label>
+                                        <label for="pass">Clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Clave" id="password" required data-validation-required-message="Introduce tu nueva clave">
+                                            <input type="password" class="form-control" placeholder="Clave" name="pass"
+                                            required data-validation-required-message="Introduce tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>
-                                        <label for="password2">Repite clave:</label>
+                                        <label for="pass2">Repite clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirmar Clave" id="password2" required data-validation-required-message="Confirma tu nueva clave">
+                                            <input type="password" class="form-control" placeholder="Confirmar Clave" name="pass2"
+                                            required data-validation-required-message="Confirma tu nueva clave">
                                             <p class="help-block text-danger"></p>
-                                        </div>     
+                                        </div>
+                                        <label for="foto">Foto:</label>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="foto" name="foto"
+                                            required data-validation-required-message="Introduce tu foto">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
 
-										<div style="padding-top: 20px;">			
-										
-										<h4>Modificacion de datos del establecimiento:</h4>
-										
-                                        <div style="padding-top: 20px;">    
+                                        <div class="form-group">
+                                            <label for="desc">Descripcion:</label>
+                                            <textarea class="form-control" placeholder="Descripcion del local" name="desc"
+                                            required data-validation-required-message="Introduce una descripcion del local"></textarea>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
 
-                                        <div class="form-group">
-                                            <label for="foto">Foto:</label>
-                                            <input type="file" class="form-control" placeholder="foto" id="foto" required data-validation-required-message="Introduce tu foto">
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-										
-                                        <div class="form-group">
-                                            <label for="local">Descripcion:</label>
-                                            <textarea class="form-control" placeholder="Descripcion del local" id="local" required data-validation-required-message="Introduce una descripcion del local"></textarea>
-                                            <p class="help-block text-danger"></p>
-                                        </div>
-                                        
                                         <label for="timeStart">Hora Inicio:</label>
                                         <div class="form-group">
-                                            <input type="time" id="timeStart" required data-validation-required-message="Introduce tu nuevo horario">
+                                            <input type="time" name="timeStart"
+                                            required data-validation-required-message="Introduce tu nuevo horario">
                                             <p class="help-block text-danger"></p>
                                         </div>
 
                                        <label for="timeEnd">Hora Fin:</label>
                                        <div class="form-group">
-                                            <input type="time" id="timeEnd" required data-validation-required-message="Introduce tu nuevo horario">
+                                            <input type="time" name="timeEnd"
+                                            required data-validation-required-message="Introduce tu nuevo horario">
                                             <p class="help-block text-danger"></p>
                                         </div>
-                                        
-                                    <div style="padding-top: 20px;">   
+
+                                        <label for="coord">Coordenadas:</label>
+                                        <div class="form-group">
+                                             <input type="text" name="coord"
+                                             required data-validation-required-message="Introduce tu nuevo horario">
+                                             <p class="help-block text-danger"></p>
+                                         </div>
+
+                                    <div style="padding-top: 20px;">
 
                                     <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">
-                                        <div id="success"></div>
                                         <button type="submit" class="btn btn-primary">MODIFICAR</button>
                                     </div>
+                                  </form>
                                     <div class="row" style="padding-top: 200px;">
                     </div>
                         </div>
-                    </div>                               
+                    </div>
 							   </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
     </tbody>
-    
+
 </html>
