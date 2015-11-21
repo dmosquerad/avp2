@@ -10,7 +10,7 @@
     session_start();
 
 
-    $ExisteLogin = "SELECT * from tablausuarios where login = '$user' and contraseña='$pass'";
+    $ExisteLogin = "SELECT * from tablausuarios where login = '$user' and password='$pass'";
     $Resultado = mysql_query($ExisteLogin) or die('No se puede comprobar si existe ese usuario');
 
     if(mysql_num_rows($Resultado)==1){

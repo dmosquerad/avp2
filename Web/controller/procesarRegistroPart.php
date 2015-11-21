@@ -27,7 +27,7 @@
     echo "<a href='../view/usuarios/registroParticipante.php'>Volver al  Registro</a>";
   }
     else{
-      $InsertaUsuario = "Insert into tablausuarios(login,nombreU,emailU,contraseña,tipo)
+      $InsertaUsuario = "Insert into tablausuarios(login,nombreU,emailU,password,tipo)
       values ('$login','$name','$email','$pass','$tipo')";
       $insercion = mysql_query($InsertaUsuario) or die('error al ejecutar la insercion de usuario');
       $InsertaParticipante = "Insert into participante(descripcionPAR,coordenadasPAR,fotoPAR,horarioPAR,TablaUsuarios_login)

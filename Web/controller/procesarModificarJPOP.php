@@ -9,7 +9,7 @@ if($pass==$pass2){
   require_once '../functions/BDconectar.php';
   ConectarBD();
 
-  $ModificaUsuario= "Update tablausuarios set emailU='$email', contraseña='$pass' where login='$login'";
+  $ModificaUsuario= "Update tablausuarios set emailU='$email', password='$pass' where login='$login'";
   $Modificacion = mysql_query($ModificaUsuario) or die('error al ejecutar la modificacion de usuario');
   $ModificaJPOP= "Update juradopopular set descripcionPOP='$desc' where TablaUsuarios_login='$login'";
   $Modificacion = mysql_query($ModificaJPOP) or die('error al ejecutar la modificacion de jurado popular');

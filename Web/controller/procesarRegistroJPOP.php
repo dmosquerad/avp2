@@ -21,7 +21,7 @@
     }
     else{
 
-      $InsertaUsuario = "Insert into tablausuarios(login,nombreU,emailU,contraseña,tipo)
+      $InsertaUsuario = "Insert into tablausuarios(login,nombreU,emailU,password,tipo)
       values ('$login','$name','$email','$pass','$tipo')";
       $insercion = mysql_query($InsertaUsuario) or die('error al ejecutar la insercion de usuario');
       $InsertaJuradoPopular = "Insert into juradopopular(descripcionPOP, TablaUsuarios_login) values('$desc','$login')";
