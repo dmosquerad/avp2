@@ -45,7 +45,19 @@
                 <div class="row">
                     <div class="col-md-12">
 					<!-- Pricipio tipo usuario -->
-					<div align=left> <p><b><font size="3" color="#FFFFFF">Administrador: </font><a href="../../view/usuarios/modificacionORG.php" data-toggle="modal"><font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a></font></b></p>
+					<div align=left> <p><b>
+            <font size="3" color="#FFFFFF">Administrador:</font>
+            <?php
+            session_start();
+            if(isset($_SESSION["name"])){
+			           echo $_SESSION["name"];
+		        }else{
+                  echo "anon";
+		        }
+            ?>
+            <a href="../../view/usuarios/modificacionORG.php" data-toggle="modal">
+             <font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a>
+             </font></b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>

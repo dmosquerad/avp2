@@ -14,7 +14,7 @@
 
         <!-- Font Awesome CSS -->
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
-		
+
 		<!-- Custom CSS -->
         <link href="../../css/animate.css" rel="stylesheet">
 
@@ -40,16 +40,27 @@
         <![endif]-->
 
     </head>
-    
+
     <body>
-        
+
         <!-- Start Logo Section -->
         <section id="logo-section" class="text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
 					<!-- Pricipio tipo usuario -->
-					<div align=left> <p><b><font size="3" color="#FFFFFF">Participante: </font><a href=".../../view/usuarios/modificacionPAR.php" data-toggle="modal"><font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a></font></b></p>
+					<div align=left> <p><b><font size="3" color="#FFFFFF">Participante: </font>
+            <?php
+            session_start();
+            if(isset($_SESSION["name"])){
+			           echo $_SESSION["name"];
+		        }else{
+                  echo "anon";
+		        }
+            ?>
+            <a href="../../view/usuarios/modificacionPAR.php" data-toggle="modal">
+              <font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a>
+              </font></b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>
@@ -59,40 +70,40 @@
             </div>
         </section>
         <!-- End Logo Section -->
-        
-        
+
+
         <!-- Start Main Body Section -->
         <div class="mainbody-section text-center">
             <div class="container">
                 <div class="row">
-                    
+
                     <div class="col-md-3">
-                        
+
 <!--                         <div class="menu-item blue">
                             <a href="#mensaje-modal" data-toggle="modal">
                                 <i class="fa fa-archive"></i>
                                 <p>Mensaje</p>
                             </a>
                         </div> -->
-                        
+
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
                                 <i class="fa fa-newspaper-o"></i>
                                 <p>Noticias</p>
                             </a>
                         </div>
-                        
+
                         <div class="menu-item red">
                             <a href="../../view/busqueda/busqueda.php" data-toggle="modal">
                                 <i class="fa fa-search"></i>
                                 <p>Busqueda</p>
                             </a>
                         </div>
-                        
+
                     </div>
-                    
+
                     <div class="col-md-6">
-                        
+
                         <!-- Start Carousel Section -->
                         <div class="home-slider">
                             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px;">
@@ -120,7 +131,7 @@
                             </div>
                         </div>
                         <!-- Start Carousel Section -->
-                        
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
@@ -130,7 +141,7 @@
                                     </a>
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
                                     <a href="../../view/pinchos/pinchosbreve.php" data-toggle="modal">
@@ -139,38 +150,38 @@
                                     </a>
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-                    
+
                     <div class="col-md-3">
-                        
+
                         <div class="menu-item light-red">
                             <a href="../../view/usuarios/contacto.php" data-toggle="modal">
                                 <i class="fa fa-envelope-o"></i>
                                 <p>Contacto</p>
                             </a>
                         </div>
-                                          
+
 						<div class="menu-item color">
                             <a href="../../view/usuarios/generaCodigo.php" data-toggle="modal">
                                 <i class="fa fa-random"></i>
                                 <p>Genera Codigo</p>
                             </a>
-                        </div> 
-						
+                        </div>
+
                         <div class="menu-item blue">
                             <a href="#establecimiento-modal" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Main Body Section -->
-        
+
   </html>

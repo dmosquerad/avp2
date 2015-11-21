@@ -7,6 +7,7 @@
 
     require_once '../functions/BDconectar.php';
     ConectarBD();
+    session_start();
 
 
     $ExisteLogin = "SELECT * from tablausuarios where login = '$user' and contraseña='$pass'";
@@ -17,8 +18,7 @@
       $p = mysql_query($tipo) or die('No se puede comprobar si existe ese usuario');
       $a=mysql_fetch_array($p);
 
-
-      //$_SESSION["name"] = $_POST['user'];
+      $_SESSION['name'] = $user;
       switch($a["tipo"]){
           case '1':
               header('Location:../view/usuarios/administrador.php');
