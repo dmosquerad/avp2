@@ -27,15 +27,15 @@
 
 <body>
 
-  <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
+  <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1"></div>
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl">
                     </div>
                 </div>
-              </div>
-      </a>
+            </div>
+              </a>
       <div class="container">
           <div class="row">
               <div class="section-title text-center">
@@ -49,17 +49,16 @@
                             <form method= "post" action="../../controller/procesarLogin.php">
                               <label for="name">Usuario:</label>
                               <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Usuario" id="user" required data-validation-required-message="Introduce nombre">
+                                <input type="text" class="form-control" placeholder="Usuario" name="user" required data-validation-required-message="Introduce nombre">
                                 <p class="help-block text-danger"></p>
                               </div>
                               <label for="email">Contraseña:</label>
                               <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Contraseña" id="pass" required data-validation-required-message="Introduce contraseña">
+                                <input type="password" class="form-control" placeholder="Contraseña" name="pass" required data-validation-required-message="Introduce contraseña">
                                 <p class="help-block text-danger"></p>
                               </div>
                               <div class="clearfix"></div>
                               <div class="col-lg-12 text-center">
-                                <div id="success"></div>
                                 <button type="submit" class="btn btn-primary">ENTRAR</button>
                               </div>
                             </form>

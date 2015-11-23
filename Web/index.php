@@ -127,12 +127,12 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="view/establecimiento/establecimiento.php" data-toggle="modal">
+                                    <a href="#team-modal" data-toggle="modal">
                                         <i class="fa fa-home"></i>
                                         <p>Establecimentos</p>
                                     </a>
                                 </div>
-                            </div>
+                            </div>s
 
                         </div>
 
