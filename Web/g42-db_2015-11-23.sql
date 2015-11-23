@@ -151,7 +151,6 @@ CREATE TABLE `pincho` (
   `nombrePIN` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `ingredientesPIN` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
   `Participante_TablaUsuarios_login` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Codigo_idCodigo` int(11) NOT NULL,
   `votoFinal` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -159,8 +158,8 @@ CREATE TABLE `pincho` (
 -- Dumping data for table `pincho`
 --
 
-INSERT INTO `pincho` (`idPincho`, `precioPIN`, `fotoPIN`, `descripcionPIN`, `nombrePIN`, `ingredientesPIN`, `Participante_TablaUsuarios_login`, `Codigo_idCodigo`, `votoFinal`) VALUES
-(1, '35 euros', 'www.yvanelcomenapolitanas.com', 'Napolitana de chocolate', 'Napolitana de Chocolate', 'Chocolate', 'pepin', 10, 5);
+INSERT INTO `pincho` (`idPincho`, `precioPIN`, `fotoPIN`, `descripcionPIN`, `nombrePIN`, `ingredientesPIN`, `Participante_TablaUsuarios_login`, `votoFinal`) VALUES
+(1, '35 euros', 'www.yvanelcomenapolitanas.com', 'Napolitana de chocolate', 'Napolitana de Chocolate', 'Chocolate', 'pepin', 5);
 
 -- --------------------------------------------------------
 
@@ -171,7 +170,6 @@ INSERT INTO `pincho` (`idPincho`, `precioPIN`, `fotoPIN`, `descripcionPIN`, `nom
 CREATE TABLE `pincho_has_juradoprofesional` (
   `Pincho_idPincho` int(11) NOT NULL,
   `Pincho_Participante_TablaUsuarios_login` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `Pincho_Codigo_idCodigo` int(11) NOT NULL,
   `JuradoProfesional_TablaUsuarios_login` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -179,8 +177,8 @@ CREATE TABLE `pincho_has_juradoprofesional` (
 -- Dumping data for table `pincho_has_juradoprofesional`
 --
 
-INSERT INTO `pincho_has_juradoprofesional` (`Pincho_idPincho`, `Pincho_Participante_TablaUsuarios_login`, `Pincho_Codigo_idCodigo`, `JuradoProfesional_TablaUsuarios_login`) VALUES
-(1, 'pepin', 10, 'pepe');
+INSERT INTO `pincho_has_juradoprofesional` (`Pincho_idPincho`, `Pincho_Participante_TablaUsuarios_login`, `JuradoProfesional_TablaUsuarios_login`) VALUES
+(1, 'pepin', 'pepe');
 
 -- --------------------------------------------------------
 
@@ -249,7 +247,7 @@ ALTER TABLE `juradopopular`
 -- Indexes for table `juradopopular_has_codigo`
 --
 ALTER TABLE `juradopopular_has_codigo`
-  ADD PRIMARY KEY (`JuradoPopular_TablaUsuarios_login`,`Codigo_idCodigo`,`Codigo_Participante_TablaUsuarios_login`),
+  ADD PRIMARY KEY (`JuradoPopular_TablaUsuarios_login`,`Codigo_Participante_TablaUsuarios_login`),
   ADD KEY `fk_JuradoPopular_has_Codigo_Codigo1_idx` (`Codigo_idCodigo`,`Codigo_Participante_TablaUsuarios_login`),
   ADD KEY `fk_JuradoPopular_has_Codigo_JuradoPopular1_idx` (`JuradoPopular_TablaUsuarios_login`);
 
@@ -275,17 +273,16 @@ ALTER TABLE `participante`
 -- Indexes for table `pincho`
 --
 ALTER TABLE `pincho`
-  ADD PRIMARY KEY (`idPincho`,`Participante_TablaUsuarios_login`,`Codigo_idCodigo`),
-  ADD KEY `fk_Pincho_Participante1_idx` (`Participante_TablaUsuarios_login`),
-  ADD KEY `fk_Pincho_Codigo1_idx` (`Codigo_idCodigo`);
+  ADD PRIMARY KEY (`idPincho`,`Participante_TablaUsuarios_login`),
+  ADD KEY `fk_Pincho_Participante1_idx` (`Participante_TablaUsuarios_login`);
 
 --
 -- Indexes for table `pincho_has_juradoprofesional`
 --
 ALTER TABLE `pincho_has_juradoprofesional`
-  ADD PRIMARY KEY (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`,`Pincho_Codigo_idCodigo`,`JuradoProfesional_TablaUsuarios_login`),
+  ADD PRIMARY KEY (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`,`JuradoProfesional_TablaUsuarios_login`),
   ADD KEY `fk_Pincho_has_JuradoProfesional_JuradoProfesional1_idx` (`JuradoProfesional_TablaUsuarios_login`),
-  ADD KEY `fk_Pincho_has_JuradoProfesional_Pincho1_idx` (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`,`Pincho_Codigo_idCodigo`);
+  ADD KEY `fk_Pincho_has_JuradoProfesional_Pincho1_idx` (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`);
 
 --
 -- Indexes for table `tablausuarios`
@@ -346,7 +343,6 @@ ALTER TABLE `participante`
 -- Constraints for table `pincho`
 --
 ALTER TABLE `pincho`
-  ADD CONSTRAINT `fk_Pincho_Codigo1` FOREIGN KEY (`Codigo_idCodigo`) REFERENCES `codigo` (`idCodigo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pincho_Participante1` FOREIGN KEY (`Participante_TablaUsuarios_login`) REFERENCES `participante` (`TablaUsuarios_login`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -354,7 +350,7 @@ ALTER TABLE `pincho`
 --
 ALTER TABLE `pincho_has_juradoprofesional`
   ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional_JuradoProfesional1` FOREIGN KEY (`JuradoProfesional_TablaUsuarios_login`) REFERENCES `juradoprofesional` (`TablaUsuarios_login`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional_Pincho1` FOREIGN KEY (`Pincho_idPincho`, `Pincho_Participante_TablaUsuarios_login`, `Pincho_Codigo_idCodigo`) REFERENCES `pincho` (`idPincho`, `Participante_TablaUsuarios_login`, `Codigo_idCodigo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional_Pincho1` FOREIGN KEY (`Pincho_idPincho`, `Pincho_Participante_TablaUsuarios_login`) REFERENCES `pincho` (`idPincho`, `Participante_TablaUsuarios_login`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `votoeliminatorio`
