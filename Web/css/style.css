@@ -628,9 +628,25 @@ and (max-width : 991px) {
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    width: 60%;
 }
 th, td {
     padding: 10px;
+}
+/* tabla pinchos*/
+table2, th2, td2 {
+    border: 1px solid black ;
+    border-collapse: collapse;
+    width: 60%;
+}
+th2, td2 {
+    padding: 10px;
+}
+
+
+div.contenedor {
+  width: 500px;
+  margin: 0 auto;
 }
 
 

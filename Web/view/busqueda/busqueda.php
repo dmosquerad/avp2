@@ -50,7 +50,7 @@
 						  <h1 style="text-align:center"></h1>
 							  <div class ="col-md-4 col-md-offset-4">
 								 <section id="search">
-								 <form action="busqueda2.php" method="POST">
+								 <form action="busquedapincho.php" method="POST">
   								   <label for="search-input">
   									    <i class="fa fa-search"></i>
   								  </label>
