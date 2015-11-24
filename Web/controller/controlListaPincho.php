@@ -10,8 +10,11 @@
     or die('No se puede hacer la consulta'. mysql_error());
 
     while($row = mysql_fetch_array($consulta)) {
-      echo "<tr><td><a href='pinchocompleta.php?pincho=".$row['idPincho']."'>".$row['nombrePIN']."</a>
-  		<td>".$row['precioPIN']."</td>
-      <td><center><img src=".$row["fotoPIN"]."class=img-responsive tam></center></td></tr>";
+      echo "<tr>
+      <td><a href='pinchocompleta.php?pincho=".$row['idPincho']."'><img src=".$row["fotoPIN"]." height=200px width=300px></a></td>
+      <td><table><tr><td>".$row['nombrePIN']."</td></tr>
+  		<tr><td>".$row['precioPIN']."</td></tr></table>
+      </td>
+      </tr>";
   }
 ?>

@@ -40,25 +40,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="latest-post">
-
-                          <table  cellspacing="10">
-                              <thead>
-                                  <!--<a href="pinchoscompleta1.php"><img src="../../images/pburger.jpg" class="img-responsive tam"></a>-->
-                                  <!--<img src="../../images/pburger.jpg" class="img-responsive tam">-->
-                                  <tr>
-                                  <li><i class="fa fa-user"></i> Auther : iThemesLab </li> <li><i class="fa fa-calendar">
-                                  </i> 07 Aug, 2014 </li>
-                                  <li><i class="fa fa-tag"></i> Music </li>
-
-                                    <th>Descripcion</th>
-                                    <?php include ('../../controller/controlListaPincho.php'); ?>
-                                  </tr>
-                              </thead>
-                            </table>
-                        </div>
-                    </div>
+                  <center><table>
+                        <thead>
+                            <!--<a href="pinchoscompleta1.php"><img src="../../images/pburger.jpg" class="img-responsive tam"></a>-->
+                            <!--<img src="../../images/pburger.jpg" class="img-responsive tam">
+                            <li><i class="fa fa-user"></i> Auther : iThemesLab </li> <li><i class="fa fa-calendar">
+                            </i> 07 Aug, 2014 </li>
+                            <li><i class="fa fa-tag"></i> Music </li>
+                          -->
+                              <th><h3>Descripcion</h3></th>
+                              <?php include ('../../controller/controlListaPincho.php'); ?>
+                        </thead>
+                  </table><center>
                 </div>
             </div>
           </div>
