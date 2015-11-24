@@ -127,7 +127,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="view/establecimiento/establecimiento.php" data-toggle="modal">
+                                    <a href="view/establecimiento/estab.php" data-toggle="modal">
                                         <i class="fa fa-home"></i>
                                         <p>Establecimentos</p>
                                     </a>

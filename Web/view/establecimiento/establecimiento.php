@@ -135,9 +135,9 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="team-member">
-                        <img src="../../images/estab/casapulpo.jpg" class="img-responsive tam2">
+                        <img src="../../images/estab/eatarazana.jpg" class="img-responsive tam2">
                         <div class="team-details">
-                            <h4>Bar A CASA DO PULPO</h4>
+                            <h4>Bar A TARAZANA</h4>
                             <div class="designation">Ourense Vinos</div>
                             <ul style="text-align: center;">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
