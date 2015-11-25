@@ -24,7 +24,9 @@
     </head>
 
     <tbody>
-      <!-- Start pinchos completa-->
+      <?php
+      session_start();
+      ?>
       <a href="pinchosbreve.html"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">

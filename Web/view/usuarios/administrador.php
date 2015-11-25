@@ -91,7 +91,7 @@
                         </div>
 
                         <div class="menu-item blue">
-                            <a href="../../view/administrar/administrar.php" data-toggle="modal">
+                            <a href="../../view/administrar/listarpincho.php" data-toggle="modal">
                                 <i class="fa fa-search"></i>
                                 <p>Administrar</p>
                             </a>

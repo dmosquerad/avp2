@@ -27,7 +27,10 @@
 
     </head>
 <body>
-  <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
+  <?php
+    session_start();
+    ?>
+  <a href="../../controller/prueba.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -44,7 +47,7 @@
 							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4171.012097982218!2d-7.865157459977139!3d42.335040722251165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1447624300415" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
-               
+
                   </div>
   </div>
 </body>

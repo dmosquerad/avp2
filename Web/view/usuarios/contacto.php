@@ -26,7 +26,10 @@
 
     </head>
 <body>
-  <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
+  <?php
+  session_start();
+  ?>
+  <a href="../../controller/prueba.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -43,7 +46,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        
+
                         <div class="col-md-4">
                             <div class="footer-contact-info">
                                 <h4>Contact info</h4>
@@ -55,7 +58,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <div class="footer-social text-center">
                                 <ul>
@@ -67,7 +70,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-4">
                             <div class="footer-contact-info">
                                 <h4>Horario</h4>
@@ -79,7 +82,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                     </div><!--/.row -->
                     <div class="row" style="padding-top: 80px;">
                         <div class="col-md-12">

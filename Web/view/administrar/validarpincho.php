@@ -108,12 +108,19 @@
 	<section id="main" class="column">
 
 		<article class="module width_full">
-			<header><h3>Basic Styles</h3></header>
+			<header><h3>Validar Pincho</h3></header>
 				<div class="module_content">
-					<h1>Header 1</h1>
-					<h2>Header 2</h2>
-					<h3>Header 3</h3>
-					<h4>Header 4</h4>
+					<table>
+						<thead>
+							<tr>
+								<td>Pincho</td>
+								<td>Establecimiento</td>
+								<td>Ingredientes</td>
+								<td>Estado de Validacion</td>
+							</tr>
+								<?php include('../../controller/administrarValidacion.php');?>
+						</thead>
+					</table>
 				</div>
 		</article><!-- end of styles article -->
 	</section>

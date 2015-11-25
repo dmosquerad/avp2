@@ -108,12 +108,19 @@
 	<section id="main" class="column">
 
 		<article class="module width_full">
-			<header><h3>Basic Styles</h3></header>
+			<header><h3>Listar Comentarios</h3></header>
 				<div class="module_content">
-					<h1>Header 1</h1>
-					<h2>Header 2</h2>
-					<h3>Header 3</h3>
-					<h4>Header 4</h4>
+					<table>
+						<thead>
+							<tr>
+								<td>ID Comentario</td>
+								<td>Titulo</td>
+								<td>Contenido</td>
+								<td>Usuario</td>
+							</tr>
+								<?php include('../../controller/administrarComentarios.php');?>
+						</thead>
+					</table>
 				</div>
 		</article><!-- end of styles article -->
 	</section>

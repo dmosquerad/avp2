@@ -79,12 +79,12 @@
 
                     <div class="col-md-3">
 
-                        <div class="menu-item blue">
+<!--                         <div class="menu-item blue">
                             <a href="#mensaje-modal" data-toggle="modal">
-                                <i class="fa fa-thumbs-o-up"></i>
-                                <p>Votar pinchos</p>
+                                <i class="fa fa-archive"></i>
+                                <p>Mensaje</p>
                             </a>
-                        </div> 
+                        </div> -->
 
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">

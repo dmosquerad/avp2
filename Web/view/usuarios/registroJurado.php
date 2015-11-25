@@ -33,7 +33,7 @@
 </head>
 
 <body>
-  <a href="../../view/usuarios/prelogin.php"><div class="section-modal" id="service-modal" tabindex="-1"></div>
+  <a href="../../view/usuarios/prelogin.php"><div class="section-modal" id="service-modal" tabindex="-1">
     <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -102,5 +102,7 @@
           </div>
       </div>
   </div>
+</div>
+
 </body>
 </html>
