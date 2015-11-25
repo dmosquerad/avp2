@@ -61,6 +61,9 @@
             <a href="../../view/usuarios/modificacionJPOP.php" data-toggle="modal">
               <font size="2" color="#FFFFFF">
               <i class="fa fa-user"></i>Editar Perfil</a></font></b></p>
+            <a href ="../../index.php" data-toggle="modal">
+              <font size="3" color ="#FF00FF">
+                Abandonar</a></font>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>
@@ -174,7 +177,7 @@
                         </div>
 
                         <div class="menu-item blue">
-                            <a href="#establecimiento-modal" data-toggle="modal">
+                            <a href="" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>

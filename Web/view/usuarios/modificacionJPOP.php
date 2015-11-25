@@ -32,8 +32,10 @@
 
     </head>
     <body>
-
-	      <a href="../../view/usuarios/juradoPopular.php"><div class="section-modal" id="service-modal" tabindex="-1">
+      <?php
+      session_start();
+      ?>
+	      <a href="../../controller/prueba.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">

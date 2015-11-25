@@ -24,6 +24,9 @@
 
     </head>
 <tbody>
+  <?php
+  session_start();
+  ?>
   <a href="../../view/usuarios/participante.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">

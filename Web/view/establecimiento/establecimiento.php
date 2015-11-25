@@ -25,7 +25,7 @@
 
       <!-- Start ESTABLECIMIENTOS Section -->
       <!-- Start Pinchos -->
-      <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
+      <a href="../../controller/prueba.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -120,7 +120,7 @@
                   </div>
                   <div class="col-md-3 col-sm-6">
                       <div class="team-member">
-                          <img src="../../images/estab/casapulpo.jpg" class="img-responsive tm2">
+                          <img src="../../images/estab/casadopulpo.jpg" class="img-responsive tm2">
                           <div class="team-details">
                               <h4>Bar A CASA DO PULPO</h4>
                               <div class="designation">Ourense Vinos</div>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="team-member">
-                        <img src="../../images/estab/casapulpo.jpg" class="img-responsive tam2">
+                        <img src="../../images/estab/casadopulpo.jpg" class="img-responsive tam2">
                         <div class="team-details">
                             <h4>Bar A CASA DO PULPO</h4>
                             <div class="designation">Ourense Vinos</div>
