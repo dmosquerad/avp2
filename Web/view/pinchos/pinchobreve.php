@@ -42,12 +42,6 @@
                 <div class="row">
                   <center><table>
                         <thead>
-                            <!--<a href="pinchoscompleta1.php"><img src="../../images/pburger.jpg" class="img-responsive tam"></a>-->
-                            <!--<img src="../../images/pburger.jpg" class="img-responsive tam">
-                            <li><i class="fa fa-user"></i> Auther : iThemesLab </li> <li><i class="fa fa-calendar">
-                            </i> 07 Aug, 2014 </li>
-                            <li><i class="fa fa-tag"></i> Music </li>
-                          -->
                               <th><h3>Descripcion</h3></th>
                               <?php include ('../../controller/controlListaPincho.php'); ?>
                         </thead>
