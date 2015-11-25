@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="es">
 <head>
 	<meta charset="utf-8"/>
 	<title>Dashboard I Admin Panel</title>
@@ -15,7 +14,6 @@
 	<script src="../../js/jquery.tablesorter.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="../../js/jquery.equalHeight.js"></script>
 	<script type="text/javascript">
-
 	$(document).ready(function()
     	{
       	  $(".tablesorter").tablesorter();
@@ -41,7 +39,7 @@
 	});
 
 });
-    </script>
+  </script>
     <script type="text/javascript">
     $(function(){
         $('.column').equalHeight();
@@ -99,26 +97,28 @@
 		</ul>
 
 		<footer>
-			<hr />
 			<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
 			<p>Theme by <a href="http://www.medialoot.com">MediaLoot</a></p>
 		</footer>
+		<hr/>
 	</aside><!-- end of sidebar -->
 
 	<section id="main" class="column">
-
 		<article class="module width_full">
-			<header><h3>Basic Styles</h3></header>
+			<header><h3>Lista de Pinchos</h3></header>
 				<div class="module_content">
-					<h1>Header 1</h1>
-					<h2>Header 2</h2>
-					<h3>Header 3</h3>
-					<h4>Header 4</h4>
+										<table>
+											<thead>
+												<tr>
+													<td>ID Pincho</td>
+													<td>Nombre Pincho</td>
+													<td>Participante</td>
+												</tr>
+													<?php include('../../controller/administrarPincho.php');?>
+											</thead>
+										</table>
 				</div>
 		</article><!-- end of styles article -->
 	</section>
-
-
 </body>
-
 </html>
