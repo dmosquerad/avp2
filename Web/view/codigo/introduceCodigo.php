@@ -44,7 +44,7 @@
                                     <div class="row">
                                           <h1 style="text-align:center"></h1>
                                           <div class ="col-md-4 col-md-offset-4">
-                                            <form action="introduceCodigo2.php" method="POST">
+                                            <form action="introduceCodigo2.php" method="get">
                                               <label for="name">Introduce 3 Codigos:</label>
                                                 <div class="form-group">
                                                   <input type="text" name="Codigo1" class="form-control" placeholder="Codigo1" id="Codigo1" required data-validation-required-message="Introduce codigo1">

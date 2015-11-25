@@ -4,45 +4,16 @@
 
 	ConectarBD();
 
-	session_start();
+	$codigoFin=$_POST['volv'];
 
+	echo $codigoFin;
 
-	echo $_SESSION["name"];
+	$sql ="UPDATE pincho A , codigo B
+		SET votoPOP=votoPOP+1 
+		WHERE A.Participante_TablaUsuarios_login=B.Participante_TablaUsuarios_login AND B.idCodigo='$codigoFin'";
 
-	echo " no va";
+ 	$result = mysql_query ($sql)or die('No funciona VOTO');
 
-	// //Recogemos las variables que vienen por POST desde el formulario
-	// $codigo1 = $_POST['Codigo1'];
-	// $codigo2 = $_POST['Codigo2'];
-	// $codigo3 = $_POST['Codigo3'];
-
-	// echo '$codigo1';
-
-
-	// if(isset($codigo1)){
-
-	// 		$sql ="UPDATE pincho set votoPOP=votoPOP+1 where idPincho='$codigo1'";
-	// 		$result = mysql_query ($sql)or die('No funciona VOTO');
-
-	// 		$sql1 ="UPDATE codigo set uso='1' where idCodigo IN ('$codigo1','$codigo2','$codigo3')";
-	// 		$result1 = mysql_query ($sql1)or die('No funciona DESUSAR');
-	// }
+ 	echo "Voto Realizado";
     
-    // if(isset($codigo2)){
-
-	// 		$sql ="UPDATE pincho set votoPOP=votoPOP+1 where idPincho='$codigo2'";
-	// 		$result = mysql_query ($sql)or die('No funciona VOTO');
-
-	// 		$sql1 ="UPDATE codigo set uso='1' where idCodigo IN ('$codigo1','$codigo2','$codigo3')";
-	// 		$result1 = mysql_query ($sql1)or die('No funciona DESUSAR');
-	// }
-
-	// if(isset($codigo3)){
-
-	// 		$sql ="UPDATE pincho set votoPOP=votoPOP+1 where idPincho='$codigo3'";
-	// 		$result = mysql_query ($sql)or die('No funciona VOTO');
-
-	// 		$sql1 ="UPDATE codigo set uso='1' where idCodigo IN ('$codigo1','$codigo2','$codigo3')";
-	// 		$result1 = mysql_query ($sql1)or die('No funciona DESUSAR');
-	// }
 ?>
