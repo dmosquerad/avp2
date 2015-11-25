@@ -61,9 +61,6 @@
             <a href="../../view/usuarios/modificacionJPOP.php" data-toggle="modal">
               <font size="2" color="#FFFFFF">
               <i class="fa fa-user"></i>Editar Perfil</a></font></b></p>
-            <a href ="../../index.php" data-toggle="modal">
-              <font size="3" color ="#FF00FF">
-                Abandonar</a></font>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>
@@ -82,18 +79,13 @@
 
                     <div class="col-md-3">
 
-<!--                         <div class="menu-item blue">
-                            <a href="#mensaje-modal" data-toggle="modal">
-                                <i class="fa fa-archive"></i>
-                                <p>Mensaje</p>
-                            </a>
-                        </div> -->
-                        <div class="menu-item blue">
-                            <a href="../../view/usuarios/introduceCodigo.php" data-toggle="modal">
-                                <i class="fa fa-floppy-o"></i>
-                                <p>Almacen codigo</p>
+                       <div class="menu-item blue">
+                            <a href="../../view/codigo/introduceCodigo.php" data-toggle="modal">
+                                <i class="fa fa-thumbs-o-up"></i>
+                                <p>Votar Pincho</p>
                             </a>
                         </div>
+
 
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
@@ -159,15 +151,6 @@
                                     </a>
                                 </div>
                             </div>
-
-<!-- 							<div class="col-md-6">
-								<div class="menu-item green">
-									<a href="../../view/usuarios/introduceCodigo.php" data-toggle="modal">
-										<i class="fa fa-floppy-o"></i>
-										<p>Almacen codigo</p>
-									</a>
-								</div>
-							</div> -->
                         </div>
 
 
@@ -191,7 +174,7 @@
                         </div>
 
                         <div class="menu-item blue">
-                            <a href="" data-toggle="modal">
+                            <a href="#establecimiento-modal" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>

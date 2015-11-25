@@ -1,20 +1,48 @@
 <?php
 
-	require_once '../../functions/BDconectar.php';
+	require_once '../functions/BDconectar.php';
 
 	ConectarBD();
 
-	//Recogemos las variables que vienen por POST desde el formulario
-	$codigo1 = $_POST['Codigo1'];
-	$codigo2 = $_POST['Codigo2'];
-	$codigo3 = $_POST['Codigo3'];
+	session_start();
 
-	$sql1 ="UPDATE juradopopular_has_codigo set votoPOP = votoPOP +1 where Codigo_idCodigo = '$codigo1'";
 
-	$result1 = mysql_query ($sql1)or die('No funciona');
+	echo $_SESSION["name"];
 
-	$sql2 ="UPDATE juradopopular_has_codigo set uso = uso +1 where Codigo_idCodigo IN('$codigo1','$codigo2','$Codigo3')";
+	echo " no va";
 
-	$result2 = mysql_query ($sql2)or die('No funciona');
+	// //Recogemos las variables que vienen por POST desde el formulario
+	// $codigo1 = $_POST['Codigo1'];
+	// $codigo2 = $_POST['Codigo2'];
+	// $codigo3 = $_POST['Codigo3'];
 
+	// echo '$codigo1';
+
+
+	// if(isset($codigo1)){
+
+	// 		$sql ="UPDATE pincho set votoPOP=votoPOP+1 where idPincho='$codigo1'";
+	// 		$result = mysql_query ($sql)or die('No funciona VOTO');
+
+	// 		$sql1 ="UPDATE codigo set uso='1' where idCodigo IN ('$codigo1','$codigo2','$codigo3')";
+	// 		$result1 = mysql_query ($sql1)or die('No funciona DESUSAR');
+	// }
+    
+    // if(isset($codigo2)){
+
+	// 		$sql ="UPDATE pincho set votoPOP=votoPOP+1 where idPincho='$codigo2'";
+	// 		$result = mysql_query ($sql)or die('No funciona VOTO');
+
+	// 		$sql1 ="UPDATE codigo set uso='1' where idCodigo IN ('$codigo1','$codigo2','$codigo3')";
+	// 		$result1 = mysql_query ($sql1)or die('No funciona DESUSAR');
+	// }
+
+	// if(isset($codigo3)){
+
+	// 		$sql ="UPDATE pincho set votoPOP=votoPOP+1 where idPincho='$codigo3'";
+	// 		$result = mysql_query ($sql)or die('No funciona VOTO');
+
+	// 		$sql1 ="UPDATE codigo set uso='1' where idCodigo IN ('$codigo1','$codigo2','$codigo3')";
+	// 		$result1 = mysql_query ($sql1)or die('No funciona DESUSAR');
+	// }
 ?>

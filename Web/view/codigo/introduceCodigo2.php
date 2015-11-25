@@ -48,30 +48,43 @@
                       <div class="col-md-12">
                         <div class="row">
                           <h1 style="text-align:center"></h1>
-                            <div class ="col-md-4 col-md-offset-4">
+                                <div align="center">
                 							<table style="margin: auto;">
                 								<thead>
                 									<tr>
+                                                        <th>Codigo</th>
                                     <th>ID Pincho</th>
                   									<th>Precio Pincho</th>
                                     <th>Enlace foto</th>
                   									<th>Descripción</th>
                                     <th>Nombre Pincho</th>
-                                    <th>Participante</th>   
+                                    <th>Participante</th>
+                                                    <th>Codigo</th>    
                 									</tr>
                 								</thead>
                                 <tbody>
                                 <?php include('../../controller/controlCodigo.php');?> 
                                 </tbody>
-                							</table> 
+                				</table> 
+                                <div cass="row" style="padding-top: 20px;"></div>
 
-                                <select name="pincho">
-                                    <option>$_POST['Codigo1'];</option>
-                                    <option>$_POST['Codigo2'];</option>
-                                    <option>$_POST['Codigo3'];</option>
-                                </select>
+                                <?php echo 'Si no aparecen tres pinchos no se realizara el voto'?>
+
+                        <form action="../../controller/controlVotoPOP.php" method="POST">
+                            <div cass="row" style="padding-top: 20px;"></div>
+
+                    <form action="../../controller/controlVotoPOP.php" method="POST">
+                        <select name="volv"> <!-- este es el valor que toma el php para el metodo $_POST -->
+                            <option name ="Codigo1V" value="1" selected="selected" >Codigo 1</option> <!-- el valor value es el nombre que toma para el echo-->
+                            <option name ="Codigo2V" value="2">Codigo 2</option>
+                            <option name ="Codigo3V" value="3">Codigo 3</option> 
+                            <input type="submit" class="btn btn-primary" name="enviar" value="VOTA">
+                        </select>
+
+                    </form>
                                 
-                            <div cass="row" style="padding-top: 403px;"></div>
+                        <div cass="row" style="padding-top: 403px;"></div>    
+                    </form>
 
                           </div>
                         </div>

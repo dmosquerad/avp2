@@ -44,20 +44,21 @@
                                     <div class="row">
                                           <h1 style="text-align:center"></h1>
                                           <div class ="col-md-4 col-md-offset-4">
+                                            <form action="introduceCodigo2.php" method="POST">
                                               <label for="name">Introduce 3 Codigos:</label>
-                                                <form action="introduceCodigo2.php" method="POST">
                                                 <div class="form-group">
-                                                  <input type="text" class="form-control" placeholder="Codigo" id="Codigo1" required data-validation-required-message="Introduce codigo">
+                                                  <input type="text" name="Codigo1" class="form-control" placeholder="Codigo1" id="Codigo1" required data-validation-required-message="Introduce codigo1">
                                                   <p class="help-block text-danger"></p>
-                                                  <input type="text" class="form-control" placeholder="Codigo" id="Codigo2" required data-validation-required-message="Introduce codigo">
+                                                  <input type="text" name="Codigo2" class="form-control" placeholder="Codigo2" id="Codigo2" required data-validation-required-message="Introduce codigo2">
                                                   <p class="help-block text-danger"></p>
-                                                  <input type="text" class="form-control" placeholder="Codigo" id="Codigo3" required data-validation-required-message="Introduce codigo">
+                                                  <input type="text" name="Codigo3" class="form-control" placeholder="Codigo3" id="Codigo3" required data-validation-required-message="Introduce codigo3">
                                                   <p class="help-block text-danger"></p>
                                                 </div>
                                           <div class="col-lg-12 text-center">
                                             <div id="success"></div>
                                             <button type="submit" class="btn btn-primary">Introducir 3 codigos validos</button>
                                           </div>
+
                                           </form>
 
                                             <div class="row" style="padding-top: 403px;">

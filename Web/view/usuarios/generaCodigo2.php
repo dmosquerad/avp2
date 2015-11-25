@@ -36,23 +36,19 @@
                 <div class="container">
                     <div class="row">
                         <div class="section-title text-center">
-                            <h3>Codigo</h3>
+                            <h3>Codigo Generados</h3>
                         </div>
                     </div>
                     <div class="row" style="padding-top: 20px;">
                             <div class="col-md-12">
                                     <div class="row">
                                           <h1 style="text-align:center"></h1>
-                                          <div class ="col-md-4 col-md-offset-4">
-                                          <div class="col-lg-12 text-center">
-                                            <div id="success"></div>
-                                            <form action="generaCodigo2.php" method="POST">
-                                              <button type="submit" class="btn btn-primary">Generar codigos</button>
-                          
-                                            </form>
-                                          </div> 
+                                            <div align="center"
+                                          </div>
+                                            <?php include('../../controller/controlGenCodigo.php');?> 
                                             <div class="row" style="padding-top: 1003px;">
                                             </div>
+                                          </div>
                                           </div>
                                   </div>
                              </div>
