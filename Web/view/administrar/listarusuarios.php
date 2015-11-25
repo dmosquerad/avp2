@@ -108,13 +108,20 @@
 	<section id="main" class="column">
 
 		<article class="module width_full">
-			<header><h3>Basic Styles</h3></header>
-				<div class="module_content">
-					<h1>Header 1</h1>
-					<h2>Header 2</h2>
-					<h3>Header 3</h3>
-					<h4>Header 4</h4>
-				</div>
+			<header><h3>Lista de Usuarios</h3></header>
+			<div class="module_content">
+									<table>
+										<thead>
+											<tr>
+												<td>Login</td>
+												<td>Nombre de Usuario</td>
+												<td>Email</td>
+												<td>Tipo</td>
+											</tr>
+												<?php include('../../controller/administrarUsuario.php');?>
+										</thead>
+									</table>
+			</div>
 		</article><!-- end of styles article -->
 	</section>
 

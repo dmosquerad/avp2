@@ -108,12 +108,51 @@
 	<section id="main" class="column">
 
 		<article class="module width_full">
-			<header><h3>Basic Styles</h3></header>
+			<header><h3>Asignar Pincho</h3></header>
 				<div class="module_content">
-					<h1>Header 1</h1>
-					<h2>Header 2</h2>
-					<h3>Header 3</h3>
-					<h4>Header 4</h4>
+
+<form name="jppin" action="../../controller/asignarpinchoControl.php" method="POST" >
+
+<?php
+/*Conexion a la bd*/
+require_once '../../functions/BDconectar.php';
+ConectarBD();
+
+$consulta_mysql='select TablaUsuarios_login from juradoprofesional';
+$resultado_consulta_mysql=mysql_query($consulta_mysql);
+
+$consulta_mysql_pin='select idPincho,nombrePIN from pincho';
+$resultado_consulta_mysql_pin=mysql_query($consulta_mysql_pin);
+
+?>
+
+<select name='JP'>
+<?php
+while($fila=mysql_fetch_array($resultado_consulta_mysql)){
+?>
+		<option value=" <?php echo $fila['TablaUsuarios_login'] ?> " >
+		<?php echo $fila['TablaUsuarios_login']; ?>
+		</option>
+		<?php
+}
+?>
+
+</select>
+<select name='PIN'>
+	<?php
+	while($fila2=mysql_fetch_array($resultado_consulta_mysql_pin)){
+	?>
+			<option value=" <?php echo $fila2['idPincho'] ?> " >
+			<?php echo $fila2['nombrePIN']; ?>
+			</option>
+			<?php
+	}
+	?>
+</select>
+<input type="submit" value="Asignar">
+
+					</form>
+
 				</div>
 		</article><!-- end of styles article -->
 	</section>
