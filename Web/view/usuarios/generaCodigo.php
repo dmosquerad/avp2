@@ -24,7 +24,23 @@
 
     </head>
 <tbody>
-  <a href="../../view/usuarios/participante.php"><div class="section-modal" id="service-modal" tabindex="-1">
+  <?php
+  require_once '../../controller/prueba.php';
+  session_start();
+  if(isset($_SESSION["name"])){
+    $user=$_SESSION["name"];
+    if(comprobar($user,'3')==true){
+      echo $_SESSION["name"];
+    }
+    else{
+      session_destroy();
+      header('Location: ../../index.php');
+    }
+  }else{
+      header('Location: ../../index.php');
+  }
+  ?>
+  <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -46,11 +62,9 @@
                                           <div class ="col-md-4 col-md-offset-4">
                                           <div class="col-lg-12 text-center">
                                             <div id="success"></div>
-                                            <form action="generaCodigo2.php" method="POST">
-                                              <button type="submit" class="btn btn-primary">Generar codigos</button>
-                          
-                                            </form>
-                                          </div> 
+                                            <button type="submit" class="btn btn-primary">Generar codigos</button>
+                                          </div>
+
                                             <div class="row" style="padding-top: 1003px;">
                                             </div>
                                           </div>

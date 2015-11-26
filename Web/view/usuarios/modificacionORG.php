@@ -42,6 +42,9 @@
           header('Location: ../../index.php');
         }
       }
+      else{
+          header('Location: ../../index.php');
+      }
       ?>
 	      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">

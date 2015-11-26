@@ -65,7 +65,7 @@
                     header('Location: ../../index.php');
                   }
                 }else{
-                    echo "anon";
+                    header('Location: ../../index.php');
                 }
                 ?>
               </font>
@@ -80,7 +80,7 @@
 
         <!-- Fin tipo usuario -->
                       <div class="logo text-center">
-          <img src="../../images/LogoPincho.svg" ></img>
+          <img src="../../images/LogoPincho.png" ></img>
                       </div>
                   </div>
         </section>

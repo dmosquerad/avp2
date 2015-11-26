@@ -77,7 +77,7 @@
             </b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
-						<img src="../../images/LogoPincho.svg" ></img>
+						<img src="../../images/LogoPincho.png" ></img>
                         </div>
                     </div>
                 </div>
@@ -99,10 +99,10 @@
                                 <p>Mensaje</p>
                             </a>
                         </div> -->
-                       <div class="menu-item blue">
-                            <a href="../../view/codigo/introduceCodigo.php" data-toggle="modal">
-                                <i class="fa fa-thumbs-o-up"></i>
-                                <p>Votar Pincho</p>
+                        <div class="menu-item blue">
+                            <a href="../../view/usuarios/introduceCodigo.php" data-toggle="modal">
+                                <i class="fa fa-floppy-o"></i>
+                                <p>Almacen codigo</p>
                             </a>
                         </div>
 

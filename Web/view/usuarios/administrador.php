@@ -61,7 +61,7 @@
                 header('Location: ../../index.php');
               }
 		        }else{
-                  echo "anon";
+                header('Location: ../../index.php');
 		        }
             ?>
           </font>
@@ -74,7 +74,7 @@
            </b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
-						<img src="../../images/LogoPincho.svg" ></img>
+						<img src="../../images/LogoPincho.png" ></img>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
 
                         <div class="menu-item blue">
                             <a href="../../view/administrar/listarpincho.php" data-toggle="modal">
-                                <i class="fa fa-users"></i>
+                                <i class="fa fa-search"></i>
                                 <p>Administrar</p>
                             </a>
                         </div>
@@ -168,9 +168,9 @@
                     <div class="col-md-3">
 
                         <div class="menu-item color">
-                            <a href="../../view/layouts/gastromapa.php" data-toggle="modal">
-                                <i class="fa fa-map-marker"></i>
-                                <p>Gastromapa</p>
+                            <a href="#OrgJPRO-modal" data-toggle="modal">
+                                <i class="fa fa-users"></i>
+                                <p>Organizar Jurado Pro</p>
                             </a>
                         </div>
 

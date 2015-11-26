@@ -25,7 +25,7 @@
 
       <!-- Start ESTABLECIMIENTOS Section -->
       <!-- Start Pinchos -->
-      <a href="../../index.php"><div class="section-modal" id="service-modal" tabindex="-1">
+      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -45,12 +45,6 @@
 
                             <table>
                                   <thead>
-                                      <!--<a href="pinchoscompleta1.php"><img src="../../images/pburger.jpg" class="img-responsive tam"></a>-->
-                                      <!--<img src="../../images/pburger.jpg" class="img-responsive tam">
-                                      <li><i class="fa fa-user"></i> Auther : iThemesLab </li> <li><i class="fa fa-calendar">
-                                      </i> 07 Aug, 2014 </li>
-                                      <li><i class="fa fa-tag"></i> Music </li>
-                                    -->
                                         <th><h3>Descripcion</h3></th>
                                         <div class="col-md-3 col-sm-6">
                                          <div class="team-member">

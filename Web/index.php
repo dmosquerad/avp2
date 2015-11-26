@@ -39,14 +39,17 @@
     </head>
 
     <body>
-
         <!-- Start Logo Section -->
+<?php
+  session_start();
+  $_SESSION["name"]=NULL;
+  ?>
         <section id="logo-section" class="text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo text-center">
-                            <img src="images/LogoPincho.svg" ></img>
+                            <img src="images/LogoPincho.png" ></img>
                         </div>
                     </div>
                 </div>
@@ -127,7 +130,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="view/establecimiento/estab.php" data-toggle="modal">
+                                    <a href="#team-modal" data-toggle="modal">
                                         <i class="fa fa-home"></i>
                                         <p>Establecimentos</p>
                                     </a>

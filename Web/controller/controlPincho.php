@@ -5,7 +5,7 @@
 	ConectarBD();
 
 	//Recogemos las variables que vienen por POST desde el formulario
-	$nombreP = $_GET['nomPIN'];
+	$nombreP = $_POST['nomPIN'];
 
 	$sql = "SELECT * FROM pincho WHERE (nombrePIN like '%".$nombreP."%')";
 	$result = mysql_query ($sql)or die('No funciona');

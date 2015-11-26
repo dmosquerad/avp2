@@ -6,7 +6,7 @@
     ConectarBD();
 
     //Realizamos la consulta
-    $consulta = mysql_query("SELECT * FROM pincho WHERE estadoPIN=1")
+    $consulta = mysql_query("SELECT * FROM pincho")
     or die('No se puede hacer la consulta'. mysql_error());
 
     while($row = mysql_fetch_array($consulta)) {
