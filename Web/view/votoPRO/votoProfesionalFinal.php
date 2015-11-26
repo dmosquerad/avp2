@@ -68,7 +68,7 @@
 
                         <div cass="row" style="padding-top: 20px;"></div>
 
-                        <form action="../../controller/controlGanador.php" method="POST">
+                        <form action="../../view/votoPRO/haceVotoPROfinal.php" method="POST">
                             <div align="center">
                                 <div class="row">
 
