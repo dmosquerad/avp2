@@ -99,7 +99,7 @@
                                 <i class="fa fa-thumbs-o-up"></i>
                                 <p>Votar pinchos</p>
                             </a>
-                        </div> 
+                        </div>
 
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
@@ -159,7 +159,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="../../view/pinchos/pinchosbreve.php" data-toggle="modal">
+                                    <a href="../../view/pinchos/pinchobreve.php" data-toggle="modal">
                                         <i class="fa fa-cutlery"></i>
                                         <p>Pinchos</p>
                                     </a>
@@ -187,7 +187,7 @@
                         </div>
 
                         <div class="menu-item blue">
-                            <a href="#establecimiento-modal" data-toggle="modal">
+                            <a href="../../view/establecimiento/estab.php" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>

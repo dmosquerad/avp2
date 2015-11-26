@@ -164,7 +164,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="../../view/pinchos/pinchosbreve.php" data-toggle="modal">
+                                    <a href="../../view/pinchos/pinchobreve.php" data-toggle="modal">
                                         <i class="fa fa-cutlery"></i>
                                         <p>Pinchos</p>
                                     </a>
@@ -202,7 +202,7 @@
                         </div>
 
                         <div class="menu-item blue">
-                            <a href="" data-toggle="modal">
+                            <a href="../../view/establecimiento/estab.php" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>
