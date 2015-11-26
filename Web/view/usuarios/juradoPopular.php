@@ -73,11 +73,11 @@
               <i class="fa fa-user"></i>Editar Perfil</a></font>
             <a href ="../../index.php" data-toggle="modal">
               <font size="3" color ="#00FFFF">
-              <i class="fa fa-arrow-left"></i>Abandonar</a></font>          
+              <i class="fa fa-arrow-left"></i>Abandonar</a></font>
             </b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
-						<img src="../../images/LogoPincho.png" ></img>
+						<img src="../../images/LogoPincho.svg" ></img>
                         </div>
                     </div>
                 </div>

@@ -80,7 +80,7 @@
 
         <!-- Fin tipo usuario -->
                       <div class="logo text-center">
-          <img src="../../images/LogoPincho.png" ></img>
+          <img src="../../images/LogoPincho.svg" ></img>
                       </div>
                   </div>
         </section>
