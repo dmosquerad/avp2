@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-
+<?php
+$pinchoelem=$_GET['pincho'];;
+?>
     <head>
 
         <meta charset="utf-8">
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="section-title text-center">
                             <h3>VOTO PROFESIONAL</h3>
-                            <p>Pinchos a valorar</p>
+                            <p>Pincho a elegir</p>
                         </div>
                     </div>
                     <div class="row" style="padding-top: 20px;">
@@ -54,7 +54,7 @@
                               <table style="margin: auto;">
                                 <thead>
                                   <tr>
-                                    <th>id Pincho</th>
+
                                     <th>Nombre Pincho</th>
                                     <th>Enlace foto</th>
                                     <th>Descripción</th>
@@ -63,27 +63,31 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                    <?php include('../../controller/controlPRO.php');?>
+                                <?php include('../../controller/controlVotoEliminatorio.php');?> 
                                 </tbody>
                                 </table> 
-                                <div cass="row" style="padding-top: 20px;"></div>
 
-                        <form action="../../view/votoPRO/votoProfesionalUniVoto.php" method="GET">
+                        <div cass="row" style="padding-top: 20px;"></div>
+
+                        <form action="../../view/votoPRO/haceVotoPROelem.php" method="POST">
                             <div align="center">
                                 <div class="row">
+                                    
 
-                                    idPincho para votar: <input type="number" name="pincho" min="1" >
-                                    <input type="submit" class="btn btn-primary">
+                                     <?php echo "Clikea el valor de IdPincho (".$pinchoelem.") para confirmar voto "?>
+
+                                     <div cass="row" style="padding-top: 20px;"></div>
+
+<!--                                 <?php echo "Introduce id: ".$pinchoelem ?>
+
+                                    <input type="number" name="cant2" min="<?php echo $pinchoelem ?>" max="<?php echo $pinchoelem ?>" </input> -->
+                                    <input type="number" size="10" name="cant" min="0" max="10" required data-validation-required-message="Introduce puntuacion (0-10)"</input>
+                                    <input type="submit" class="btn btn-primary" name="voto" value="<?php echo $pinchoelem ?>"</input>
 
                                     </div>
 
                             </div>
                     </form>
-                        
-                        <div cass="row" style="padding-top: 20px;"></div>
-
-
-
 
                         <div cass="row" style="padding-top: 403px;"></div> 
 

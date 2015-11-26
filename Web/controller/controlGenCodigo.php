@@ -27,11 +27,17 @@
 	$result = mysql_query($sql)or die('No funciona'.mysql_error());
 
 	if($cont<1){
+
+		echo "Codigos Generados: ";
 		echo "<table><tr></tr></table>";
+	}
+	if($cont>0){
+
+		echo" ,";
 	}
 
 	$cont++;
-	echo "<h2>".$numero_aleatorio."</h2>";
+	echo "<h1><".$numero_aleatorio."</h1>";
 
 	}
 }

@@ -77,7 +77,7 @@ $codigo3=$_GET['Codigo3'];
 
                             <div cass="row" style="padding-top: 20px;"></div>
 
-                    <form action="../../controller/controlVotoPOP.php" method="POST">
+                    <form action="haceVotoPOP.php" method="POST">
                         <select name="volv">
 
                             <option name ="Codigo1V" value=" <?php echo $codigo1 ?> " selected="selected" >Codigo 1</option> 
