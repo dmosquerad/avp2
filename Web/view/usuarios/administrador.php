@@ -106,7 +106,7 @@
 
                         <div class="menu-item blue">
                             <a href="../../view/administrar/listarpincho.php" data-toggle="modal">
-                                <i class="fa fa-search"></i>
+                                <i class="fa fa-users"></i>
                                 <p>Administrar</p>
                             </a>
                         </div>
@@ -154,7 +154,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="../../view/pinchos/pinchosbreve.php" data-toggle="modal">
+                                    <a href="../../view/pinchos/pinchobreve.php" data-toggle="modal">
                                         <i class="fa fa-cutlery"></i>
                                         <p>Pinchos</p>
                                     </a>
@@ -168,14 +168,14 @@
                     <div class="col-md-3">
 
                         <div class="menu-item color">
-                            <a href="#OrgJPRO-modal" data-toggle="modal">
-                                <i class="fa fa-users"></i>
-                                <p>Organizar Jurado Pro</p>
+                            <a href="../../view/layouts/gastromapa.php" data-toggle="modal">
+                                <i class="fa fa-map-marker"></i>
+                                <p>Gastromapa</p>
                             </a>
                         </div>
 
                          <div class="menu-item blue">
-                            <a href="#establecimiento-modal" data-toggle="modal">
+                            <a href="../../view/establecimiento/estab.php" data-toggle="modal">
                                 <i class="fa fa-home"></i>
                                 <p>Establecimientos</p>
                             </a>
