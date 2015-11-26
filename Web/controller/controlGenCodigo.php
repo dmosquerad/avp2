@@ -37,7 +37,7 @@
 	}
 
 	$cont++;
-	echo "<h1><".$numero_aleatorio."</h1>";
+	echo "<h1>".$numero_aleatorio."</h1>";
 
 	}
 }

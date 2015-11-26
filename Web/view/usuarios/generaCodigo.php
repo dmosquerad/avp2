@@ -24,10 +24,7 @@
 
     </head>
 <tbody>
-  <?php
-  session_start();
-  ?>
-  <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
+  <a href="../../view/usuarios/participante.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -49,9 +46,11 @@
                                           <div class ="col-md-4 col-md-offset-4">
                                           <div class="col-lg-12 text-center">
                                             <div id="success"></div>
-                                            <button type="submit" class="btn btn-primary">Generar codigos</button>
-                                          </div>
-
+                                            <form action="generaCodigo2.php" method="POST">
+                                              <button type="submit" class="btn btn-primary">Generar codigos</button>
+                          
+                                            </form>
+                                          </div> 
                                             <div class="row" style="padding-top: 1003px;">
                                             </div>
                                           </div>
