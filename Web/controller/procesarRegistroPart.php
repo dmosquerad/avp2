@@ -36,9 +36,12 @@
       header('Location:../view/usuarios/participante.php');
     }
   }else{
+    header('Location:../view/error/errorRegistro.php');
+    /*
     echo "Los campos Contraseña y Repetir Contraseña no coinciden";
     echo "Por favor, revise esos campos";
     echo "<a href='../view/usuarios/registroParticipante.php'>Volver al  Registro</a>";
+    */
   }
 
  ?>

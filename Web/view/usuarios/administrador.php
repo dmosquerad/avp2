@@ -47,17 +47,31 @@
 					<!-- Pricipio tipo usuario -->
 					<div align=left> <p><b>
             <font size="3" color="#FFFFFF">Administrador:</font>
+            <font size="3" color="#FF0000">
             <?php
+            require_once '../../controller/prueba.php';
             session_start();
             if(isset($_SESSION["name"])){
-			           echo $_SESSION["name"];
+              $user=$_SESSION["name"];
+              if(comprobar($user,'1')==true){
+                echo $_SESSION["name"];
+              }
+              else{
+                session_destroy();
+                header('Location: ../../index.php');
+              }
 		        }else{
                   echo "anon";
 		        }
             ?>
+          </font>
             <a href="../../view/usuarios/modificacionORG.php" data-toggle="modal">
              <font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a>
-             </font></b></p>
+             </font>
+             <a href ="../../index.php" data-toggle="modal">
+               <font size="3" color ="#00FFFF">
+               <i class="fa fa-arrow-left"></i>Abandonar</a></font>
+           </b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>

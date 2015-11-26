@@ -52,11 +52,21 @@
 
 
 <body>
-
+	<?php
+	require_once '../../controller/prueba.php';
+	session_start();
+	if(isset($_SESSION["name"])){
+		$user=$_SESSION["name"];
+		if(comprobar($user,'1')!=true){
+			session_destroy();
+			header('Location: ../../index.php');
+		}
+	}
+	?>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title">Website Admin</a></h1>
-			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="../../index.php">View Site</a></div>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="../../controller/controlSesiones.php">Volver</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 

@@ -49,25 +49,40 @@
                 <div class="row">
                     <div class="col-md-12">
 					<!-- Pricipio tipo usuario -->
-					<div align=left> <p><b><font size="3" color="#FFFFFF">Participante: </font>
-            <?php
-            session_start();
-            if(isset($_SESSION["name"])){
-			           echo $_SESSION["name"];
-		        }else{
-                  echo "anon";
-		        }
-            ?>
-            <a href="../../view/usuarios/modificacionPAR.php" data-toggle="modal">
-              <font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a>
-              </font></b></p>
-					<!-- Fin tipo usuario -->
-                        <div class="logo text-center">
-						<img src="../../images/LogoPincho.png" ></img>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <p><b>
+          <div align=left> <font size="3" color="#FFFFFF">Participante: </font>
+              <font size="3" color="#FF0000">
+                <?php
+                require_once '../../controller/prueba.php';
+                session_start();
+                if(isset($_SESSION["name"])){
+                  $user=$_SESSION["name"];
+                  if(comprobar($user,'3')==true){
+                    echo $_SESSION["name"];
+                  }
+                  else{
+                    session_destroy();
+                    header('Location: ../../index.php');
+                  }
+                }else{
+                    echo "anon";
+                }
+                ?>
+              </font>
+          <a href="../../view/usuarios/modificacionPAR.php" data-toggle="modal">
+            <font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a>
+            </font>
+
+            <a href ="../../index.php" data-toggle="modal">
+            <font size="3" color ="#00FFFF" margin-right=50px>
+            <i class="fa fa-arrow-left"></i>Abandonar</a></font>
+          </b></p>
+
+        <!-- Fin tipo usuario -->
+                      <div class="logo text-center">
+          <img src="../../images/LogoPincho.png" ></img>
+                      </div>
+                  </div>
         </section>
         <!-- End Logo Section -->
 
@@ -79,12 +94,12 @@
 
                     <div class="col-md-3">
 
-<!--                         <div class="menu-item blue">
-                            <a href="#mensaje-modal" data-toggle="modal">
-                                <i class="fa fa-archive"></i>
-                                <p>Mensaje</p>
+                          <div class="menu-item blue">
+                            <a href="../../view/pinchos/crearPincho.php" data-toggle="modal">
+                                <i class="fa fa-arrow-up"></i>
+                                <p>Subir pincho</p>
                             </a>
-                        </div> -->
+                        </div>
 
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">
@@ -182,6 +197,10 @@
                 </div>
             </div>
         </div>
+      </div>
+  </div>
+</div>
+</div>
         <!-- End Main Body Section -->
 
   </html>

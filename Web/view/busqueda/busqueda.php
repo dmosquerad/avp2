@@ -28,8 +28,8 @@
 
     </head>
 <body>
-    
-  <a href="../../controller/prueba.php"><div class="section-modal" id="service-modal" tabindex="-1">
+
+  <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">

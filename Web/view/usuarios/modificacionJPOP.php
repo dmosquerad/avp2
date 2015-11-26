@@ -33,9 +33,17 @@
     </head>
     <body>
       <?php
+      require_once '../../controller/prueba.php';
       session_start();
+      if(isset($_SESSION["name"])){
+        $user=$_SESSION["name"];
+        if(comprobar($user,'4')!=true){
+          session_destroy();
+          header('Location: ../../index.php');
+        }
+      }
       ?>
-	      <a href="../../controller/prueba.php"><div class="section-modal" id="service-modal" tabindex="-1">
+	      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -52,17 +60,19 @@
                             <p>Jurado Popular</p>
                           </div>
                     </div>
-							    <div class="row" style="padding-top: 80px;">
+							    <div class="row" style="padding-top: 50px;">
                       <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6">
                               <form method= "post" action="../../controller/procesarModificarJPOP.php">
+                                <!--
                                 <label for="login">Login:</label>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Login" name="login"
                                             required data-validation-required-message="Introduce tu login">
                                             <p class="help-block text-danger"></p>
                                         </div>
+                                    -->
                                 <label for="email">Email:</label>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Email" name="email"

@@ -1,5 +1,6 @@
 <?php
-$login= $_POST['login'];
+session_start();
+$login=$_SESSION["name"];
 $email= $_POST['email'];
 $pass= $_POST['pass'];
 $pass2= $_POST['pass2'];
@@ -14,10 +15,11 @@ if($pass==$pass2){
 }
 
 else{
-
+  header('Location:../view/error/errorModificacion.php');
+/*
   echo 'Los campos Contraseña y Repetir Contraseña no coinciden';
   echo 'Por favor, revise esos campos';
-  echo "<a href='../view/usuarios/modificacionORG.php'>Volver a la Modificación</a>";
+  echo "<a href='../view/usuarios/modificacionORG.php'>Volver a la Modificación</a>";*/
 }
 
  ?>

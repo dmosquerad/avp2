@@ -42,7 +42,6 @@
     </head>
 
     <body>
-
         <!-- Start Logo Section -->
         <section id="logo-section" class="text-center">
             <div class="container">
@@ -50,17 +49,33 @@
                     <div class="col-md-12">
 					<!-- Pricipio tipo usuario -->
 					<div align=left> <p><b><font size="3" color="#FFFFFF">Jurado Profesional: </font>
+            <font size="3" color="FF0000">
             <?php
+            require_once '../../controller/prueba.php';
             session_start();
             if(isset($_SESSION["name"])){
-                 echo $_SESSION["name"];
+              $user=$_SESSION["name"];
+              if(comprobar($user,'2')==true){
+                echo $_SESSION["name"];
+              }
+              else{
+                session_destroy();
+                header('Location: ../../index.php');
+              }
             }else{
                   echo "anon";
             }
             ?>
+          </font>
             <a href="../../view/usuarios/modificacionJPRO.php" data-toggle="modal">
               <font size="2" color="#FFFFFF"><i class="fa fa-user"></i>Editar Perfil</a>
-              </font></b></p>
+              </font>
+              <div align=right>
+              <a href ="../../index.php" data-toggle="modal">
+                <font size="3" color ="#00FFFF">
+                <i class="fa fa-arrow-left"></i>Abandonar</a></font>
+              </div>
+            </b></p>
 					<!-- Fin tipo usuario -->
                         <div class="logo text-center">
 						<img src="../../images/LogoPincho.png" ></img>
@@ -79,12 +94,12 @@
 
                     <div class="col-md-3">
 
-                        <div class="menu-item blue">
-                            <a href="../../view/votoPRO/preVotoPro.php" data-toggle="modal">
-                                <i class="fa fa-thumbs-o-up"></i>
-                                <p>Votar pinchos</p>
+<!--                         <div class="menu-item blue">
+                            <a href="#mensaje-modal" data-toggle="modal">
+                                <i class="fa fa-archive"></i>
+                                <p>Mensaje</p>
                             </a>
-                        </div> 
+                        </div> -->
 
                         <div class="menu-item green">
                             <a href="../../view/layouts/noticias.php" data-toggle="modal">

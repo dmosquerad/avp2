@@ -4,7 +4,6 @@
     $user= $_POST['user'];
     $pass= $_POST['pass'];
 
-
     require_once '../functions/BDconectar.php';
     ConectarBD();
     session_start();
@@ -30,14 +29,15 @@
               header('Location:../view/usuarios/participante.php');
           break;
           case '4':
-
               header('Location: ../view/usuarios/juradoPopular.php');
          break;
       }
     }
   else {
-    echo 'Login o contraseña incorrectos';
-    echo "<a href='../view/usuarios/login.php'>Volver al login</a>";
+    //$errors['a']='Login o contraseña incorrectos';
+    //$_SESSION["error"]='Login o contraseña incorrectos';
+    header('Location:../view/error/error.php');
+    //echo "<a href='../view/usuarios/login.php'>Volver al login</a>";
   }
 
   ?>
