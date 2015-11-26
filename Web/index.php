@@ -46,7 +46,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo text-center">
-                            <img src="images/LogoPincho.png" ></img>
+                            <img src="images/LogoPincho.svg" ></img>
                         </div>
                     </div>
                 </div>
