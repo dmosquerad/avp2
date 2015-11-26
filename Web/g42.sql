@@ -145,10 +145,24 @@ CREATE TABLE `participante` (
 --
 
 INSERT INTO `participante` (`descripcionPAR`, `coordenadasPAR`, `fotoPAR`, `horarioPAR`, `TablaUsuarios_login`) VALUES
-('CARAPAN', '10,12,13', 'www.google.es', '23:30 23:31', 'CaraPan'),
-('SOOOOOY PEPIIIN', '12,3,2', 'www.yahoo.fr', '22:00 - 23:00', 'pepin'),
-('Octopus', '2,5,3', 'www.esei.uvigo.es', '00:05-23:50', 'spiderman');
+('CARAPAN','10,12,13','/Web/images/estab/eorellas.jpg','12:00 - 23:31','CaraPan'),
+('SOOOOOY PEPIIIN','12,3,2', '/Web/images/estab/efuentefria.jpg','22:00 - 23:00','pepin'),
+('Octopus','2,5,3','/Web/images/estab/eatarazana.jpg','00:05-23:50','spiderman');
+/*
+("ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu","-53.20668, 76.84617","Aragón","22:00 - 23:00","Imogene"),
+("pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede,","24.14478, -158.23679","Aragón","22:00 - 23:00","Signe"),
+("et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque","46.30458, -30.88142","Andalucía","22:00 - 23:00","Stephanie"),
+("augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et","-46.9993, -99.50792","Extremadura","22:00 - 23:00","Rowan"),
+("diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non,","-31.99376, 117.68988","Aragón","22:00 - 23:00","Kirby"),
+("velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id","-35.59991, -155.1532","La Rioja","22:00 - 23:00","Quail"),
+("ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis.","16.12172, -104.81601","Extremadura","22:00 - 23:00","Mara"),
+("in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit","-84.0338, -121.35277","Comunitat Valenciana","22:00 - 23:00","Keely"),
+("dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi","68.74495, -64.51103","Principado de Asturias","22:00 - 23:00","Tallulah"),
+("libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc","72.405, -97.48625","Catalunya","22:00 - 23:00","Laura"),
+("et tristique pellentesque, tellus sem mollis dui, in sodales elit erat vitae risus. Duis a","49.6132, -82.48841","Catalunya","22:00 - 23:00","Isabelle"),
+("elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui.","-59.46119, -152.81167","Madrid","22:00 - 23:00","Kerry");
 
+*/
 -- --------------------------------------------------------
 
 --
@@ -223,29 +237,37 @@ INSERT INTO `tablausuarios` (`login`, `nombreU`, `emailU`, `password`, `tipo`) V
 ('pepe', 'Pepe', 'diagrama@hotmail.com', '123', 2),
 ('pepin', 'Pepein', 'pepin@gmail.com', '123', 3),
 ('raulreal', 'Raul', 'mitsu.powa@gmail.com', '123', 1),
-("Erich","Jescie","montes.nascetur@Nuncuterat.org","TRE16DMX7BP","4"),
-("Montana","Amela","orci.Phasellus@cursus.co.uk","HQH76BFP7EQ","4"),
-("Eagan","Kirsten","laoreet@aliquamiaculislacus.edu","QKE75BBQ6DB","3"),
-("Kieran","Erin","erat@estarcuac.net","TKC47MLN1QY","1"),
-("Dana","Lydia","vitae@acturpisegestas.ca","HIA84YRO0ES","2"),
-("Heidi","Kyla","posuere.cubilia.Curae@egestasligula.org","ONJ58OAX2CV","1"),
-("Cailin","Keiko","non@ornarefacilisiseget.net","EJT14FGY8CQ","4"),
-("Michelle","Colleen","semper.tellus@aliquet.edu","UMO61HHI3BN","4"),
-("Nathan","Brenna","Pellentesque.ut.ipsum@nisiaodio.co.uk","SKS79TWZ6ZF","4"),
-("Clio","Dai","at.sem@convallis.com","LGU47BLC5QS","4"),
-("Yvette","Wynne","ac@posuere.edu","YQA84DNF6YL","3"),
-("Gillian","Rhoda","tristique@id.net","UCX36YRR7OE","3"),
-("Amy","Iris","nunc@massa.ca","OQQ33IAX0PU","4"),
-("Freya","Ciara","fermentum.arcu@quisdiam.com","FRY78VDO7VF","4"),
-("Neve","Madeson","Integer@ante.org","ZUE88YCV7YT","2"),
-("Leah","Madeline","Integer.id@feugiatnon.edu","NEY65AZR3KD","4"),
-("Nerea","Hiroko","dictum.eleifend.nunc@Loremipsumdolor.ca","FUM78NWF7UK","2"),("Jameson","Jacqueline","quam.quis.diam@convallisdolor.com","BGV30FFZ4AO","3"),("Jenette","Holly","cursus.Nunc@non.org","ZWQ58XYA0MN","1"),("Summer","Yvette","ut.cursus@duinec.ca","WNL51OQI7ZW","3"),("Ferris","Joelle","nisl.elementum@idsapien.edu","CSW34ROT6OO","3"),
-("Savannah","Adele","ornare.lectus@Etiamlaoreet.edu","NNO42YTE0UV","2"),("Shannon","Vivien","at@commodo.net","FZR12KVA0IT","2"),("Hayfa","Kylan","Duis.volutpat.nunc@risusat.net","KNJ96HLY2GJ","3"),("Eaton","Chava","enim@Vivamuseuismod.com","URD43NZE3JD","2"),("Gretchen","Amanda","ultrices.posuere.cubilia@ridiculus.ca","AER41NJK8BA","3"),
-("Quinn","Ria","sit.amet@ipsumDonec.co.uk","YJO02LQT6NO","4"),("Tanya","Fleur","sed.est.Nunc@sodales.com","XTF10HCF8ZQ","1"),("Silas","Charde","nonummy.ut@elitpretium.co.uk","PPN82VNC8NF","4"),("Leo","Ruth","Morbi.non.sapien@sit.ca","RJB10WFM6NL","3"),("Justine","Tatyana","Nullam.suscipit.est@ut.net","VWD50GJW4UV","3"),
-("Keiko","Bryar","Suspendisse.aliquet@Maurisutquam.org","VCV51PRA7EA","1"),("Kyle","Desirae","lectus.pede@montesnasceturridiculus.org","KJF97UUG1KR","4"),("Fatima","Joan","non.enim.commodo@sapiencursus.edu","IKO45RIP6TB","2"),("Hoyt","Lana","purus.sapien.gravida@a.ca","MMJ64MXE6KR","2"),("Trevor","Rose","a.odio@metuseuerat.ca","GUD22AKA3HT","2"),
-("Camden","Montana","molestie@turpisvitae.org","ZFY48HMW6UZ","1"),("Acton","Danielle","Duis.risus@porttitorerosnec.co.uk","EYM90NLY0MM","4"),("Xerxes","Chastity","sed.turpis.nec@ac.ca","UKO85IIU1RE","1"),("Emily","Rinah","Morbi.neque@imperdiet.net","ZLX20GCT6GD","3"),("Latifah","Octavia","aliquam@afelisullamcorper.co.uk","DAC29DHH5UT","4"),
-("Geraldine","Lesley","vel.sapien.imperdiet@Nulla.net","FWH53FRM2KI","1"),("Alexandra","Blair","nec@Integerurna.com","GIE88HVG7ZQ","4"),("Xena","Donna","ornare.libero@dolorDonec.edu","BBA58ETC9WH","3"),("Fitzgerald","Rama","tellus.faucibus@liberoest.ca","BES16VKQ2ZU","3"),("Lucas","Quail","cursus@est.net","VRM93XAV7OA","1"),
-("Sean","Chiquita","ornare.Fusce.mollis@magnaUt.com","BRN36VZZ7PD","3"),("Savan","Rhoda","Cras@Nuncullamcorpervelit.edu","NUK38VIG2KF","1"),("Priscilla","Octavia","ut.sem.Nulla@quisaccumsanconvallis.net","XQG94IRK4MZ","1"),("Katell","Leah","Vivamus@sitamet.com","NFS65IIP0YV","3"),
+/*
+("Galena", "Maya", "ut.erat.Sed@leo.co.uk","WTM68YGN3KX", 2),
+("Signe", "Hyacinth", "augue.malesuada@magnaSuspendissetristique.ca","VET10RKV8OM", 3),
+("Melissa", "Mary", "luctus.ipsum.leo@Craseu.net","RWW95POP6ZN", 2),
+("Kirsten", "Inez", "Morbi.metus.Vivamus@semper.net","PRW66WFP1DQ", 4),
+("Imogene", "Hedwig","enim.Etiam.gravida@lectuspede.net","YGA16HFX3VY", 3),
+("Stephanie", "Iola", "magnis.dis@et.edu","XDJ12VLG9GL", 3),
+("Tallulah", "Rama", "Suspendisse@tempus.edu","SKT47FUS1HM", 3),
+("Desiree", "Noelle", "amet.nulla@dictumultriciesligula.ca","PZX60JVZ6VU", 3),
+("Kirby", "Caryn", "amet.diam@ipsum.edu","XWT63XWW8JO",3),
+("Katell", "Sigourney","ante.iaculis.nec@sociisnatoquepenatibus.edu","PWA25XVM9WE",2),
+("Bethany","Quynn","adipiscing.lobortis.risus@nisi.org","QFI27WCJ1JM",3),
+("Leslie","Cheryl","dictum.augue.malesuada@sitametante.co.uk","CTB83GZH6DA",4),
+("Ayanna","Kay","lectus.ante.dictum@Aeneaneuismodmauris.org","LBJ13UCO2WR",3),
+("Quail","Rachel","nec@acfeugiat.ca","ZXK15JBC0NI",3),
+("Joy", "Nichole","a@acturpisegestas.co.uk","ZWY86IKZ0QP",2),
+("Rebecca", "Lacy","consectetuer.euismod.est@ornaresagittis.co.uk","HAW09QKX2FY",3),
+("Rana", "Nelle","ante.ipsum@condimentum.net","LGC05ZHX5AN",2),
+("Gemma", "Yvette","netus@diamDuismi.co.uk","UUW72JCJ1JP",4),
+("Susan", "Chiquita","urna.Nunc.quis@eratin.co.uk","LAX03PMA4RS",4),
+("Mira", "Ursa","scelerisque.dui@Duis.net","BVR44RMK4QH",4),
+("Mara", "Abigail","Fusce@pedeCumsociis.ca","OLH51FPU5KM",3),
+("Laura", "Renee","ante.Vivamus@pharetrased.org","TCV98EDX0YB",3),
+("Keely", "Rana","ridiculus@justoPraesent.co.uk","SFW82NHG5LC",3),
+("Venus", "Gloria","Etiam.bibendum.fermentum@duilectus.org","OGD95YGK9EJ",2),
+("Rowan", "Xerxes","justo.faucibus.lectus@ipsum.org","FUR32WVP0IE",3),
+("Ifeoma", "Willow","malesuada.vel.convallis@idrisusquis.ca","FEP24YWS0FM",2),
+("Natalie", "Clare","Duis@sedleoCras.co.uk","LAM04VNR2DL",2),
+("Isabelle", "Mollie","nec@nonummyipsum.co.uk","DLT62CID2UR",3),
+("Kerry", "Jillian","dolor.Fusce.feugiat@amet.ca","YNU23WVM7JT",3),
+*/
 ('RobLucci', 'Rui Car', 'ruicarames.ticvdm@gmail.com', '123', 4),
 ('spiderman', 'Peter Parker', 'spidey@marvel.com', '123', 3);
 
@@ -265,9 +287,12 @@ CREATE TABLE `votoeliminatorio` (
 -- Contenu de la table `votoeliminatorio`
 --
 
-INSERT INTO `votoeliminatorio` (`Pincho_idPincho`, `JuradoProfesional_TablaUsuarios_login`, `votoJPROelim`) VALUES
-(1, 'pepe', 9);
+INSERT INTO `votoeliminatorio` (`Pincho_idPincho`,`JuradoProfesional_TablaUsuarios_login`,`votoJPROelim`) VALUES (1, 'pepe', 9);
+/*
+(1,"Melissa",9),(2,"Galena",17),(3,"Katell",16),(4,"Joy",6),(5,"Rana",16),(6,"Venus",19),(7,"Ifeoma",3),
+(8,"Natalie",13);
 
+*/
 --
 -- Index pour les tables exportées
 --
