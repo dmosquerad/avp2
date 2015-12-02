@@ -1,4 +1,7 @@
+
 <!DOCTYPE html>
+
+
 <html lang="es">
 
     <head>
@@ -42,8 +45,21 @@
                 <div class="row">
                   <center><table>
                         <thead>
+                            <h2><?php
+                            //require_once("../../controller/controladorPincho.php");
+                            require_once("../../model/modeloPincho.php");
+
+                            $a = array();
+                            $a = listarPinchos();
+                            echo $a;
+                            /*
+                            $nombre = $_GET["nombrePIN"];
+                            echo($nombre);
+                            */
+                            ?>
+                          </h2>
                               <th><h3>Descripcion</h3></th>
-                              <?php include ('../../controller/controlListaPincho.php'); ?>
+
                         </thead>
                   </table><center>
                 </div>
