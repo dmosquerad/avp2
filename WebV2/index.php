@@ -118,7 +118,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
-                                    <a href="view/pinchos/pinchobreve.php" data-toggle="modal">
+                                    <a href="controller/controlListaPin.php" data-toggle="modal">
                                         <i class="fa fa-cutlery"></i>
                                         <p>Pinchos</p>
                                     </a>

@@ -1,4 +1,7 @@
+
 <!DOCTYPE html>
+
+
 <html lang="es">
 
     <head>
@@ -39,13 +42,27 @@
                         <p>Descripcion breve de los pinchos</p>
                     </div>
                 </div>
+
                 <div class="row">
-                  <center><table>
-                        <thead>
-                              <th><h3>Descripcion</h3></th>
-                              <?php include ('../../controller/controlListaPincho.php'); ?>
-                        </thead>
-                  </table><center>
+<?php
+  if(isset($_GET["msg"])){
+    $msg = $_GET["msg"];
+    echo($msg);
+  }
+  if(isset($_GET["array"])){
+    $array = unserialize($_GET["array"]);
+    foreach($array as $pincho){
+      echo "PINCHO";
+      $idPincho = $pincho["idPincho"];
+      $nombre = $pincho["nombrePIN"];
+      $descripcion = $pincho["descripcionPIN"];
+      $precio =  $pincho["precioPIN"];
+      $fotoPIN = $pincho["fotoPIN"];
+    //  echo "<a href='../controllers/galleryController.php?idPincho=$idPincho&nombre=$nombre&descripcion=$descripcion&precio=$precio&fotoPIN=$fotoPIN'>";
+    //  echo "<img class='img-portfolio img-responsive' src='".$url."' width='300' height='300'>";
+    }
+  }
+?>
                 </div>
             </div>
           </div>
