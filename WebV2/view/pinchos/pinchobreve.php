@@ -44,25 +44,24 @@
                 </div>
 
                 <div class="row">
-<?php
-  if(isset($_GET["msg"])){
-    $msg = $_GET["msg"];
-    echo($msg);
-  }
-  if(isset($_GET["array"])){
-    $array = unserialize($_GET["array"]);
-    foreach($array as $pincho){
-      echo "PINCHO";
-      $idPincho = $pincho["idPincho"];
-      $nombre = $pincho["nombrePIN"];
-      $descripcion = $pincho["descripcionPIN"];
-      $precio =  $pincho["precioPIN"];
-      $fotoPIN = $pincho["fotoPIN"];
-    //  echo "<a href='../controllers/galleryController.php?idPincho=$idPincho&nombre=$nombre&descripcion=$descripcion&precio=$precio&fotoPIN=$fotoPIN'>";
-    //  echo "<img class='img-portfolio img-responsive' src='".$url."' width='300' height='300'>";
-    }
-  }
-?>
+          <?php
+              if(isset($_GET["msg"])){
+                $msg = $_GET["msg"];
+                echo($msg);
+              }
+              if(isset($_GET["array"])){
+                $array = unserialize($_GET["array"]);
+                foreach($array as $pincho){
+
+                  $idPincho = $pincho["idPincho"];
+                  $nombre = $pincho["nombrePIN"];
+                  $descripcion = $pincho["descripcionPIN"];
+                  $precio =  $pincho["precioPIN"];
+                  $fotoPIN = $pincho["fotoPIN"];
+                  echo "<table><tr><td><a href='pinchocompleta.php?pincho=".$pincho['idPincho']."'><img src=".$pincho["fotoPIN"]." height=200px width=300px></a></td><td><table><tr><td>".$pincho['nombrePIN']."</td></tr><tr><td>".$pincho['precioPIN']."</td></tr></table></td></tr>";
+                }
+              }
+            ?>
                 </div>
             </div>
           </div>

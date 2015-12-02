@@ -5,27 +5,26 @@ require_once("bdconectar.php");
 class Pincho {
 
     private $db;
-    private $conectar;
+    private $con;
 
-	  public function __construct() {
+    public function __construct() {
         $this->db = new Database();
-        $this->conectar = $this->db->getConnection();
+        $this->con = $this->db->getConnection();
     }
-  //Funcion que devuelve todos los pinchos validados.
-    public function listarPinchos() {
-      $sql = "select * from pincho where estadoPIN=1";
-            $result = mysql_query($sql, $this->con);
-            echo $result;
-            if (mysql_num_rows($result) == 0) {
-                return false;
-            } else {
-                $toret = array();
-                while ($row = mysql_fetch_assoc($result)) {
-                    $toret[] = $row;
-                }
-                return $toret;
-            }
-  }
 
+    //Funcion que devuelve todos los pinchos validados en el sistema.
+    public function selectAll() {
+        $sql = 'select * from pincho where estadoPIN=1';
+        $result = mysql_query($sql, $this->con);
+        if (mysql_num_rows($result) == 0) {
+            return false;
+        } else {
+            $toret = array();
+            while ($row = mysql_fetch_assoc($result)) {
+                $toret[] = $row;
+            }
+          return $toret;
+        }
+    }
 }
-  ?>
+?>
