@@ -49,20 +49,21 @@
             <font size="3" color="#FFFFFF">Administrador:</font>
             <font size="3" color="#FF0000">
             <?php
-            require_once '../../controller/prueba.php';
+            require_once ("../../model/user.php");
+            $user=new Usuario();
             session_start();
             if(isset($_SESSION["name"])){
-              $user=$_SESSION["name"];
-              if(comprobar($user,'1')==true){
+              $login=$_SESSION["name"];
+              if($user->comprobarTipo('1',$login)==true){
                 echo $_SESSION["name"];
               }
               else{
                 session_destroy();
                 header('Location: ../../index.php');
               }
-		        }else{
-                header('Location: ../../index.php');
-		        }
+            }else{
+                  header('Location: ../../index.php');
+            }
             ?>
           </font>
             <a href="../../view/usuarios/modificacionORG.php" data-toggle="modal">

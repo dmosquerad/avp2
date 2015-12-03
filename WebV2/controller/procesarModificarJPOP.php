@@ -1,19 +1,20 @@
 <?php
+require_once'../model/user.php';
+require_once'../model/jpop.php';
 session_start();
-$login=$_SESSION["name"];
-$email= $_POST['email'];
-$pass= $_POST['pass'];
+
+$a=array();
+$a['login']=$_SESSION["name"];
+$a['email']=$_POST['email'];
+$a['pass']=$_POST['pass'];
+$a['desc']=$_POST['desc'];
 $pass2= $_POST['pass2'];
-$desc= $_POST['desc'];
 
-if($pass==$pass2){
-  require_once '../functions/BDconectar.php';
-  ConectarBD();
-
-  $ModificaUsuario= "Update tablausuarios set emailU='$email', password='$pass' where login='$login'";
-  $Modificacion = mysql_query($ModificaUsuario) or die('error al ejecutar la modificacion de usuario');
-  $ModificaJPOP= "Update juradopopular set descripcionPOP='$desc' where TablaUsuarios_login='$login'";
-  $Modificacion = mysql_query($ModificaJPOP) or die('error al ejecutar la modificacion de jurado popular');
+if($a['pass']==$pass2){
+  $user = new Usuario();
+  $pop= new Popular();
+  $user->modificar($a);
+  $pop->modificarPop($a);
   header('Location:../view/usuarios/juradoPopular.php');
 }
 

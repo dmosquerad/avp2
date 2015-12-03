@@ -33,16 +33,21 @@
     </head>
     <tbody>
       <?php
-      require_once '../../controller/prueba.php';
+      require_once ("../../model/user.php");
+      $user=new Usuario();
       session_start();
       if(isset($_SESSION["name"])){
-        $user=$_SESSION["name"];
-        if(comprobar($user,'1')!=true){
+        $login=$_SESSION["name"];
+        if($user->comprobarTipo('1',$login)==true){
+          echo $_SESSION["name"];
+          $datos1=$user->select($login);
+        }
+        else{
           session_destroy();
           header('Location: ../../index.php');
         }
       }else{
-          header('Location: ../../index.php');
+            header('Location: ../../index.php');
       }
       ?>
 	      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
@@ -72,26 +77,26 @@
                                         <!--
                                         <label for="login">Login:</label>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Login" name="login"
+                                            <input type="text" class="form-control" value="Login" name="login"
                                             required data-validation-required-message="Introduce tu login">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                       -->
                                         <label for="email">Email:</label>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" name="email"
-                                             required data-validation-required-message="Introduce tu nuevo email">
+                                            <input type="email" class="form-control" value="<?php echo $datos1["emailU"]?>"
+                                            name="email" required data-validation-required-message="Introduce tu nuevo email">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="password1">Clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Clave" name="pass"
+                                            <input type="password" class="form-control" value="<?php echo $datos1["password"]?>" name="pass"
                                             required data-validation-required-message="Introduce tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="password2">Repite clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirmar Clave" name="pass2"
+                                            <input type="password" class="form-control" value="<?php echo $datos1["password"]?>" name="pass2"
                                              required data-validation-required-message="Confirma tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>

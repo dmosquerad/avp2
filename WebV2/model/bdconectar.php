@@ -1,19 +1,25 @@
 <?php
-class Database {
 
-    protected $conectar;
+//---------------------------------------------------------------------------------
+//Funcion: ConectarBD()
+//Fecha: 20/11/2015
+//Establece conexion con el gestor de bd, si no es posible informa y devuelve 0.
+//A continuacion selecciona la bd, si no es posible informa y devuelve 0.
+//---------------------------------------------------------------------------------
+class BD {
+		protected $connect;
 
-    public function __construct() {
-        $aux = mysql_connect("localhost", "g42", "g42");
-        if (!$aux) {
-            die('No se puede conectar a la base de datos:' . mysql_error());
-        }
-        mysql_select_db("g42", $aux);
-        mysql_set_charset('utf8');
-        $this->conectar = $aux;
-    }
-    public function getConnection() {
-      return $this->conectar;
-  }
+		public function __construct(){
+			$aux=mysql_connect('localhost','g42','g42');
+			if(!$aux){
+				die('No es posible conectar al gestor de bd'. mysql_error());
+			}
+			mysql_select_db('g42',$aux);
+			$this->connect=$aux;
+		}
+
+		public function getConnect(){
+			return $this->connect;
+		}
 }
 ?>

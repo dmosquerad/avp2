@@ -1,11 +1,34 @@
 <?php
-  $login= $_POST['login'];
-  $name= $_POST['name'];
-  $email= $_POST['email'];
-  $pass= $_POST['pass'];
-  $pass2= $_POST['pass2'];
-  $tipo='4';
-  $desc= $_POST['desc'];
+  require_once'../model/user.php';
+  require_once'../model/jpop.php';
+  session_start();
+
+  $a=array();
+  $a['login']= $_POST['login'];
+  $a['name'] = $_POST['name'];
+  $a['email']= $_POST['email'];
+  $a['pass'] = $_POST['pass'];
+  $a['desc'] = $_POST['desc'];
+  $pass2=$_POST['pass2'];
+
+  if($a['pass']!=$pass2){
+    header('Location:../view/error/errorRegistro.php');
+  }else{
+    $user = new Usuario();
+    $comprobar= $user->exists($a);
+    if($comprobar == false){
+        header('Location:../view/error/errorRegistro2.php');
+    }
+    else{
+      $pop= new Popular();
+      $user->insertPop($a);
+      $pop->insertPop($a);
+      $_SESSION["name"] = $a['login'];
+      header('Location:../view/usuarios/juradoPopular.php');
+    }
+  }
+
+  /*
   if($pass==$pass2){
     require_once '../functions/BDconectar.php';
     ConectarBD();
@@ -17,9 +40,7 @@
 
     if($a>'0'){
       header('Location:../view/error/errorRegistro2.php');
-      /*
-      echo 'Este usuario ya existe';
-      echo "<a href='../view/usuarios/registroJurado.php'>Volver al  Registro</a>";*/
+
     }
     else{
 
@@ -34,9 +55,6 @@
   }
   else{
     header('Location:../view/error/errorRegistro.php');
-/*
-    echo 'Los campos Contraseña y Repetir Contraseña no coinciden';
-    echo 'Por favor, revise esos campos';
-    echo "<a href='../view/usuarios/registroJurado.php'>Volver al Registro</a>";*/
-  }
+
+  }*/
  ?>

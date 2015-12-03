@@ -53,11 +53,12 @@
           <div align=left> <font size="3" color="#FFFFFF">Participante: </font>
               <font size="3" color="#FF0000">
                 <?php
-                require_once '../../controller/prueba.php';
+                require_once ("../../model/user.php");
+                $user=new Usuario();
                 session_start();
                 if(isset($_SESSION["name"])){
-                  $user=$_SESSION["name"];
-                  if(comprobar($user,'3')==true){
+                  $login=$_SESSION["name"];
+                  if($user->comprobarTipo('3',$login)==true){
                     echo $_SESSION["name"];
                   }
                   else{
@@ -65,7 +66,7 @@
                     header('Location: ../../index.php');
                   }
                 }else{
-                    header('Location: ../../index.php');
+                      header('Location: ../../index.php');
                 }
                 ?>
               </font>

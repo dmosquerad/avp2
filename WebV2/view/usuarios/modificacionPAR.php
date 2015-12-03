@@ -32,16 +32,24 @@
     </head>
     <tbody>
       <?php
-      require_once '../../controller/prueba.php';
+      require_once ("../../model/user.php");
+      require_once ("../../model/part.php");
+      $user=new Usuario();
       session_start();
       if(isset($_SESSION["name"])){
-        $user=$_SESSION["name"];
-        if(comprobar($user,'3')!=true){
+        $login=$_SESSION["name"];
+        if($user->comprobarTipo('3',$login)==true){
+          echo $_SESSION["name"];
+          $part=new Participante();
+          $datos1=$user->select($login);
+          $datos2=$part->select($login);
+        }
+        else{
           session_destroy();
           header('Location: ../../index.php');
         }
       }else{
-          header('Location: ../../index.php');
+            header('Location: ../../index.php');
       }
       ?>
 	      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
@@ -71,40 +79,42 @@
                                         <!--
                                         <label for="login">Login:</label>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Login" name="login"
+                                            <input type="text" class="form-control" value="Login" name="login"
                                             required data-validation-required-message="Introduce tu login">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                       -->
                                         <label for="email">Email:</label>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" name="email"
-                                            required data-validation-required-message="Introduce tu nuevo email">
+                                            <input type="email" class="form-control" value="<?php echo $datos1["emailU"]?>"
+                                            name="email" required data-validation-required-message="Introduce tu nuevo email">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="pass">Clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Clave" name="pass"
-                                            required data-validation-required-message="Introduce tu nueva clave">
+                                            <input type="password" class="form-control" value="<?php echo $datos1["password"]?>"
+                                            name="pass" required data-validation-required-message="Introduce tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="pass2">Repite clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirmar Clave" name="pass2"
-                                            required data-validation-required-message="Confirma tu nueva clave">
+                                            <input type="password" class="form-control" value="<?php echo $datos1["password"]?>"
+                                            name="pass2" required data-validation-required-message="Confirma tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="foto">Foto:</label>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="foto" name="foto"
-                                            required data-validation-required-message="Introduce tu foto">
+                                            <input type="text" class="form-control" value="<?php echo $datos2["fotoPAR"]?>"
+                                            name="foto" required data-validation-required-message="Introduce tu foto">
                                             <p class="help-block text-danger"></p>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="desc">Descripcion:</label>
-                                            <textarea class="form-control" placeholder="Descripcion del local" name="desc"
-                                            required data-validation-required-message="Introduce una descripcion del local"></textarea>
+                                            <textarea class="form-control" name="desc"
+                                            required data-validation-required-message="Introduce una descripcion del local">
+                                            <?php echo $datos2["descripcionPAR"]?>
+                                            </textarea>
                                             <p class="help-block text-danger"></p>
                                         </div>
 
@@ -124,7 +134,7 @@
 
                                         <label for="coord">Coordenadas:</label>
                                         <div class="form-group">
-                                             <input type="text" name="coord"
+                                             <input type="text" name="coord" value="<?php echo $datos2["coordenadasPAR"]?>"
                                              required data-validation-required-message="Introduce tu nuevo horario">
                                              <p class="help-block text-danger"></p>
                                          </div>

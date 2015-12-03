@@ -51,20 +51,21 @@
 					<div align=left> <p><b><font size="3" color="#FFFFFF">Jurado Profesional: </font>
             <font size="3" color="FF0000">
             <?php
-            require_once '../../controller/prueba.php';
+            require_once ("../../model/user.php");
+            $user=new Usuario();
             session_start();
             if(isset($_SESSION["name"])){
-              $user=$_SESSION["name"];
-              if(comprobar($user,'2')==true){
+              $login=$_SESSION["name"];
+              if($user->comprobarTipo('2',$login)==true){
                 echo $_SESSION["name"];
               }
               else{
                 session_destroy();
                 header('Location: ../../index.php');
               }
-            }else{
+		        }else{
                   header('Location: ../../index.php');
-            }
+		        }
             ?>
           </font>
             <a href="../../view/usuarios/modificacionJPRO.php" data-toggle="modal">

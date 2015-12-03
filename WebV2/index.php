@@ -39,6 +39,10 @@
     </head>
 
     <body>
+      <?php
+      session_start();
+      $_SESSION["name"]=NULL;
+       ?>
 
         <!-- Start Logo Section -->
         <section id="logo-section" class="text-center">
@@ -118,7 +122,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
-                                    <a href="controller/controlListaPin.php" data-toggle="modal">
+                                    <a href="view/pinchos/pinchobreve.php" data-toggle="modal">
                                         <i class="fa fa-cutlery"></i>
                                         <p>Pinchos</p>
                                     </a>

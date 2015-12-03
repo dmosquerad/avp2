@@ -1,7 +1,4 @@
-
 <!DOCTYPE html>
-
-
 <html lang="es">
 
     <head>
@@ -42,26 +39,13 @@
                         <p>Descripcion breve de los pinchos</p>
                     </div>
                 </div>
-
                 <div class="row">
-          <?php
-              if(isset($_GET["msg"])){
-                $msg = $_GET["msg"];
-                echo($msg);
-              }
-              if(isset($_GET["array"])){
-                $array = unserialize($_GET["array"]);
-                foreach($array as $pincho){
-
-                  $idPincho = $pincho["idPincho"];
-                  $nombre = $pincho["nombrePIN"];
-                  $descripcion = $pincho["descripcionPIN"];
-                  $precio =  $pincho["precioPIN"];
-                  $fotoPIN = $pincho["fotoPIN"];
-                  echo "<table><tr><td><a href='pinchocompleta.php?pincho=".$pincho['idPincho']."'><img src=".$pincho["fotoPIN"]." height=200px width=300px></a></td><td><table><tr><td>".$pincho['nombrePIN']."</td></tr><tr><td>".$pincho['precioPIN']."</td></tr></table></td></tr>";
-                }
-              }
-            ?>
+                  <center><table>
+                        <thead>
+                              <th><h3>Descripcion</h3></th>
+                              <?php include ('../../controller/controlListaPincho.php'); ?>
+                        </thead>
+                  </table><center>
                 </div>
             </div>
           </div>

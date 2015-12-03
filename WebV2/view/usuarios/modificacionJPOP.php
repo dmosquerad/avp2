@@ -33,16 +33,20 @@
     </head>
     <body>
       <?php
-      require_once '../../controller/prueba.php';
+      require_once ("../../model/user.php");
+      $user=new Usuario();
       session_start();
       if(isset($_SESSION["name"])){
-        $user=$_SESSION["name"];
-        if(comprobar($user,'4')!=true){
+        $login=$_SESSION["name"];
+        if($user->comprobarTipo('4',$login)==true){
+          echo $_SESSION["name"];
+        }
+        else{
           session_destroy();
           header('Location: ../../index.php');
         }
       }else{
-          header('Location: ../../index.php');
+            header('Location: ../../index.php');
       }
       ?>
 	      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">

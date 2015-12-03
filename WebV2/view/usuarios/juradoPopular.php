@@ -52,11 +52,12 @@
 					<div align=left> <p><b><font size="3" color="#FFFFFF">Jurado Popular: </font>
             <font size="3" color="FF0000">
             <?php
-            require_once '../../controller/prueba.php';
+            require_once ("../../model/user.php");
+            $user=new Usuario();
             session_start();
             if(isset($_SESSION["name"])){
-              $user=$_SESSION["name"];
-              if(comprobar($user,'4')==true){
+              $login=$_SESSION["name"];
+              if($user->comprobarTipo('4',$login)==true){
                 echo $_SESSION["name"];
               }
               else{

@@ -1,27 +1,25 @@
 <?php
+require_once'../model/user.php';
+require_once'../model/jpro.php';
 session_start();
-$login=$_SESSION["name"];
-$email= $_POST['email'];
-$pass= $_POST['pass'];
+
+$a=array();
+$a['login']=$_SESSION["name"];
+$a['email']=$_POST['email'];
+$a['pass']=$_POST['pass'];
+$a['prof']=$_POST['job'];
 $pass2= $_POST['pass2'];
-$prof= $_POST['job'];
 
-if($pass==$pass2){
-  require_once '../functions/BDconectar.php';
-  ConectarBD();
 
-  $ModificaUsuario= "Update tablausuarios set emailU='$email', password='$pass' where login='$login'";
-  $Modificacion = mysql_query($ModificaUsuario) or die('error al ejecutar la modificacion de usuario');
-  $ModificaJPRO= "Update juradoprofesional set profesionPRO='$prof' where TablaUsuarios_login='$login'";
-  $Modificacion = mysql_query($ModificaJPRO) or die('error al ejecutar la modificacion de jurado popular');
+if($a['pass']==$pass2){
+  $user = new Usuario();
+  $pro= new Profesional();
+  $user->modificar($a);
+  $pro->modificarPro($a);
   header('Location:../view/usuarios/juradoProfesional.php');
 }
 
 else{
   header('Location:../view/error/errorModificacion.php');
-/*
-  echo 'Los campos Contraseña y Repetir Contraseña no coinciden';
-  echo 'Por favor, revise esos campos';
-  echo "<a href='../view/usuarios/modificacionJPRO.php'>Volver a la Modificación</a>";*/
 }
  ?>

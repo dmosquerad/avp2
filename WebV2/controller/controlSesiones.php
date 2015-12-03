@@ -1,16 +1,14 @@
 <?php
 
-require_once '../functions/BDconectar.php';
-ConectarBD();
+require_once'../model/user.php';
 session_start();
 if($_SESSION["name"]!=NULL){
-  $user=$_SESSION["name"];
-
-  $tipo= "select tipo from tablausuarios where login='$user'";
-  $p = mysql_query($tipo) or die('No se puede comprobar si existe ese usuario');
-  $a=mysql_fetch_array($p);
-
-  switch($a["tipo"]){
+  $a= array();
+  $a["login"]=$_SESSION["name"];
+  $user = new Usuario();
+  $tipo= $user->selectTipo($a);
+  
+  switch($tipo["tipo"]){
       case '1':
           header('Location:../view/usuarios/administrador.php');
       break;
