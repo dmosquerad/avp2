@@ -14,10 +14,6 @@ class Codigo{
     //controlGenCodigo //echo
     public function generaCodigo($nombreP , $numero){
 
-/*        $nombreP = $_SESSION["name"];
-        $numero = $_GET["numero"];*/
-        
-        // Genera Codigo valor de veces a generar.
 
         $cont=0;
 
@@ -65,11 +61,6 @@ class Codigo{
 
     //controlCodigo //echo es de popular
     public function checkeaCodigo($codigo1, $codigo2, $codigo3){    
-    
-    $codigo1 = $_GET["Codigo1"];
-    $codigo2 = $_GET["Codigo2"];
-    $codigo3 = $_GET["Codigo3"];
-
     $c1;
     $c2;
     $c3;

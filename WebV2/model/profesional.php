@@ -31,8 +31,6 @@ class Profesional{
     //ControlGanador //echo
     public function insertaVotoProfesionalGanador($nombreP, $pincho ){
 
-    $nombreP = $_SESSION["name"];
-    $pincho = $_POST["pincho"];
  
     $a="SELECT COUNT(*) FROM pincho WHERE idPincho='$pincho' AND finalista='1'";
 
@@ -78,10 +76,6 @@ class Profesional{
     //controlVotoEliminatorio //echo
     public function muestraEliminatorioFinal($nombreP,$pinchoelem){
 
-        $nombreP = $_SESSION["name"];
-        $pinchoelem =$_GET['pincho'];
-
-
         $a = "SELECT COUNT(*) FROM pincho_has_juradoprofesional where JuradoProfesional_TablaUsuarios_login='$nombreP' AND Pincho_idPincho='$pinchoelem'";
 
         $b=mysql_query($a)or die('No funciona'.mysql_error()); 
@@ -112,11 +106,6 @@ class Profesional{
     //ControlVotoPROelem //echo
     public function insertaVotoProfesionalEliminatorio($nombreP ,$voto , $pincho){
 
-
-        //Recogemos las variables que vienen por POST desde el formulario
-        $voto = $_POST['cant'];
-        $pincho = $_POST['voto'];
-        $nombreP = $_SESSION["name"];
         
         $a = "SELECT COUNT(*) FROM votoeliminatorio where JuradoProfesional_TablaUsuarios_login='$nombreP' AND Pincho_idPincho='$pincho'";
 
