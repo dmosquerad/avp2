@@ -53,16 +53,20 @@
 
 <body>
 	<?php
-	require_once '../../controller/prueba.php';
+	require_once ("../../model/user.php");
+	$user=new Usuario();
 	session_start();
 	if(isset($_SESSION["name"])){
-		$user=$_SESSION["name"];
-		if(comprobar($user,'1')!=true){
+		$login=$_SESSION["name"];
+		if($user->comprobarTipo('1',$login)==true){
+			echo $_SESSION["name"];
+		}
+		else{
 			session_destroy();
 			header('Location: ../../index.php');
 		}
 	}else{
-			header('Location: ../../index.php');
+				header('Location: ../../index.php');
 	}
 	?>
 	<header id="header">
@@ -84,7 +88,7 @@
 	</section><!-- end of secondary bar -->
 
 	<aside id="sidebar" class="column" style="height: 1700px;">
-		
+
 		<hr/>
 		<h3>Pinchos</h3>
 		<ul class="toggle">
