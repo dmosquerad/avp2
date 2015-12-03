@@ -24,19 +24,6 @@
 
     </head>
 <body>
-  <?php
-    require_once '../../controller/prueba.php';
-    session_start();
-    if(isset($_SESSION["name"])){
-      $user=$_SESSION["name"];
-      if(comprobar($user,'4')!=true){
-        session_destroy();
-        header('Location: ../../index.php');
-      }
-    }else{
-        header('Location: ../../index.php');
-    }
-    ?>
   <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">

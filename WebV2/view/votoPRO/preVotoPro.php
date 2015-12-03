@@ -28,19 +28,6 @@
 
 
 <tbody>
-  <?php
-  require_once '../../controller/prueba.php';
-  session_start();
-  if(isset($_SESSION["name"])){
-    $user=$_SESSION["name"];
-    if(comprobar($user,'2')!=true){
-      session_destroy();
-      header('Location: ../../index.php');
-    }
-  }else{
-      header('Location: ../../index.php');
-  }
-  ?>
 
   <a href="../../view/usuarios/juradoProfesional.php">
     <div class="section-modal" id="service-modal" tabindex="-1">
