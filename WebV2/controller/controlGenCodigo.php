@@ -1,47 +1,14 @@
 <?php
-
-	require_once '../../functions/BDconectar.php';
-
-	ConectarBD();
+//tengo que abrir alli la base de datos
+require_once("../../model/codigo.php");
 
 	session_start();
 
 	$nombreP = $_SESSION["name"];
+	$numero = $_GET["numero"];
+// Genera Codigo valor de veces a generar.
 
-	$cont=0;
-
-	while($cont<10){
-
-	$numero_aleatorio = rand(1,10000);
-
-	$a = "SELECT COUNT(*) FROM codigo where idCodigo='$numero_aleatorio'";
-
-	$b=mysql_query($a)or die('No funciona'.mysql_error()); 
-
-
-	if (mysql_result($b, 0)<1){
-
-	$sql = "INSERT INTO codigo (idCodigo,Participante_TablaUsuarios_login)
-			VALUES ('$numero_aleatorio','$nombreP')";
-
-	$result = mysql_query($sql)or die('No funciona'.mysql_error());
-
-	if($cont<1){
-
-		echo "Codigos Generados: ";
-		echo "<table><tr></tr></table>";
-	}
-	if($cont>0){
-
-		echo" ,";
-	}
-
-	$cont++;
-	echo "<h1>".$numero_aleatorio."</h1>";
-
-	}
-}
-echo".";
-
+	$c = new Codigo();
+	$c->generaCodigo($nombreP, $numero);
 
 ?>
