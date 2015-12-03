@@ -42,30 +42,30 @@
                       </div>
                   </div>
                   <div class="row">
+                      <th><h3>Descripcion</h3></th>
+                              <?php
+                                  if(isset($_GET["msg"])){
+                                    $msg = $_GET["msg"];
+                                    echo($msg);
+                                  }
+                                  if(isset($_GET["array"])){
+                                    $array = unserialize($_GET["array"]);
+                                    foreach($array as $pincho){
+                                        $participante = $pincho['TablaUsuarios_login'];
+                                        $foto = $pincho["fotoPAR"];
+                                        $horas = $pincho["horarioPAR"];
+                                        $coordenadas = $pincho["coordenadasPAR"];
 
-                            <table>
-                                  <thead>
-                                      <!--<a href="pinchoscompleta1.php"><img src="../../images/pburger.jpg" class="img-responsive tam"></a>-->
-                                      <!--<img src="../../images/pburger.jpg" class="img-responsive tam">
-                                      <li><i class="fa fa-user"></i> Auther : iThemesLab </li> <li><i class="fa fa-calendar">
-                                      </i> 07 Aug, 2014 </li>
-                                      <li><i class="fa fa-tag"></i> Music </li>
-                                    -->
-                                        <th><h3>Descripcion</h3></th>
-                                        <div class="col-md-3 col-sm-6">
-                                         <div class="team-member">
-                                          <div class="team-details">
-                                        <?php include ('../../controller/controlListaEstab.php'); ?>
-                                        </div>
-                                      </div>
-                                      </div>
-                                  </thead>
-                            </table>
-                  <div class="row" style="padding-top: 337px;"></div>
+                                        echo "<table><tr><td> <a href='estabcompleto.php?action=verEstab'><img src=".$foto." height=200px width=300px></a></td><td><table><tr><td>".$horas."</td></tr><tr><td>".$coordenadas."</td></tr></table></td></tr>";
+
+                                    }
+                                  }
+                                ?>
+                        </div>
+                      </div>
+                    </div>
 
                   </div><!-- /.row -->
-
-              </div>
       <!-- End ESTABLECIMIENTO Section -->
     </tbody>
 </html>

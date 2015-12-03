@@ -22,16 +22,10 @@
         <link href="../../css/style.css" rel="stylesheet">
 
     </head>
-    <?php
-  		include '../../controller/consultarEstab.php';
 
-  		$participante=$_GET["participante"];
-
-  		$array=consultarEstab($participante);
-  	?>
     <tbody>
       <!-- Start pinchos completa-->
-      <a href="estab.php"><div class="section-modal" id="service-modal" tabindex="-1">
+      <a href="controller/controlListaEstab.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -52,29 +46,20 @@
 
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <div class="testimonial">
-                                <center><img src="<?php echo $array["fotoPAR"]; ?>" class="img-responsive tam"></center>
+                                <center><img src="<?php
+                                    $array = unserialize($_GET["verEstab"]);
+                                    echo $array["fotoPAR"]; ?>" class="img-responsive tam">
+                               </center>
                                 <h4><?php echo $array["TablaUsuarios_login"]; ?></h4>
                                 <div class="speech">
                                     <p><?php echo $array["descripcionPAR"]; ?></p>
                                     <p><?php echo $array["horarioPAR"]; ?></p>
                                     <p><?php echo $array["coordenadasPAR"]; ?></p>
-
                                 </div>
                             </div>
                         </div>
                       </div>
                   </div>
-                  <div class="col-md-6 "algin="left">
-
-                    <!--COMENTARIO-->
-                    <label for="name">Comentarios:</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Comentario" id="desc" required data-validation-required-message="Introduce Comentario">
-                        <p class="help-block text-danger"></p>
-                        </div>
-                  <button type="submit" class="btn btn-primary">Introduce comentario</button>
-                </div>
-            <div class="row" style="padding-top: 100px;"></div>
         </div>
     </tbody>
 

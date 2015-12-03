@@ -1,20 +1,38 @@
 <?php
-	//se incluyen las funciones
-    require_once '../../functions/BDconectar.php';
+require_once("../model/modeloParticipante.php");
 
-    //Conectarmos con la bd
-    ConectarBD();
+$pa = new Participante();
+$boolean = $pa->selectAll();
 
-    //Realizamos la consulta
-    $consulta = mysql_query("SELECT * FROM participante")
-    or die('No se puede hacer la consulta'. mysql_error());
+if($boolean == false){
+  $msg = "Error";
+  header("Location: ../view/establecimiento/estab.php?msg=$msg");
+}else{
+  $array = serialize($boolean);
+  header("Location: ../view/establecimiento/estab.php?array=$array");
+}
 
-    while($row = mysql_fetch_array($consulta)) {
-      echo "<tr>
-      <td><a href='estabcompleto.php?participante=".$row['TablaUsuarios_login']."'><img src=".$row["fotoPAR"]." height=300px width=400px></a></td>
-      <td><table><tr><td><h2>horario: </h2>".$row['horarioPAR']."</td></tr>
-  		<tr><td><h2>Coordenadas Restaurantes: </h2>".$row['coordenadasPAR']."</td></tr></table>
-      </td>
-      </tr>";
+
+  $action = $_GET["action"];
+  if ($action == "verEstab") {
+      verEstab();
+  } else {
+      //Procesamiento de futuras peticiones que vengan por GET
+      echo("No recibe los datos del GET");
   }
+}
+
+function verEstab() {
+    $aux = new Participante();
+    $boolean = $aux->selectAll($array["TablaUsuarios_login"]);
+
+    if ($boolean == false) {
+      $msg = "Error";
+        header("Location: ../view/error/errorPincho1.php");
+    } else {
+      $array=serialize($boolean);
+        header("Location: ../view/estabcompleto.php?$array");
+    }
+}
+
 ?>

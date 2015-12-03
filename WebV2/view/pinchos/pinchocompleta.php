@@ -61,15 +61,6 @@
                         </div>
                       </div>
                   </div>
-                  <div class="col-md-6 "algin="left">
-                    <label for="name">Comentarios:</label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Comentario" id="desc" required data-validation-required-message="Introduce Comentario">
-                        <p class="help-block text-danger"></p>
-                        </div>
-                  <button type="submit" class="btn btn-primary">Introduce comentario</button>
-                </div>
-            <div class="row" style="padding-top: 100px;"></div>
         </div>
     </tbody>
 
