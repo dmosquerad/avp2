@@ -5,8 +5,7 @@ ConectarBD();
 $jpro=$_POST['JP'];
 $pin=$_POST['PIN'];
 
-//$sqlpin="SELECT idPincho,Participante_TablaUsuarios_login,Codigo_idCodigo FROM pincho WHERE nombrePIN='$pin'";
-//$sqlpincho="SELECT * FROM pincho WHERE nombrePIN = '$pin'";
+
 $sqlpincho="SELECT * FROM pincho WHERE idPincho = '$pin'";
 $sentencia=mysql_query($sqlpincho) or die('No funciona result');
 
