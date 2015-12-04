@@ -64,7 +64,7 @@
                             <p><h4><?php echo $pincho["nombrePIN"]; ?></h4></p>
                             <div class="speech">
                                 <p>Descripcion: <?php echo $pincho["descripcionPIN"]; ?></p>
-                                <p>Coordenadas: <?php echo $pincho["precioPIN"]; ?></p>
+                                <p>Precio: <?php echo $pincho["precioPIN"]; ?></p>
 
                             </div>
                           </div>
