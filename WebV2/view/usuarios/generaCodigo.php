@@ -48,7 +48,7 @@
                                             <div id="success"></div>
                                             <form action="generaCodigo2.php" method="GET">
 
-                                              Numero de codigos a generar: <input type="number" name="numero" min="7" max="100" >
+                                              Numero de codigos a generar: <input type="number" name="numero" value="7" min="7" max="100" >
 
                                               <div class="row" style="padding-top: 20px;">
 
