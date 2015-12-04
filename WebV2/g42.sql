@@ -19,7 +19,13 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `g42`
 --
+CREATE DATABASE IF NOT EXISTS `g42` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE `g42`;
 
+
+CREATE USER 'g42'@'localhost' IDENTIFIED BY 'g42';
+
+GRANT ALL PRIVILEGES ON g42 . * TO 'g42'@'localhost';
 -- --------------------------------------------------------
 
 --
@@ -190,13 +196,13 @@ CREATE TABLE `pincho` (
 --
 
 INSERT INTO `pincho` (`idPincho`, `precioPIN`, `fotoPIN`, `descripcionPIN`, `nombrePIN`, `ingredientesPIN`, `Participante_TablaUsuarios_login`, `votoPOP`, `finalista`, `estadoPIN`) VALUES
-(1, '35 euros', 'www.yvanelcomenapolitanas.com', 'Napolitana de chocolate', 'Napolitana de chocolate', 'Chocolate', 'pepin', 6, 1, 0),
-(2, '1 euro', '/Web/images/pcafe.jpg', 'Ese cafe', 'pincho ,tio!', 'Mazapan', 'spiderman', 0, NULL, 1),
-(3, '0.9 cents', '/Web/images/pinchos.jpg', 'un pincho', 'pincho ,tio!', 'Mazapan', 'CaraPan', 0, NULL, 0),
-(4, '2.55', '/Web/images/ptomate.jpg', 'tomates con tomate tomates con tomate', 'TOMATOES', 'tomate', 'Isabelle', 1, 1, 1),
-(5, '2.10', '/Web/images/ppostre.jpg', 'Vaso frio con pincho caliente', 'Vaso ', NULL, 'Keely', 1, 0, 1),
-(6, '2.10 euros', '/Web/images/ppostre.jpg', 'Postre', 'PPPPPPPPPPPPP', 'Frio', 'Quail', 2, 1, 1),
-(7, '2.00 euros', '/Web/images/ppostre.jpg', 'Pincho ese de postre muy bueno', 'Pincho postre', 'plato pan ingredientes', 'Signe', 1, 1, 1);
+(1, '35 euros', '/g42/images/ppostre.jpg', 'Napolitana de chocolate', 'Napolitana de chocolate', 'Chocolate', 'pepin', 6, 1, 0),
+(2, '1 euro', '/g42/images/pcafe.jpg', 'Ese cafe', 'pincho ,tio!', 'Mazapan', 'spiderman', 0, NULL, 1),
+(3, '0.9 cents', '/g42/images/pinchos.jpg', 'un pincho', 'pincho ,tio!', 'Mazapan', 'CaraPan', 0, NULL, 0),
+(4, '2.55', '/g42/images/ptomate.jpg', 'tomates con tomate tomates con tomate', 'TOMATOES', 'tomate', 'Isabelle', 1, 1, 1),
+(5, '2.10', '/g42/images/ppostre.jpg', 'Vaso frio con pincho caliente', 'Vaso ', NULL, 'Keely', 1, 0, 1),
+(6, '2.10 euros', '/g42/images/ppostre.jpg', 'Postre', 'PPPPPPPPPPPPP', 'Frio', 'Quail', 2, 1, 1),
+(7, '2.00 euros', '/g42/images/ppostre.jpg', 'Pincho ese de postre muy bueno', 'Pincho postre', 'plato pan ingredientes', 'Signe', 1, 1, 1);
 
 -- --------------------------------------------------------
 
