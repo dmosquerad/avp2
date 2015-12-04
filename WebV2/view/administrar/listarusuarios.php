@@ -92,17 +92,17 @@
 		<hr/>
 		<h3>Pinchos</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="listarpincho.php">Listar Pincho</a></li>
-			<li class="icn_categories"><a href="validarpincho.php">Validar Pinchos</a></li>
-			<li class="icn_tags"><a href="asignarpincho.php">Asignar Pinchos Jurado Profesional</a></li>
+			<li class="icn_new_article"><a href="../../controller/controlAdministrador.php?action=lp">Listar Pincho</a></li>
+			<li class="icn_categories"><a href="../../controller/controlAdministrador.php?action=vp">Validar Pinchos</a></li>
+			<li class="icn_tags"><a href="../../controller/controlAdministrador.php?action=ap">Asignar Pinchos Jurado Profesional</a></li>
 		</ul>
 		<h3>Usuarios</h3>
 		<ul class="toggle">
-			<li class="icn_profile"><a href="listarusuarios.php">Listar Usuarios</a></li>
+			<li class="icn_profile"><a href="../../controller/controlAdministrador.php?action=lu">Listar Usuarios</a></li>
 		</ul>
 		<h3>Establecimientos</h3>
 		<ul class="toggle">
-			<li class="icn_folder"><a href="listarestablecimientos.php">Listar Establecimiento</a></li>
+			<li class="icn_folder"><a href="../../controller/controlAdministrador.php?action=le">Listar Establecimiento</a></li>
 		</ul>
 		<h3>Noticias</h3>
 		<ul class="toggle">
@@ -126,6 +126,9 @@
 			<header><h3>Lista de Usuarios</h3></header>
 			<div class="module_content">
 									<table>
+										Administrador=1, Participante=3, Jurado Popular=4, Jurado Profesional=2.
+										</br>
+										</br>
 										<thead>
 											<tr>
 												<td>Login</td>
@@ -133,10 +136,28 @@
 												<td>Email</td>
 												<td>Tipo</td>
 											</tr>
-												<?php include('../../controller/administrarUsuario.php');?>
-										</thead>
+											<?php
+													if(isset($_GET["msg"])){
+														$msg = $_GET["msg"];
+														echo($msg);
+													}
+													if(isset($_GET["array"])){
+														$array = unserialize($_GET["array"]);
+														foreach($array as $pincho){
+
+															echo '<tr>';
+															echo '<td>'.$pincho['login'].'</td>';
+															echo '<td>'.$pincho['nombreU'].'</td>';
+															echo '<td>'.$pincho['emailU'].'</td>';
+															echo '<td>'.$pincho['tipo'].'</td>';
+															echo '<td><a href="../../controller/borrarusuario.php?id='.$pincho['login'].'">Eliminar</a></td>';
+															echo '</tr>';
+														}
+													}
+												?>
+											</thead>
 									</table>
-</br>
+								</br>
 	Administrador=1, Participante=3, Jurado Popular=4, Jurado Profesional=2.
 			</div>
 		</article><!-- end of styles article -->

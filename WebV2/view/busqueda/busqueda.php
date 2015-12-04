@@ -51,19 +51,19 @@
 						  <h1 style="text-align:center"></h1>
 							  <div class ="col-md-4 col-md-offset-4">
 								 <section id="search">
-								 <form action="busquedapincho.php" method="POST">
+								 <form action="../../controller/controlbusca.php" method="POST">
   								   <label for="search-input">
   									    <i class="fa fa-search"></i>
   								  </label>
                     <!--primer input PINCHO-->
-  								  <input id="pincho" name="nomPIN" class="form-control input-lg" placeholder="Buscar pincho"  tabindex="1">
+  								  <input id="pincho" name="pincho" class="form-control input-lg" placeholder="Buscar pincho"  tabindex="1">
                     <a id="search-clear" href="#" class="fa fa-times-circle hide"></a>
 
     								<div class="col-lg-12 text-center">
     									<button id='button1' type="submit" value="Submit" class="btn btn-primary" style="margin-right:28px">Buscar Pincho</button>
     								</div>
                 </form>
-                <form action=busquedaestab.php method="POST">
+                <form action="../../controller/controlbusca.php" method="POST">
                     <label for="search-input">
                        <i class="fa fa-search"></i>
                     </label>

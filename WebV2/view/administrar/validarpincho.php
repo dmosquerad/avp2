@@ -90,17 +90,17 @@
 		<hr/>
 		<h3>Pinchos</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="listarpincho.php">Listar Pincho</a></li>
-			<li class="icn_categories"><a href="validarpincho.php">Validar Pinchos</a></li>
-			<li class="icn_tags"><a href="asignarpincho.php">Asignar Pinchos Jurado Profesional</a></li>
+			<li class="icn_new_article"><a href="../../controller/controlAdministrador.php?action=lp">Listar Pincho</a></li>
+			<li class="icn_categories"><a href="../../controller/controlAdministrador.php?action=vp">Validar Pinchos</a></li>
+			<li class="icn_tags"><a href="../../controller/controlAdministrador.php?action=ap">Asignar Pinchos Jurado Profesional</a></li>
 		</ul>
 		<h3>Usuarios</h3>
 		<ul class="toggle">
-			<li class="icn_profile"><a href="listarusuarios.php">Listar Usuarios</a></li>
+			<li class="icn_profile"><a href="../../controller/controlAdministrador.php?action=lu">Listar Usuarios</a></li>
 		</ul>
 		<h3>Establecimientos</h3>
 		<ul class="toggle">
-			<li class="icn_folder"><a href="listarestablecimientos.php">Listar Establecimiento</a></li>
+			<li class="icn_folder"><a href="../../controller/controlAdministrador.php?action=le">Listar Establecimiento</a></li>
 		</ul>
 		<h3>Noticias</h3>
 		<ul class="toggle">
@@ -131,7 +131,24 @@
 								<td>Ingredientes</td>
 								<td>Estado de Validacion</td>
 							</tr>
-								<?php include('../../controller/administrarValidacion.php');?>
+							<?php
+									if(isset($_GET["msg"])){
+										$msg = $_GET["msg"];
+										echo($msg);
+									}
+									if(isset($_GET["array"])){
+										$array = unserialize($_GET["array"]);
+										foreach($array as $pincho){
+											echo '<tr>';
+											echo '<td>'.$pincho['nombrePIN'].'</td>';
+											echo '<td>'.$pincho['Participante_TablaUsuarios_login'].'</td>';
+											echo '<td>'.$pincho['ingredientesPIN'].'</td>';
+									    echo '<td>'.$pincho['estadoPIN'].'</td>';
+											echo '<td><a href="../../controller/validarpincho.php?nombrePIN='.$pincho['nombrePIN'].'">Validar</a></td>';
+											echo '</tr>';
+										}
+									}
+								?>
 						</thead>
 					</table>
 				</div>

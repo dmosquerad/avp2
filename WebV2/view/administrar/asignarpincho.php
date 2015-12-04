@@ -91,17 +91,17 @@
 		<hr/>
 		<h3>Pinchos</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="listarpincho.php">Listar Pincho</a></li>
-			<li class="icn_categories"><a href="validarpincho.php">Validar Pinchos</a></li>
-			<li class="icn_tags"><a href="asignarpincho.php">Asignar Pinchos Jurado Profesional</a></li>
+			<li class="icn_new_article"><a href="../../controller/controlAdministrador.php?action=lp">Listar Pincho</a></li>
+			<li class="icn_categories"><a href="../../controller/controlAdministrador.php?action=vp">Validar Pinchos</a></li>
+			<li class="icn_tags"><a href="../../controller/controlAdministrador.php?action=ap">Asignar Pinchos Jurado Profesional</a></li>
 		</ul>
 		<h3>Usuarios</h3>
 		<ul class="toggle">
-			<li class="icn_profile"><a href="listarusuarios.php">Listar Usuarios</a></li>
+			<li class="icn_profile"><a href="../../controller/controlAdministrador.php?action=lu">Listar Usuarios</a></li>
 		</ul>
 		<h3>Establecimientos</h3>
 		<ul class="toggle">
-			<li class="icn_folder"><a href="listarestablecimientos.php">Listar Establecimiento</a></li>
+			<li class="icn_folder"><a href="../../controller/controlAdministrador.php?action=le">Listar Establecimiento</a></li>
 		</ul>
 		<h3>Noticias</h3>
 		<ul class="toggle">
@@ -129,8 +129,8 @@
 
 <?php
 /*Conexion a la bd*/
-require_once '../../functions/BDconectar.php';
-ConectarBD();
+require_once '../../model/BDconectar.php';
+
 
 $consulta_mysql='select TablaUsuarios_login from juradoprofesional';
 $resultado_consulta_mysql=mysql_query($consulta_mysql);

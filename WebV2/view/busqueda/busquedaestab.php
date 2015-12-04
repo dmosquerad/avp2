@@ -52,15 +52,29 @@
                 							<table style="margin: auto;">
                 								<thead>
                 									<tr>
-                                    <th>Descripción Participante</th>
-                  									<th>Coordenadas Participante</th>
-                                    <th>Enlace foto</th>
-                  									<th>Horario Participante</th>
                                     <th>Login Participante</th>
+                  									<th>Coordenadas Participante</th>
+                  									<th>Horario Local</th>
                 									</tr>
                 								</thead>
                                 <tbody>
-                                <?php include('../../controller/controlEstab.php');?>
+                                  <?php
+                                  if(isset($_GET["msg"])){
+                                    $msg = $_GET["msg"];
+                                    echo($msg);
+                                  }
+                                  if(isset($_GET["array"])){
+                                    $array = unserialize($_GET["array"]);
+                                    foreach($array as $pincho){
+
+                                      $usuario = $pincho["TablaUsuarios_login"];
+                                      $coordenadas = $pincho["coordenadasPAR"];
+                                      $horario =  $pincho["horarioPAR"];
+
+                                      echo "<tr><td>".$usuario."</td><td>".$coordenadas."</td><td>".$horario.'</td></tr>';
+                                    }
+                                  }
+                                  ?>
                                 </tbody>
                 							</table>
                             <div class="row" style="padding-top: 403px;"></div>

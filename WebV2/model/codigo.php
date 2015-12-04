@@ -2,7 +2,7 @@
 require_once("BDconectar.php");
 
 class Codigo{
-    
+
     private $db;
     private $con;
 
@@ -10,7 +10,7 @@ class Codigo{
         $this->db = new BD();
         $this->con = $this->db->getConnect();
     }
-
+    
     //controlGenCodigo //echo
     public function generaCodigo($nombreP , $numero){
 
@@ -25,7 +25,7 @@ class Codigo{
 
         $a = "SELECT COUNT(*) FROM codigo where idCodigo='$numero_aleatorio'";
 
-        $b=mysql_query($a)or die('No funciona'.mysql_error()); 
+        $b=mysql_query($a)or die('No funciona'.mysql_error());
 
 
         if (mysql_result($b, 0)<1){
@@ -40,14 +40,14 @@ class Codigo{
             echo "Codigos Generados: ";
             echo "<table>";
 
-        } 
-        if ($contador == 1){
-        echo "<tr>"; 
         }
-        if ($contador > 7) { 
-            echo "</tr>"; 
-            $contador = 1; 
-        } 
+        if ($contador == 1){
+        echo "<tr>";
+        }
+        if ($contador > 7) {
+            echo "</tr>";
+            $contador = 1;
+        }
 
         echo "<td><h1>".$numero_aleatorio."</h1></td>";
             $contador++;
@@ -60,16 +60,16 @@ class Codigo{
     }
 
     //controlCodigo //echo es de popular
-    public function checkeaCodigo($codigo1, $codigo2, $codigo3){    
+    public function checkeaCodigo($codigo1, $codigo2, $codigo3,$nombrePOP){
     $c1;
     $c2;
     $c3;
-    
+
     $cont = 1;
 
 
-    $a= "SELECT COUNT(idPincho) 
-    FROM pincho A,codigo B 
+    $a= "SELECT COUNT(idPincho)
+    FROM pincho A,codigo B
     WHERE B.idCodigo IN('$codigo1','$codigo2','$codigo3') AND B.Participante_TablaUsuarios_login=A.Participante_TablaUsuarios_login AND B.uso IS NULL";
 
     $result1 = mysql_query($a) or die('No funciona' .mysql_error());
@@ -81,22 +81,22 @@ class Codigo{
 
     }else{
         $a1= "SELECT B.Participante_TablaUsuarios_login
-            FROM pincho A,codigo B 
+            FROM pincho A,codigo B
             WHERE B.idCodigo='$codigo1' AND B.Participante_TablaUsuarios_login=A.Participante_TablaUsuarios_login";
 
-        $b1=mysql_query($a1)or die('No funciona'.mysql_error()); 
+        $b1=mysql_query($a1)or die('No funciona'.mysql_error());
 
         $a2= "SELECT B.Participante_TablaUsuarios_login
-            FROM pincho A,codigo B 
+            FROM pincho A,codigo B
             WHERE B.idCodigo='$codigo2' AND B.Participante_TablaUsuarios_login=A.Participante_TablaUsuarios_login";
 
-        $b2=mysql_query($a2)or die('No funciona'.mysql_error()); 
+        $b2=mysql_query($a2)or die('No funciona'.mysql_error());
 
         $a3= "SELECT B.Participante_TablaUsuarios_login
-        FROM pincho A,codigo B 
+        FROM pincho A,codigo B
         WHERE B.idCodigo='$codigo3' AND B.Participante_TablaUsuarios_login=A.Participante_TablaUsuarios_login";
 
-        $b3=mysql_query($a3)or die('No funciona'.mysql_error()); 
+        $b3=mysql_query($a3)or die('No funciona'.mysql_error());
 
         $c1=implode(mysql_fetch_row($b1));
 
@@ -105,17 +105,21 @@ class Codigo{
         $c3=implode(mysql_fetch_row($b3));
 
 
-        
+
         if(strcmp($c1,$c2)!=0 && strcmp($c1,$c3)!=0 && strcmp($c2,$c3)!=0){
 
-            $sql = "SELECT A.idPincho, A.precioPin, A.fotoPIN, A.descripcionPIN, A.nombrePIN, A.Participante_TablaUsuarios_login, B.idCodigo 
-                FROM pincho A,codigo B 
+            $sql = "SELECT A.idPincho, A.precioPin, A.fotoPIN, A.descripcionPIN, A.nombrePIN, A.Participante_TablaUsuarios_login, B.idCodigo
+                FROM pincho A,codigo B
                 WHERE B.idCodigo IN('$codigo1','$codigo2','$codigo3') AND B.Participante_TablaUsuarios_login=A.Participante_TablaUsuarios_login AND B.uso IS NULL";
             $result = mysql_query($sql)or die('No funciona' . mysql_error());
 
             $sql3= "UPDATE codigo set uso='1' where idCodigo IN('$codigo1','$codigo2','$codigo3')";
 
             $result2 = mysql_query($sql3)or die('No funciona' . mysql_error());
+
+            $sql4= "UPDATE codigo set usadoPor='$nombrePOP' where idCodigo IN('$codigo1','$codigo2','$codigo3')";
+
+           $result3 = mysql_query($sql4)or die('No funciona' . mysql_error());
 
         while ($row = mysql_fetch_row($result)){
 

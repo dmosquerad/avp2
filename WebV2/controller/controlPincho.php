@@ -1,6 +1,6 @@
 <?php
 
-	require_once '../../functions/BDconectar.php';
+	require_once '../../model/BDconectar.php';
 
 	ConectarBD();
 

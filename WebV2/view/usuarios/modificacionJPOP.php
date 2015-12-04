@@ -34,12 +34,16 @@
     <body>
       <?php
       require_once ("../../model/user.php");
+      require_once ("../../model/jpop.php");
       $user=new Usuario();
       session_start();
       if(isset($_SESSION["name"])){
         $login=$_SESSION["name"];
         if($user->comprobarTipo('4',$login)==true){
           echo $_SESSION["name"];
+          $pop=new Popular();
+          $datos1=$user->select($login);
+          $datos2=$pop->select($login);
         }
         else{
           session_destroy();
@@ -81,26 +85,27 @@
                                     -->
                                 <label for="email">Email:</label>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" name="email"
-                                            required data-validation-required-message="Introduce tu nuevo email">
+                                            <input type="email" class="form-control" value="<?php echo $datos1["emailU"]?>"
+                                            name="email"  required data-validation-required-message="Introduce tu nuevo email">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="password1">Clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Clave" name="pass"
-                                            required data-validation-required-message="Introduce tu nueva clave">
+                                            <input type="password" class="form-control" value="<?php echo $datos1["password"]?>"
+                                            name="pass"  required data-validation-required-message="Introduce tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="password2">Repite clave:</label>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirmar Clave" name="pass2"
-                                            required data-validation-required-message="Confirma tu nueva clave">
+                                            <input type="password" class="form-control" value="<?php echo $datos1["password"]?>"
+                                            name="pass2" required data-validation-required-message="Confirma tu nueva clave">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <label for="description">Descripcion:</label>
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Descripcion" name="desc"
+                                            <textarea class="form-control"  name="desc"
                                             required data-validation-required-message="Introduce una nueva descripcion">
+                                            <?php echo $datos2["descripcionPOP"]?>"
                                             </textarea>
                                             <p class="help-block text-danger"></p>
                                         </div>

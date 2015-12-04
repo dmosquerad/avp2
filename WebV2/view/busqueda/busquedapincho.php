@@ -54,17 +54,31 @@
                 								<thead>
                 									<tr>
                                     <th>ID Pincho</th>
-                  									<th>Precio Pincho</th>
-                                    <th>Enlace foto</th>
-                  									<th>Descripción</th>
                                     <th>Nombre Pincho</th>
-                                    <th>Participante</th>
-                                    <th>Votos</th>
+                  									<th>Precio Pincho</th>
                                     <th>Estado Pincho</th>
+                                    <th>Participante</th>
                 									</tr>
                 								</thead>
                                 <tbody>
-                                <?php include('../../controller/controlPincho.php');?>
+                                  <?php
+                                  if(isset($_GET["msg"])){
+                                    $msg = $_GET["msg"];
+                                    echo($msg);
+                                  }
+                                  if(isset($_GET["array"])){
+                                    $array = unserialize($_GET["array"]);
+                                    foreach($array as $pincho){
+
+                                      $idPincho = $pincho["idPincho"];
+                                      $nombre = $pincho["nombrePIN"];
+                                      $precio =  $pincho["precioPIN"];
+                                      $estadoP =  $pincho["estadoPIN"];
+                                      $usuario = $pincho["Participante_TablaUsuarios_login"];
+                                      echo "<tr><td>".$idPincho."</td><td>".$nombre."</td><td>".$precio.'</td><td>'.$estadoP .'</td><td>'.$usuario.'</td></tr>';
+                                    }
+                                  }
+                                  ?>
                                 </tbody>
                 							</table>
                             <div class="row" style="padding-top: 403px;"></div>

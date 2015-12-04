@@ -34,14 +34,20 @@
 
 <body>
   <?php
-  require_once '../../controller/prueba.php';
+  require_once ("../../model/user.php");
+  $user=new Usuario();
   session_start();
   if(isset($_SESSION["name"])){
-    $user=$_SESSION["name"];
-    if(comprobar($user,'3')!=true){
+    $login=$_SESSION["name"];
+    if($user->comprobarTipo('3',$login)==true){
+      echo $_SESSION["name"];
+    }
+    else{
       session_destroy();
       header('Location: ../../index.php');
     }
+  }else{
+        header('Location: ../../index.php');
   }
   ?>
   <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
@@ -84,13 +90,13 @@
                             </div>
                             <label for="desc">Descripcion:</label>
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Descripcion del local" name="desc"
+                                <textarea class="form-control" placeholder="Descripcion del pincho" name="desc"
                                 required data-validation-required-message="Introduce una descripcion del pincho"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <label for="ingredientes">Ingredientes:</label>
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Ingredientes del Pincho" name="ingredientes"
+                                <textarea class="form-control" placeholder="Ingredientes del pincho" name="ingredientes"
                                 required data-validation-required-message="Introduce ingredientes del pincho"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>

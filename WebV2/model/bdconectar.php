@@ -1,11 +1,4 @@
 <?php
-
-//---------------------------------------------------------------------------------
-//Funcion: ConectarBD()
-//Fecha: 20/11/2015
-//Establece conexion con el gestor de bd, si no es posible informa y devuelve 0.
-//A continuacion selecciona la bd, si no es posible informa y devuelve 0.
-//---------------------------------------------------------------------------------
 class BD {
 		protected $connect;
 

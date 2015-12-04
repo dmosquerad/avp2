@@ -122,7 +122,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
-                                    <a href="view/pinchos/pinchobreve.php" data-toggle="modal">
+                                    <a href="controller/controlListaPin.php" data-toggle="modal">
                                         <i class="fa fa-cutlery"></i>
                                         <p>Pinchos</p>
                                     </a>
@@ -131,7 +131,7 @@
 
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="view/establecimiento/estab.php" data-toggle="modal">
+                                    <a href="controller/controlListaEstab.php" data-toggle="modal">
                                         <i class="fa fa-home"></i>
                                         <p>Establecimentos</p>
                                     </a>

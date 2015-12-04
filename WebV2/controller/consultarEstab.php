@@ -2,7 +2,7 @@
 ////listar establecimiento para la descripcion completa
 function consultarEstab($participante)
 {
-  require_once '../../functions/BDconectar.php';
+  require_once '../model/BDConectar.php';
 
   //Conectarmos con la bd
   ConectarBD();

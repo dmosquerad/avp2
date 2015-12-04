@@ -57,20 +57,20 @@ $codigo3=$_GET['Codigo3'];
                 							<table style="margin: auto;">
                 								<thead>
                 									<tr>
-                                                        <th>Codigo</th>
+                                  <th>Codigo</th>
                                     <th>ID Pincho</th>
                   									<th>Precio Pincho</th>
                                     <th>Enlace foto</th>
                   									<th>Descripción</th>
                                     <th>Nombre Pincho</th>
                                     <th>Participante</th>
-                                                    <th>Codigo</th>    
+                                  <th>Codigo introducido</th>    
                 									</tr>
                 								</thead>
                                 <tbody>
-                                <?php include('../../controller/controlCodigo.php');?> 
+                                <?php include('../../controller/controlCodigo.php');?>
                                 </tbody>
-                				</table> 
+                				</table>
                                 <div cass="row" style="padding-top: 20px;"></div>
 
                                 <?php echo 'Si no aparecen tres pinchos no se realizara el voto'?>
@@ -80,15 +80,15 @@ $codigo3=$_GET['Codigo3'];
                     <form action="haceVotoPOP.php" method="POST">
                         <select name="volv">
 
-                            <option name ="Codigo1V" value=" <?php echo $codigo1 ?> " selected="selected" >Codigo 1</option> 
+                            <option name ="Codigo1V" value=" <?php echo $codigo1 ?> " selected="selected" >Codigo 1</option>
                             <option name ="Codigo2V" value="<?php echo $codigo2 ?>">Codigo 2</option>
-                            <option name ="Codigo3V" value="<?php echo $codigo3 ?>">Codigo 3</option> 
+                            <option name ="Codigo3V" value="<?php echo $codigo3 ?>">Codigo 3</option>
                             <input type="submit" class="btn btn-primary" name="enviar" value="VOTA">
                         </select>
 
                     </form>
-                                
-                        <div cass="row" style="padding-top: 403px;"></div>    
+
+                        <div cass="row" style="padding-top: 403px;"></div>
                     </form>
 
                           </div>

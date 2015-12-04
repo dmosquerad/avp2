@@ -22,16 +22,9 @@
         <link href="../../css/style.css" rel="stylesheet">
 
     </head>
-    <?php
-  		include '../../controller/consultarPincho.php';
-
-  		$pincho=$_GET["pincho"];
-
-  		$array=consultarPincho($pincho);
-  	?>
     <tbody>
       <!-- Start pinchos completa-->
-      <a href="pinchobreve.php"><div class="section-modal" id="service-modal" tabindex="-1">
+      <a href="../../controller/controlSesiones.php"><div class="section-modal" id="service-modal" tabindex="-1">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
                     <div class="lr">
@@ -52,16 +45,33 @@
 
                         <div class="col-md-6 col-md-offset-3 text-center">
                             <div class="testimonial">
-                                <center><img src="<?php echo $array["fotoPIN"]; ?>" class="img-responsive tam"></center>
-                                <h4><?php echo $array["nombrePIN"]; ?></h4>
-                                <div class="speech">
-                                    <p><?php echo $array["descripcionPIN"]; ?></p>
-                                </div>
+                              <?php
+                              if(isset($_GET["msg"])){
+                                $msg = $_GET["msg"];
+                                echo($msg);
+                              }
+                              if(isset($_GET["array2"])){
+                                $array = unserialize($_GET["array2"]);
+                                foreach ($array as $pincho) {
+                                  $nombre = $pincho["nombrePIN"];
+                                  $descripcion = $pincho["descripcionPIN"];
+                                  $precio = $pincho["precioPIN"];
+                                  $foto = $pincho["fotoPIN"];
+                                }
+                              }
+                            ?>
+                            <center><img src="<?php echo $pincho["fotoPIN"]; ?>" class="img-responsive tam"></center>
+                            <p><h4><?php echo $pincho["nombrePIN"]; ?></h4></p>
+                            <div class="speech">
+                                <p>Descripcion: <?php echo $pincho["descripcionPIN"]; ?></p>
+                                <p>Coordenadas: <?php echo $pincho["precioPIN"]; ?></p>
+
+                            </div>
+                          </div>
                             </div>
                         </div>
                       </div>
                   </div>
         </div>
     </tbody>
-
 </html>

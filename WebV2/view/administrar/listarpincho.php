@@ -89,17 +89,17 @@
 		<hr/>
 		<h3>Pinchos</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="listarpincho.php">Listar Pincho</a></li>
-			<li class="icn_categories"><a href="validarpincho.php">Validar Pinchos</a></li>
-			<li class="icn_tags"><a href="asignarpincho.php">Asignar Pinchos Jurado Profesional</a></li>
+			<li class="icn_new_article"><a href="../../controller/controlAdministrador.php?action=lp">Listar Pincho</a></li>
+			<li class="icn_categories"><a href="../../controller/controlAdministrador.php?action=vp">Validar Pinchos</a></li>
+			<li class="icn_tags"><a href="../../controller/controlAdministrador.php?action=ap">Asignar Pinchos Jurado Profesional</a></li>
 		</ul>
 		<h3>Usuarios</h3>
 		<ul class="toggle">
-			<li class="icn_profile"><a href="listarusuarios.php">Listar Usuarios</a></li>
+			<li class="icn_profile"><a href="../../controller/controlAdministrador.php?action=lu">Listar Usuarios</a></li>
 		</ul>
 		<h3>Establecimientos</h3>
 		<ul class="toggle">
-			<li class="icn_folder"><a href="listarestablecimientos.php">Listar Establecimiento</a></li>
+			<li class="icn_folder"><a href="../../controller/controlAdministrador.php?action=le">Listar Establecimiento</a></li>
 		</ul>
 		<h3>Noticias</h3>
 		<ul class="toggle">
@@ -111,6 +111,7 @@
 		</ul>
 
 		<footer>
+			<hr />
 			<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
 			<p>Theme by <a href="http://www.medialoot.com">MediaLoot</a></p>
 		</footer>
@@ -128,7 +129,24 @@
 													<td>Nombre Pincho</td>
 													<td>Participante</td>
 												</tr>
-													<?php include('../../controller/administrarPincho.php');?>
+												<?php
+							              if(isset($_GET["msg"])){
+							                $msg = $_GET["msg"];
+							                echo($msg);
+							              }
+							              if(isset($_GET["array"])){
+							                $array = unserialize($_GET["array"]);
+							                foreach($array as $pincho){
+
+																echo '<tr>';
+																echo '<td>'.$pincho['idPincho'].'</td>';
+																echo '<td>'.$pincho['nombrePIN'].'</td>';
+																echo '<td>'.$pincho['Participante_TablaUsuarios_login'].'</td>';
+																echo '<td><a href="../../controller/borrarpincho.php?idPincho='.$pincho['idPincho'].'">Eliminar</a></td>';
+																echo '</tr>';
+																  }
+							              }
+							            ?>
 											</thead>
 										</table>
 				</div>

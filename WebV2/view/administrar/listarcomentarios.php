@@ -58,10 +58,7 @@
 	session_start();
 	if(isset($_SESSION["name"])){
 		$login=$_SESSION["name"];
-		if($user->comprobarTipo('1',$login)==true){
-			echo $_SESSION["name"];
-		}
-		else{
+		if($user->comprobarTipo('1',$login)!=true){
 			session_destroy();
 			header('Location: ../../index.php');
 		}

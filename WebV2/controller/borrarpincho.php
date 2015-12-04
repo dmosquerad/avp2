@@ -15,5 +15,5 @@ $idPincho = $_GET['idPincho'];
 
 $sql = "DELETE FROM pincho WHERE idPincho='$idPincho'";
 mysql_query ($sql)or die('No funciona');
-header('Location: ../../view/administrar/listarpincho.php');
+header('Location: ../../controller/controlAdministrador.php?action=lp');
 ?>

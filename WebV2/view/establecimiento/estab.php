@@ -42,7 +42,7 @@
                       </div>
                   </div>
                   <div class="row">
-                      <th><h3>Descripcion</h3></th>
+                      <center><th><h3>Descripcion</h3></th></center>
                               <?php
                                   if(isset($_GET["msg"])){
                                     $msg = $_GET["msg"];
@@ -56,11 +56,12 @@
                                         $horas = $pincho["horarioPAR"];
                                         $coordenadas = $pincho["coordenadasPAR"];
 
-                                        echo "<table><tr><td> <a href='estabcompleto.php?action=verEstab'><img src=".$foto." height=200px width=300px></a></td><td><table><tr><td>".$horas."</td></tr><tr><td>".$coordenadas."</td></tr></table></td></tr>";
+                                        echo "<center><table><tr><td> <a href='../../controller/controlEstabC.php?estab=$participante'><img src=".$foto." height=200px width=300px></a></td><td><table><tr><td><h3> Horario </h3>".$horas."</td></tr><tr><td><h3>Coordenadas: </h3>".$coordenadas."</td></tr></table></td></tr></center>";
 
                                     }
                                   }
                                 ?>
+
                         </div>
                       </div>
                     </div>

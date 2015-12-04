@@ -106,7 +106,7 @@
                         </div>
 
                         <div class="menu-item blue">
-                            <a href="../../view/administrar/listarpincho.php" data-toggle="modal">
+                            <a href="../../controller/controlAdministrador.php" data-toggle="modal">
                                 <i class="fa fa-users"></i>
                                 <p>Administrar</p>
                             </a>

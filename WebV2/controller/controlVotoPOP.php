@@ -1,10 +1,10 @@
 <?php
 
-	require_once("../../model/popular.php");
+	require_once("../../model/jpop.php");
     $codigoFin=$_POST['volv'];
 
-	$c = new popular();
+	$c = new Popular();
 	$c->insertaVotoPopular($codigoFin);
 
-    
+
 ?>

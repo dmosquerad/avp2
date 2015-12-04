@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+<?php
+require_once ("../../model/user.php");
+$user=new Usuario();
+session_start();
+if(isset($_SESSION["name"])){
+  $login=$_SESSION["name"];
+  if($user->comprobarTipo('4',$login)==true){
+    echo $_SESSION["name"];
+  }
+  else{
+    session_destroy();
+    header('Location: ../../index.php');
+  }
+}else{
+      header('Location: ../../index.php');
+}
+?>
 <html lang="en">
 
     <head>
@@ -61,7 +78,20 @@
 
                                           </form>
 
-                                            <div class="row" style="padding-top: 403px;">
+                                            <div class="row" style="padding-top:140px;">
+                                              <h3>Pinchos probados anteriormente</h3>
+                                            </br>
+                                              <table style="margin: auto;">
+                                                <thead>
+                                                  <tr>
+                                                    <th>Pincho</th>
+                                                    <th>Participante</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php include('../../controller/controlPinPro.php');?>
+                                                </tbody>
+                                            </table>
                                             </div>
                                           </div>
                                   </div>

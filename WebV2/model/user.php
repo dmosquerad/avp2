@@ -97,6 +97,19 @@ class Usuario{
       return $a;
     }
 
+    public function selectUsers() {
+            $sql = 'select * from tablausuarios';
+            $result = mysql_query($sql, $this->con);
+            if (mysql_num_rows($result) == 0) {
+                return false;
+            } else {
+                $toret = array();
+                while ($row = mysql_fetch_assoc($result)) {
+                    $toret[] = $row;
+                }
+              return $toret;
+            }
+    }
     public function exists($a){
         $login = $a["login"];
         $sql = "select * from tablausuarios where login='$login'";

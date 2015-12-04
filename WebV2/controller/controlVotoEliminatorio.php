@@ -1,6 +1,6 @@
 <?php
 
-	require_once("../../model/profesional.php");
+	require_once("../../model/jpro.php");
 
     session_start();
 
@@ -9,5 +9,5 @@
 
 	$c = new Profesional();
 	$c->muestraEliminatorioFinal($nombreP, $pinchoelem);
-	  
+
 ?>

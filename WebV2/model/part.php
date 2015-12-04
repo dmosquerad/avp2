@@ -55,6 +55,42 @@ class Participante{
             return false;
         }
    }
+   public function selectAll() {
+          $sql = "select * from participante";
+          $result = mysql_query($sql, $this->con);
+          if (mysql_num_rows($result) == 0) {
+              return false;
+          } else {
+              $toret = array();
+              while ($row = mysql_fetch_assoc($result)) {
+                  $toret[] = $row;
+              }
+            return $toret;
+          }
+      }
+    public function borrarPar($par){
+           $id= $par["idPincho"];
+           $tipo="DELETE FROM participante WHERE TablaUsuarios_login='$id'";
+           $p = mysql_query($tipo) or die('No se puede comprobar si existe ese usuario');
+           $a=mysql_fetch_array($p);
+           return $a;
+  }
+  //muestra el establecimiento para la vista completa
+  public function buscarEstab($login) {
+
+    $sql = "SELECT * FROM participante WHERE TablaUsuarios_login = '$login'";
+    $result = mysql_query($sql, $this->con);
+
+      if (mysql_num_rows($result) == 0) {
+          return false;
+      } else {
+          $toret = array();
+          while ($row = mysql_fetch_assoc($result)) {
+              $toret[] = $row;
+          }
+        return $toret;
+      }
+  }
  }
 
 

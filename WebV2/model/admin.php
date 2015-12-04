@@ -8,8 +8,5 @@ class Organizador{
         $this->db = new BD();
         $this->con = $this->db->getConnect();
     }
-
-
-
-
+}
  ?>

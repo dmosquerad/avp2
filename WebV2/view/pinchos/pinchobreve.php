@@ -44,6 +44,7 @@
                 </div>
 
                 <div class="row">
+                  <center><th><h3>Descripcion</h3></th></center>
           <?php
               if(isset($_GET["msg"])){
                 $msg = $_GET["msg"];
@@ -58,7 +59,7 @@
                   $descripcion = $pincho["descripcionPIN"];
                   $precio =  $pincho["precioPIN"];
                   $fotoPIN = $pincho["fotoPIN"];
-                  echo "<table><tr><td><a href='pinchocompleta.php?pincho=".$pincho['idPincho']."'><img src=".$pincho["fotoPIN"]." height=200px width=300px></a></td><td><table><tr><td>".$pincho['nombrePIN']."</td></tr><tr><td>".$pincho['precioPIN']."</td></tr></table></td></tr>";
+                  echo "<center><table><tr><td><a href='../../controller/controlPinC.php?pincha=$idPincho.'><img src=".$fotoPIN." height=200px width=300px></a></td><td><table><tr><td><p> <h3>Nombre: </h3></p>".$nombre."</td></tr><tr><td><h3>Precio: </h3>".$precio."</td></tr></table></td></tr></center>";
                 }
               }
             ?>
