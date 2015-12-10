@@ -45,6 +45,16 @@ class Usuario{
       $insercion = mysql_query($InsertaUsuario) or die('error al ejecutar la insercion de usuario');
     }
 
+    public function insertComent($a){
+      $login= $a["nombre"];
+      $comentario= $a["comentario"];
+      $id= $a["idPincho"];
+
+      $sql = "Insert into comentarios(descripcionCOM, Pincho_idPincho, TablaUsuarios_login)
+      values ('$comentario','$id','$login')";
+      $res= mysql_query($sql)or die('error al ejecutar la insercion de usuario');
+    }
+
     public function modificar($user){
       $login= $user['login'];
       $email= $user['email'];
@@ -63,6 +73,21 @@ class Usuario{
        return $a;
     }
 
+    public function selectComent($id){
+      $consulta= "select descripcionCOM from comentarios where Pincho_idPincho= '$id'";
+      $result= mysql_query($consulta) or die('No se puede comprobar si existe ese usuario');
+      //$a=mysql_fetch_array($p);
+      if (mysql_num_rows($result) == 0) {
+          return false;
+      } else {
+          $toret = array();
+          while ($row = mysql_fetch_assoc($result)) {
+              $toret[] = $row;
+          }
+        return $toret;
+      }
+    }
+
     public function comprobarTipo($pos,$login){
        $tipo= "select tipo from tablausuarios where login='$login'";
        $p = mysql_query($tipo,$this->con);
@@ -75,7 +100,6 @@ class Usuario{
           return false;
        }
     }
-
 
     public function login($a) {
       $login= $a['login'];

@@ -69,6 +69,49 @@
                             </div>
                           </div>
                             </div>
+                            <?php
+                            require_once ("../../model/user.php");
+                            $user=new Usuario();
+                            session_start();
+                            <?php
+    							              if(isset($_GET["msg"])){
+    							                $msg = $_GET["msg"];
+    							                echo($msg);
+    							              }
+    							              if(isset($_GET["array"])){
+    							                $array = unserialize($_GET["array"]);
+    							                foreach($array as $pincho){
+
+    																echo '<tr>';
+    																echo '<td>'.$pincho['idPincho'].'</td>';
+
+    																echo '</tr>';
+    																  }
+    							              }
+    							            ?>
+                          /*    foreach($com as $row){
+                                echo "<div class='speech'>". $row["descripcionCOM"]."
+                                </div>";
+                              }*/
+                            }
+                            /*
+                              $i=$array["idPincho"];
+                              $sql= sprintf("SELECT * FROM comentarios WHERE Pincho_idPincho = '$i'");
+                              $res=mysql_query($sql) or die('No comentario');
+                              while ($comentario=mysql_fetch_array($res)){
+                                  //echo $comentario['nombre'];
+                                  echo $comentario['comentario'];
+
+                              }*/
+                             ?>
+                          <div class="form-group">
+                            <form action="../../controller/comentarios.php?id=<?php echo $i?>" method="post">
+                              <textarea class="form-control" placeholder="Comenta este pincho" name="comentario">
+                              </textarea>
+                              <button type="submit" class="btn btn-primary" class="btn btn-primary">Comentar</button>
+                            </form>
+                          </div>
+
                         </div>
                       </div>
                   </div>
