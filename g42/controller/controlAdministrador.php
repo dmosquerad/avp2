@@ -28,7 +28,7 @@ if($_GET["action"]=='lp'){
 }else{
   if($_GET["action"]=='vp'){
     $p = new Pincho();
-  	$boolean = $p->selectAll();
+  	$boolean = $p->selectAllSinV();
   	if($boolean == false){
   		$msg = "Error Validar";
   		header("Location: ../view/administrar/validarpincho.php?msg=$msg");

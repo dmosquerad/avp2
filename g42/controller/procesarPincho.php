@@ -16,10 +16,7 @@ if($bool==true){
     $ex=$pincho->select($a);
         $insertPin=$pincho->insertarPincho($a);
         header('Location:../view/usuarios/participante.php');
-      }else{
-        header('Location:../view/error/errorPincho2.php');
-      }
 }else{
-    header('Location:../view/error/errorPincho1.php');
+        header('Location:../view/error/errorPincho2.php');
 }
 ?>
