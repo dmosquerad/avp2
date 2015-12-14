@@ -1,32 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
-    <head>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>AVP - GastroMapa </title>
+      <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Font Awesome CSS -->
+      <link href="../../css/font-awesome.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+      <link href="../../css/animate.css" rel="stylesheet">
+      <!-- Custom CSS -->
+      <link href="../../css/style.css" rel="stylesheet">
+      <!-- Custom Fonts -->
+      <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  </head>
+  <script type="text/javascript">
+  function load() {
+    var map = new google.maps.Map(document.getElementById("map"), {
+      center: new google.maps.LatLng(42.3346753,-7.8659848),
+      zoom: 15,
+      mapTypeId: 'roadmap'
+    });
+    var infoWindow = new google.maps.InfoWindow;
+    downloadUrl("markers.php", function(data) {
+      var xml = data.responseXML;
+      var markers = xml.documentElement.getElementsByTagName("marker");
+      for (var i = 0; i < markers.length; i++) {
+        var point = new google.maps.LatLng(
+          parseFloat(markers[i].getAttribute("lat")),
+          parseFloat(markers[i].getAttribute("lng")));
+        var icon = 'marker.png';
+        var marker = new google.maps.Marker({
+          map: map,
+          position: point,
+          icon: icon
+        });
+      }
+    });
+  }
+  function downloadUrl(url, callback) {
+    var request = window.ActiveXObject ?
+    new ActiveXObject('Microsoft.XMLHTTP') :
+    new XMLHttpRequest;
+    request.onreadystatechange = function() {
+      if (request.readyState == 4) {
+        request.onreadystatechange = doNothing;
+        callback(request, request.status);
+      }
+    };
+    request.open('GET', url, true);
+    request.send(null);
+  }
+  function doNothing() {}
+  </script>
+</head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>AVP - Busqueda </title>
-
-        <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Font Awesome CSS -->
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-
-		<!-- Custom CSS -->
-        <link href="../../css/animate.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="../../css/style.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-    </head>
-<body>
+<body onload="load()">
   <?php
     session_start();
     ?>
@@ -44,7 +77,7 @@
                         <div class="section-title text-center">
                             <h3>Gastromapa</h3>
                             <p>Soy un gastromapa</p>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4171.012097982218!2d-7.865157459977139!3d42.335040722251165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1447624300415" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <div id="map"></div>
                         </div>
                     </div>
 

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.4.15.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2015 a las 18:57:02
--- Versión del servidor: 10.1.8-MariaDB
--- Versión de PHP: 5.6.14
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 14, 2015 at 03:31 PM
+-- Server version: 5.5.46
+-- PHP Version: 5.4.45
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,19 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `g42`
+-- Database: `g42`
 --
-CREATE DATABASE IF NOT EXISTS `g42` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
-USE `g42`;
 
-
-CREATE USER 'g42'@'localhost' IDENTIFIED BY 'g42';
-
-GRANT ALL PRIVILEGES ON g42 . * TO 'g42'@'localhost';
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `codigo`
+-- Table structure for table `codigo`
 --
 
 CREATE TABLE `codigo` (
@@ -40,7 +34,7 @@ CREATE TABLE `codigo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `codigo`
+-- Dumping data for table `codigo`
 --
 
 INSERT INTO `codigo` (`idCodigo`, `Participante_TablaUsuarios_login`, `uso`, `usadoPor`) VALUES
@@ -54,7 +48,7 @@ INSERT INTO `codigo` (`idCodigo`, `Participante_TablaUsuarios_login`, `uso`, `us
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juradopopular`
+-- Table structure for table `juradopopular`
 --
 
 CREATE TABLE `juradopopular` (
@@ -63,7 +57,7 @@ CREATE TABLE `juradopopular` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `juradopopular`
+-- Dumping data for table `juradopopular`
 --
 
 INSERT INTO `juradopopular` (`descripcionPOP`, `TablaUsuarios_login`) VALUES
@@ -77,7 +71,7 @@ INSERT INTO `juradopopular` (`descripcionPOP`, `TablaUsuarios_login`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juradopopular_has_codigo`
+-- Table structure for table `juradopopular_has_codigo`
 --
 
 CREATE TABLE `juradopopular_has_codigo` (
@@ -88,7 +82,7 @@ CREATE TABLE `juradopopular_has_codigo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `juradopopular_has_codigo`
+-- Dumping data for table `juradopopular_has_codigo`
 --
 
 INSERT INTO `juradopopular_has_codigo` (`JuradoPopular_TablaUsuarios_login`, `Codigo_idCodigo`, `Codigo_Participante_TablaUsuarios_login`, `uso`) VALUES
@@ -99,7 +93,7 @@ INSERT INTO `juradopopular_has_codigo` (`JuradoPopular_TablaUsuarios_login`, `Co
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juradoprofesional`
+-- Table structure for table `juradoprofesional`
 --
 
 CREATE TABLE `juradoprofesional` (
@@ -109,7 +103,7 @@ CREATE TABLE `juradoprofesional` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `juradoprofesional`
+-- Dumping data for table `juradoprofesional`
 --
 
 INSERT INTO `juradoprofesional` (`profesionPRO`, `TablaUsuarios_login`, `votoFinal`) VALUES
@@ -123,7 +117,7 @@ INSERT INTO `juradoprofesional` (`profesionPRO`, `TablaUsuarios_login`, `votoFin
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `organizador`
+-- Table structure for table `organizador`
 --
 
 CREATE TABLE `organizador` (
@@ -131,7 +125,7 @@ CREATE TABLE `organizador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `organizador`
+-- Dumping data for table `organizador`
 --
 
 INSERT INTO `organizador` (`TablaUsuarios_login`) VALUES
@@ -140,42 +134,43 @@ INSERT INTO `organizador` (`TablaUsuarios_login`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `participante`
+-- Table structure for table `participante`
 --
 
 CREATE TABLE `participante` (
   `descripcionPAR` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `coordenadasPAR` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fotoPAR` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `horarioPAR` varchar(45) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `TablaUsuarios_login` varchar(30) COLLATE utf8_spanish_ci NOT NULL
+  `TablaUsuarios_login` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `latitud` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `longitud` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `participante`
+-- Dumping data for table `participante`
 --
 
-INSERT INTO `participante` (`descripcionPAR`, `coordenadasPAR`, `fotoPAR`, `horarioPAR`, `TablaUsuarios_login`) VALUES
-('CARAPAN', '10,12,13', '/Web/images/estab/eorellas.jpg', '12:00 - 23:31', 'CaraPan'),
-('ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu', '-53.20668, 76.84617', '/Web/images/estab/eatarazana.jpg', '22:00 - 23:00', 'Imogene'),
-('et tristique pellentesque, tellus sem mollis dui, in sodales elit erat vitae risus. Duis a', '49.6132, -82.48841', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Isabelle'),
-('in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit', '-84.0338, -121.35277', '/Web/images/estab/eatarazana.jpg', '22:00 - 23:00', 'Keely'),
-('elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui.', '-59.46119, -152.81167', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Kerry'),
-('diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non,', '-31.99376, 117.68988', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Kirby'),
-('libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc', '72.405, -97.48625', '/Web/images/estab/eportovello.jpg', '22:00 - 23:00', 'Laura'),
-('ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis.', '16.12172, -104.81601', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Mara'),
-('SOOOOOY PEPIIIN', '12,3,2', '/Web/images/estab/efuentefria.jpg', '22:00 - 23:00', 'pepin'),
-('velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id', '-35.59991, -155.1532', '/Web/images/estab/eportovello.jpg', '22:00 - 23:00', 'Quail'),
-('augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et', '-46.9993, -99.50792', '/Web/images/estab/eatarazana.jpg', '22:00 - 23:00', 'Rowan'),
-('pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede,', '24.14478, -158.23679', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Signe'),
-('Octopus', '2,5,3', '/Web/images/estab/eatarazana.jpg', '00:05-23:50', 'spiderman'),
-('et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque', '46.30458, -30.88142', '/Web/images/estab/eportovello.jpg', '22:00 - 23:00', 'Stephanie'),
-('dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi', '68.74495, -64.51103', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Tallulah');
+INSERT INTO `participante` (`descripcionPAR`, `fotoPAR`, `horarioPAR`, `TablaUsuarios_login`, `latitud`, `longitud`) VALUES
+('CARAPAN', '/Web/images/estab/eorellas.jpg', '12:00 - 23:31', 'CaraPan', '42.3367831', '-7.8641312'),
+('ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet ornare lectus justo eu', '/Web/images/estab/eatarazana.jpg', '22:00 - 23:00', 'Imogene', '42.3341955', '-7.8654635'),
+('et tristique pellentesque, tellus sem mollis dui, in sodales elit erat vitae risus. Duis a', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Isabelle', '42.3362278', '-7.8625822'),
+('in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit', '/Web/images/estab/eatarazana.jpg', '22:00 - 23:00', 'Keely', NULL, NULL),
+('elementum, dui quis accumsan convallis, ante lectus convallis est, vitae sodales nisi magna sed dui.', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Kerry', NULL, NULL),
+('diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis orci, adipiscing non,', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Kirby', NULL, NULL),
+('libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc', '/Web/images/estab/eportovello.jpg', '22:00 - 23:00', 'Laura', NULL, NULL),
+('ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis.', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Mara', NULL, NULL),
+('SOOOOOY PEPIIIN', '/Web/images/estab/efuentefria.jpg', '22:00 - 23:00', 'pepin', NULL, NULL),
+('velit. Cras lorem lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id', '/Web/images/estab/eportovello.jpg', '22:00 - 23:00', 'Quail', NULL, NULL),
+('augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et', '/Web/images/estab/eatarazana.jpg', '22:00 - 23:00', 'Rowan', NULL, NULL),
+('pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede,', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Signe', NULL, NULL),
+('Octopus', '/Web/images/estab/eatarazana.jpg', '00:05-23:50', 'spiderman', NULL, NULL),
+('et netus et malesuada fames ac turpis egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque', '/Web/images/estab/eportovello.jpg', '22:00 - 23:00', 'Stephanie', NULL, NULL),
+('dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi', '/Web/images/estab/etapanegra.jpg', '22:00 - 23:00', 'Tallulah', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pincho`
+-- Table structure for table `pincho`
 --
 
 CREATE TABLE `pincho` (
@@ -189,10 +184,10 @@ CREATE TABLE `pincho` (
   `votoPOP` int(11) DEFAULT NULL,
   `finalista` int(1) DEFAULT NULL,
   `estadoPIN` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `pincho`
+-- Dumping data for table `pincho`
 --
 
 INSERT INTO `pincho` (`idPincho`, `precioPIN`, `fotoPIN`, `descripcionPIN`, `nombrePIN`, `ingredientesPIN`, `Participante_TablaUsuarios_login`, `votoPOP`, `finalista`, `estadoPIN`) VALUES
@@ -207,7 +202,7 @@ INSERT INTO `pincho` (`idPincho`, `precioPIN`, `fotoPIN`, `descripcionPIN`, `nom
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pincho_has_juradoprofesional`
+-- Table structure for table `pincho_has_juradoprofesional`
 --
 
 CREATE TABLE `pincho_has_juradoprofesional` (
@@ -217,7 +212,7 @@ CREATE TABLE `pincho_has_juradoprofesional` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `pincho_has_juradoprofesional`
+-- Dumping data for table `pincho_has_juradoprofesional`
 --
 
 INSERT INTO `pincho_has_juradoprofesional` (`Pincho_idPincho`, `Pincho_Participante_TablaUsuarios_login`, `JuradoProfesional_TablaUsuarios_login`) VALUES
@@ -227,7 +222,7 @@ INSERT INTO `pincho_has_juradoprofesional` (`Pincho_idPincho`, `Pincho_Participa
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tablausuarios`
+-- Table structure for table `tablausuarios`
 --
 
 CREATE TABLE `tablausuarios` (
@@ -239,7 +234,7 @@ CREATE TABLE `tablausuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `tablausuarios`
+-- Dumping data for table `tablausuarios`
 --
 
 INSERT INTO `tablausuarios` (`login`, `nombreU`, `emailU`, `password`, `tipo`) VALUES
@@ -282,7 +277,7 @@ INSERT INTO `tablausuarios` (`login`, `nombreU`, `emailU`, `password`, `tipo`) V
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `votoeliminatorio`
+-- Table structure for table `votoeliminatorio`
 --
 
 CREATE TABLE `votoeliminatorio` (
@@ -292,24 +287,24 @@ CREATE TABLE `votoeliminatorio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `codigo`
+-- Indexes for table `codigo`
 --
 ALTER TABLE `codigo`
   ADD PRIMARY KEY (`idCodigo`,`Participante_TablaUsuarios_login`),
   ADD KEY `fk_Codigo_Participante1_idx` (`Participante_TablaUsuarios_login`);
 
 --
--- Indices de la tabla `juradopopular`
+-- Indexes for table `juradopopular`
 --
 ALTER TABLE `juradopopular`
   ADD PRIMARY KEY (`TablaUsuarios_login`);
 
 --
--- Indices de la tabla `juradopopular_has_codigo`
+-- Indexes for table `juradopopular_has_codigo`
 --
 ALTER TABLE `juradopopular_has_codigo`
   ADD PRIMARY KEY (`JuradoPopular_TablaUsuarios_login`,`Codigo_Participante_TablaUsuarios_login`),
@@ -317,32 +312,32 @@ ALTER TABLE `juradopopular_has_codigo`
   ADD KEY `fk_JuradoPopular_has_Codigo_JuradoPopular1_idx` (`JuradoPopular_TablaUsuarios_login`);
 
 --
--- Indices de la tabla `juradoprofesional`
+-- Indexes for table `juradoprofesional`
 --
 ALTER TABLE `juradoprofesional`
   ADD PRIMARY KEY (`TablaUsuarios_login`);
 
 --
--- Indices de la tabla `organizador`
+-- Indexes for table `organizador`
 --
 ALTER TABLE `organizador`
   ADD PRIMARY KEY (`TablaUsuarios_login`);
 
 --
--- Indices de la tabla `participante`
+-- Indexes for table `participante`
 --
 ALTER TABLE `participante`
   ADD PRIMARY KEY (`TablaUsuarios_login`);
 
 --
--- Indices de la tabla `pincho`
+-- Indexes for table `pincho`
 --
 ALTER TABLE `pincho`
   ADD PRIMARY KEY (`idPincho`,`Participante_TablaUsuarios_login`),
   ADD KEY `fk_Pincho_Participante1_idx` (`Participante_TablaUsuarios_login`);
 
 --
--- Indices de la tabla `pincho_has_juradoprofesional`
+-- Indexes for table `pincho_has_juradoprofesional`
 --
 ALTER TABLE `pincho_has_juradoprofesional`
   ADD PRIMARY KEY (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`,`JuradoProfesional_TablaUsuarios_login`),
@@ -350,13 +345,13 @@ ALTER TABLE `pincho_has_juradoprofesional`
   ADD KEY `fk_Pincho_has_JuradoProfesional_Pincho1_idx` (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`);
 
 --
--- Indices de la tabla `tablausuarios`
+-- Indexes for table `tablausuarios`
 --
 ALTER TABLE `tablausuarios`
   ADD PRIMARY KEY (`login`);
 
 --
--- Indices de la tabla `votoeliminatorio`
+-- Indexes for table `votoeliminatorio`
 --
 ALTER TABLE `votoeliminatorio`
   ADD PRIMARY KEY (`Pincho_idPincho`,`JuradoProfesional_TablaUsuarios_login`),
@@ -364,70 +359,70 @@ ALTER TABLE `votoeliminatorio`
   ADD KEY `fk_Pincho_has_JuradoProfesional1_Pincho1_idx` (`Pincho_idPincho`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `pincho`
+-- AUTO_INCREMENT for table `pincho`
 --
 ALTER TABLE `pincho`
-  MODIFY `idPincho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idPincho` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `codigo`
+-- Constraints for table `codigo`
 --
 ALTER TABLE `codigo`
   ADD CONSTRAINT `fk_Codigo_Participante1` FOREIGN KEY (`Participante_TablaUsuarios_login`) REFERENCES `participante` (`TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `juradopopular`
+-- Constraints for table `juradopopular`
 --
 ALTER TABLE `juradopopular`
   ADD CONSTRAINT `fk_JuradoPopular_TablaUsuarios1` FOREIGN KEY (`TablaUsuarios_login`) REFERENCES `tablausuarios` (`login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `juradopopular_has_codigo`
+-- Constraints for table `juradopopular_has_codigo`
 --
 ALTER TABLE `juradopopular_has_codigo`
-  ADD CONSTRAINT `fk_JuradoPopular_has_Codigo_Codigo1` FOREIGN KEY (`Codigo_idCodigo`,`Codigo_Participante_TablaUsuarios_login`) REFERENCES `codigo` (`idCodigo`, `Participante_TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_JuradoPopular_has_Codigo_Codigo1` FOREIGN KEY (`Codigo_idCodigo`, `Codigo_Participante_TablaUsuarios_login`) REFERENCES `codigo` (`idCodigo`, `Participante_TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_JuradoPopular_has_Codigo_JuradoPopular1` FOREIGN KEY (`JuradoPopular_TablaUsuarios_login`) REFERENCES `juradopopular` (`TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `juradoprofesional`
+-- Constraints for table `juradoprofesional`
 --
 ALTER TABLE `juradoprofesional`
   ADD CONSTRAINT `fk_JuradoProfesional_TablaUsuarios1` FOREIGN KEY (`TablaUsuarios_login`) REFERENCES `tablausuarios` (`login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `organizador`
+-- Constraints for table `organizador`
 --
 ALTER TABLE `organizador`
   ADD CONSTRAINT `fk_Organizador_TablaUsuarios1` FOREIGN KEY (`TablaUsuarios_login`) REFERENCES `tablausuarios` (`login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `participante`
+-- Constraints for table `participante`
 --
 ALTER TABLE `participante`
   ADD CONSTRAINT `fk_Participante_TablaUsuarios` FOREIGN KEY (`TablaUsuarios_login`) REFERENCES `tablausuarios` (`login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `pincho`
+-- Constraints for table `pincho`
 --
 ALTER TABLE `pincho`
   ADD CONSTRAINT `fk_Pincho_Participante1` FOREIGN KEY (`Participante_TablaUsuarios_login`) REFERENCES `participante` (`TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `pincho_has_juradoprofesional`
+-- Constraints for table `pincho_has_juradoprofesional`
 --
 ALTER TABLE `pincho_has_juradoprofesional`
   ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional_JuradoProfesional1` FOREIGN KEY (`JuradoProfesional_TablaUsuarios_login`) REFERENCES `juradoprofesional` (`TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional_Pincho1` FOREIGN KEY (`Pincho_idPincho`,`Pincho_Participante_TablaUsuarios_login`) REFERENCES `pincho` (`idPincho`, `Participante_TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional_Pincho1` FOREIGN KEY (`Pincho_idPincho`, `Pincho_Participante_TablaUsuarios_login`) REFERENCES `pincho` (`idPincho`, `Participante_TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `votoeliminatorio`
+-- Constraints for table `votoeliminatorio`
 --
 ALTER TABLE `votoeliminatorio`
   ADD CONSTRAINT `fk_Pincho_has_JuradoProfesional1_JuradoProfesional1` FOREIGN KEY (`JuradoProfesional_TablaUsuarios_login`) REFERENCES `juradoprofesional` (`TablaUsuarios_login`) ON DELETE CASCADE ON UPDATE CASCADE,
