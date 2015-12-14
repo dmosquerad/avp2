@@ -57,7 +57,8 @@
                                   $nombre = $estab["TablaUsuarios_login"];
                                   $descripcion = $estab["descripcionPAR"];
                                   $horas = $estab["horarioPAR"];
-                                  $coordenadas = $estab["coordenadasPAR"];
+                                  $coordenadasla = $estab["latitud"];
+                                  $coordenadaslon = $estab["longitud"];
                                   $foto = $estab["fotoPAR"];
                                 }
                               }
@@ -67,7 +68,7 @@
                                 <div class="speech">
                                     <p>Descripcion:  <?php echo $estab["descripcionPAR"]; ?></p>
                                     <p>Horario:      <?php echo $estab["horarioPAR"]; ?></p>
-                                    <p>Coordenadas:  <?php echo $estab["coordenadasPAR"]; ?></p>
+                                    <p>Coordenadas:  Latitud: <?php echo $estab["latitud"]; ?>Longitud: <?php echo $estab["longitud"]; ?></p>
 
                                 </div>
                             </div>

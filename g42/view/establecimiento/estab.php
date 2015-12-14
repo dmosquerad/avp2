@@ -54,9 +54,10 @@
                                         $participante = $pincho['TablaUsuarios_login'];
                                         $foto = $pincho["fotoPAR"];
                                         $horas = $pincho["horarioPAR"];
-                                        $coordenadas = $pincho["coordenadasPAR"];
+                                        $coordenadasla = $pincho["latitud"];
+                                        $coordenadaslon = $pincho["longitud"];
 
-                                        echo "<center><table><tr><td> <a href='../../controller/controlEstabC.php?estab=$participante'><img src=".$foto." height=200px width=300px></a></td><td><table><tr><td><h3> Horario </h3>".$horas."</td></tr><tr><td><h3>Coordenadas: </h3>".$coordenadas."</td></tr></table></td></tr></center>";
+                                        echo "<center><table><tr><td> <a href='../../controller/controlEstabC.php?estab=$participante'><img src=".$foto." height=200px width=300px></a></td><td><table><tr><td><h3> Horario </h3>".$horas."</td></tr><tr><td><h3>Coordenadas Latitud: </h3>".$coordenadasla."</td></tr><tr><td><h3>Coordenadas Longitud: </h3>".$coordenadaslon."</td></tr></table></td></tr></center>";
 
                                     }
                                   }

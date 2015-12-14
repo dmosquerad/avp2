@@ -19,12 +19,13 @@ class Participante{
     public function insertarPart($a) {
         $login = $a['login'];
         $desc=$a['desc'];
-        $cooord=$a['coord'];
+        $coordla=$a['coordla'];
+        $coordlon=$a['coordlon'];
         $foto=$a['foto'];
         $hora=$a['hora'];
 
-        $sql = "Insert into participante(descripcionPAR,coordenadasPAR,fotoPAR,horarioPAR,TablaUsuarios_login)
-        values ('$desc','$coord','$foto','$hora','$login')";
+        $sql = "Insert into participante(descripcionPAR,latitud,longitud,fotoPAR,horarioPAR,TablaUsuarios_login)
+        values ('$desc','$coordla','$coordlon','$foto','$hora','$login')";
         $result = mysql_query($sql, $this->con);
         if ($result == true) {
             return true;
@@ -36,11 +37,12 @@ class Participante{
     public function modificarPart($part){
         $login = $part['login'];
         $desc=$part['desc'];
-        $cooord=$part['coord'];
+        $coordla=$part['coordla'];
+        $coordlon=$part['coordlon'];
         $foto=$part['foto'];
         $hora=$part['hora'];
 
-        $modificaPAR= "Update participante set descripcionPAR='$desc', coordenadasPAR='$coord', fotoPAR='$foto', horarioPAR='$hora'
+        $modificaPAR= "Update participante set descripcionPAR='$desc', latitud='$coordla', longitud='$coordlon', fotoPAR='$foto', horarioPAR='$hora'
         where TablaUsuarios_login='$login'";
         $modificacion = mysql_query($modificaPAR,$this->con);
         }

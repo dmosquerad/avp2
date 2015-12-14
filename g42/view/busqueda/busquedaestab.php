@@ -68,10 +68,11 @@
                                     foreach($array as $pincho){
 
                                       $usuario = $pincho["TablaUsuarios_login"];
-                                      $coordenadas = $pincho["coordenadasPAR"];
+                                      $coordenadasla = $pincho["longitud"];
+                                      $coordenadaslon = $pincho["latitud"];
                                       $horario =  $pincho["horarioPAR"];
 
-                                      echo "<tr><td>".$usuario."</td><td>".$coordenadas."</td><td>".$horario.'</td></tr>';
+                                      echo "<tr><td>".$usuario."</td><td>".$coordenadasla."</td><td>".$coordenadaslon."</td><td>".$horario.'</td></tr>';
                                     }
                                   }
                                   ?>

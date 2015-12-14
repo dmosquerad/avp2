@@ -134,7 +134,9 @@
 
                                         <label for="coord">Coordenadas:</label>
                                         <div class="form-group">
-                                             <input type="text" name="coord" value="<?php echo $datos2["coordenadasPAR"]?>"
+                                             <input type="text" name="coord" value="<?php echo $datos2["longitud"]?>"
+                                             required data-validation-required-message="Introduce tu nuevo horario">
+                                             <input type="text" name="coord" value="<?php echo $datos2["latitud"]?>"
                                              required data-validation-required-message="Introduce tu nuevo horario">
                                              <p class="help-block text-danger"></p>
                                          </div>

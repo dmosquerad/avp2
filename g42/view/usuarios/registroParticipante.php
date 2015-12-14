@@ -112,7 +112,9 @@
                                           </div>
                                           <label for="timeEnd">Coordenadas:</label>
                                           <div class="form-group">
-                                               <input type="text" name="coord"
+                                               Latitud<input type="text" name="coordla"
+                                               required data-validation-required-message="Introduce tus coordenadas">
+                                               Longitud<input type="text" name="coordlon"
                                                required data-validation-required-message="Introduce tus coordenadas">
                                                <p class="help-block text-danger"></p>
                                            </div>
