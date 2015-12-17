@@ -74,9 +74,9 @@ class Usuario{
     }
 
     public function selectComent($id){
-      $consulta= "select descripcionCOM from comentarios where Pincho_idPincho= '$id'";
+      $consulta= "select * from comentarios where Pincho_idPincho= '$id'";
       $result= mysql_query($consulta) or die('No se puede comprobar si existe ese usuario');
-      //$a=mysql_fetch_array($p);
+
       if (mysql_num_rows($result) == 0) {
           return false;
       } else {
@@ -87,6 +87,22 @@ class Usuario{
         return $toret;
       }
     }
+
+    public function selectAllComent(){
+      $consulta= "select * from comentarios";
+      $result= mysql_query($consulta) or die('No se puede comprobar si existe ese usuario');
+
+      if (mysql_num_rows($result) == 0) {
+          return false;
+      } else {
+          $toret = array();
+          while ($row = mysql_fetch_assoc($result)) {
+              $toret[] = $row;
+          }
+        return $toret;
+      }
+    }
+
 
     public function comprobarTipo($pos,$login){
        $tipo= "select tipo from tablausuarios where login='$login'";

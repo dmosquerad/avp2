@@ -112,7 +112,7 @@
 		</ul>
 		<h3>Comentarios</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="listarcomentarios.php">Listar Comentarios</a></li>
+			<li class="icn_settings"><a href="../../controller/controlAdministrador.php?action=lc">Listar Comentarios</a></li>
 		</ul>
 
 		<footer>

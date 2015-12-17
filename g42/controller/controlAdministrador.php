@@ -28,7 +28,7 @@ if($_GET["action"]=='lp'){
 }else{
   if($_GET["action"]=='vp'){
     $p = new Pincho();
-  	$boolean = $p->selectAllSinV();
+  	$boolean = $p->selectAll();
   	if($boolean == false){
   		$msg = "Error Validar";
   		header("Location: ../view/administrar/validarpincho.php?msg=$msg");
@@ -67,10 +67,21 @@ if($_GET["action"]=='lp'){
         $array = serialize($boolean);
         header("Location: ../view/administrar/listarestablecimientos.php?array=$array");
       }
-    }
+    }else{
+    if($_GET["action"]=='lc'){
+      $p = new Usuario();
+      $boolean = $p->selectAllComent();
+      if($boolean == false){
+        $msg = "Error Listar";
+        header("Location: ../view/administrar/listarcomentarios.php?msg=$msg");
+      }else{
+        $array = serialize($boolean);
+        header("Location: ../view/administrar/listarcomentarios.php?array=$array");
+      }
   }
 }
 }
 }
-
+}
+}
 ?>

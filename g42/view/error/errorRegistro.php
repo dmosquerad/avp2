@@ -22,7 +22,7 @@
 
 <body class="login">
   <div class="error_page">
-    <img alt="Kidmondo_face_sad" src="http://kidmondo.com/wp-content/themes/kidmondo2/images/kidmondo_face_sad.gif" />
+    <img alt="Kidmondo_face_sad" src="/g42/images/kidmondo-error-page.jpg" />
     <h1>Parece ser que hubo un error</h1>
     <p>Los campos Contraseña y Repetir Contraseña no coinciden</p>
     <p><a href="../usuarios/prelogin.php">Volver a la página de Registro</a></p>

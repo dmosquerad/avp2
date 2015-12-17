@@ -83,9 +83,6 @@
 	</section><!-- end of secondary bar -->
 
 	<aside id="sidebar" class="column" style="height: 1700px;">
-		<form class="quick_search">
-			<input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
-		</form>
 		<hr/>
 		<h3>Pinchos</h3>
 		<ul class="toggle">
@@ -107,7 +104,7 @@
 		</ul>
 		<h3>Comentarios</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="listarcomentarios.php">Listar Comentarios</a></li>
+			<li class="icn_settings"><a href="../../controller/controlAdministrador.php?action=lc">Listar Comentarios</a></li>
 		</ul>
 
 		<footer>
@@ -125,12 +122,30 @@
 					<table>
 						<thead>
 							<tr>
-								<td>ID Comentario</td>
-								<td>Titulo</td>
-								<td>Contenido</td>
+								<td>ID</td>
 								<td>Usuario</td>
+								<td>Comentario</td>
+								<td>ID Pincho</td>
 							</tr>
-								<?php include('../../controller/administrarComentarios.php');?>
+							<?php
+									if(isset($_GET["msg"])){
+										$msg = $_GET["msg"];
+										echo($msg);
+									}
+									if(isset($_GET["array"])){
+										$array = unserialize($_GET["array"]);
+										foreach($array as $comment){
+
+											echo '<tr>';
+											echo '<td>'.$comment['id_comentario'].'</td>';
+											echo '<td>'.$comment['TablaUsuarios_login'].'</td>';
+											echo '<td>'.$comment['descripcionCOM'].'</td>';
+											echo '<td>'.$comment['Pincho_idPincho'].'</td>';
+											echo '<td><a href="../../controller/borrarComentario.php?idComment='.$comment['id_comentario'].'">Eliminar</a></td>';
+											echo '</tr>';
+										}
+									}
+								?>
 						</thead>
 					</table>
 				</div>
