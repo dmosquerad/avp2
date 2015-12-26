@@ -68,6 +68,17 @@ if($_GET["action"]=='lp'){
         header("Location: ../view/administrar/listarestablecimientos.php?array=$array");
       }
     }else{
+    if($_GET["action"]=='lo'){
+      $p = new Usuario();
+      $boolean = $p->listarNoticias();
+      if($boolean == false){
+        $msg = "Error Listar";
+        header("Location: ../view/administrar/listarnoticias.php?msg=$msg");
+      }else{
+        $array = serialize($boolean);
+        header("Location: ../view/administrar/listarnoticias.php?array=$array");
+      }
+  }else{
     if($_GET["action"]=='lc'){
       $p = new Usuario();
       $boolean = $p->selectAllComent();
@@ -79,6 +90,7 @@ if($_GET["action"]=='lp'){
         header("Location: ../view/administrar/listarcomentarios.php?array=$array");
       }
   }
+}
 }
 }
 }

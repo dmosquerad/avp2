@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8"/>
 	<title>Dashboard I Admin Panel</title>
@@ -72,8 +71,7 @@
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title">Website Admin</a></h1>
-			<h2 class="section_title"></h2><div class="btn_view_site">
-				<a href="../../controller/controlSesiones.php">Volver</a></div>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="../../controller/controlSesiones.php">Volver</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 
@@ -83,7 +81,7 @@
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><div class="breadcrumb_divider"></div> <a class="current"></a></article>
+			<article class="breadcrumbs"><div class="breadcrumb_divider"></div></article>
 		</div>
 	</section><!-- end of secondary bar -->
 
@@ -122,48 +120,49 @@
 	<section id="main" class="column">
 
 		<article class="module width_full">
-			<header><h3>Listar Noticias</h3></header>
+			<header><h3>Edita noticia</h3></header>
 				<div class="module_content">
 					<table>
 						<thead>
 							<tr>
-								<?php
-								echo '<tr>';
-								echo '<td>------------</td>';
-								echo '</tr>';
-								?>
-								<td>ID Noticia</td>
-								<td>Titulo</td>
-								<td>Fecha</td>
+								<form method= "post" action="../../controller/controlModNoticia.php">
+                                    <label for="name">Titulo:</label>
+                                        <div class="form-group">
+                                              <input type="text" class="form-control" placeholder="Titulo" value="<?php
+                                             	$id = $_GET['idPincho'];
+
+      											$consulta= "select tituloPIN from noticias where numNOT= '$id'";
+      											$result= mysql_query($consulta) or die('No se puede comprobar si existe ese usuario');
+      											$contados = mysql_result($result,0);
+
+      											echo $contados;
+                                              ?>" 
+                                              name="titulo" required data-validation-required-message="Introduce Titulo">
+                                       		 <p class="help-block text-danger"></p></input>
+                                    </div>
+
+									<label for="description">Texto:</label>
+                                        <div class="form-group">
+											<textarea class="form-control" onkeydown="if(event.keyCode == 13) return false;" 
+											placeholder="Introduce texto" name="texto" cols="100" rows="10"><?php
+											 	$id = $_GET['idPincho'];
+
+      											$consulta= "select noticiaPIN from noticias where numNOT= '$id'";
+      											$result= mysql_query($consulta) or die('No se puede comprobar si existe ese usuario');
+      											$contados1 = mysql_result($result,0);
+
+      											echo $contados1;
+                                              ?></textarea>
+                                        </div>
+
+
+                                      <div style="padding-top: 20px;">
+                                      <div class="col-lg-12 text-center">
+                                          <button type="submit" name="numNOT" value="<?php echo $id?>;class="btn btn-primary">Editar Noticia</button>
+
+                                      </div>
+                                  </form>
 							</tr>
-							<?php
-
-									if(isset($_GET["msg"])){
-										$msg = $_GET["msg"];
-										echo($msg);
-									}
-									if(isset($_GET["array"])){
-										$array = unserialize($_GET["array"]);
-
-
-										foreach($array as $pincho){
-											echo '<tr>';
-											echo '<td>'.$pincho['numNOT'].'</td>';
-											echo '<td>'.$pincho['tituloPIN'].'</td>';
-											echo '<td>'.$pincho['date'].'</td>';
-											echo '<td><a href="../../view/administrar/editarnoticia.php?idPincho='.$pincho['numNOT'].'">Modificar</a></td>';
-											echo '<td><a href="../../controller/borrarnoticia.php?idPincho='.$pincho['numNOT'].'">Eliminar</a></td>';
-											echo '</tr>';
-											
-
-										}
-							
-										echo '<tr>';
-									    echo '<a href="../../view/administrar/nuevanoticia.php">Crear Noticia</a>';
-										echo '</tr>';
-
-									}
-								?>
 						</thead>
 					</table>
 				</div>

@@ -160,6 +160,54 @@ class Usuario{
             return false;
         }
     }
+
+    //misnews
+    public function listarNoticias() {
+            $sql = 'select * from noticias';
+            $result = mysql_query($sql, $this->con);
+            if (mysql_num_rows($result) == 0) {
+                return false;
+            } else {
+                $toret = array();
+                while ($row = mysql_fetch_assoc($result)) {
+                    $toret[] = $row;
+                }
+              return $toret;
+            }
+    }
+    //misnews
+    public function nuevaNoticia($titulo, $texto, $hora) {
+            $sql1 = 'select MAX(numNOT)+1 from noticias';
+            $resultado = mysql_query($sql1) or die('error');
+            $contados = mysql_result($resultado,0);
+            
+            $sql = "INSERT INTO noticias (numNOT,tituloPIN,noticiaPIN,date)
+                VALUES ('$contados','$titulo','$texto','$hora')";
+            $result = mysql_query($sql)or die('No funciona'.mysql_error());
+
+    }
+    //misnews al modificar modifica la fecha tambien
+    public function editaNoticia($titulo, $texto, $hora, $id) {
+            
+            $sql = "UPDATE `noticias` SET tituloPIN='$titulo',noticiaPIN='$texto',date='$hora' WHERE numNOT='$id'";
+
+            $result = mysql_query($sql)or die('No funciona'.mysql_error());
+
+    }
+
+    public function selectAllNoticias() {
+        $sql = "select * from noticias ORDER BY date DESC";
+        $result = mysql_query($sql, $this->con);
+        if (mysql_num_rows($result) == 0) {
+            return false;
+        } else {
+            $toret = array();
+            while ($row = mysql_fetch_assoc($result)) {
+                $toret[] = $row;
+            }
+          return $toret;
+        }
+    }
 }
 
  ?>

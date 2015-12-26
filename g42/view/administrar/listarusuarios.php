@@ -72,7 +72,7 @@
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title">Website Admin</a></h1>
-			<h2 class="section_title">Dashboard</h2><div class="btn_view_site">
+			<h2 class="section_title"></h2><div class="btn_view_site">
 				<a href="../../controller/controlSesiones.php">Volver</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
@@ -106,7 +106,7 @@
 		</ul>
 		<h3>Noticias</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="listarnoticias.php">Listar Noticias</a></li>
+			<li class="icn_settings"><a href="../../controller/controlAdministrador.php?action=lo">Listar Noticias</a></li>
 		</ul>
 		<h3>Comentarios</h3>
 		<ul class="toggle">

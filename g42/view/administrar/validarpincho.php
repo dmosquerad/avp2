@@ -104,7 +104,7 @@
 		</ul>
 		<h3>Noticias</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="listarnoticias.php">Listar Noticias</a></li>
+			<li class="icn_settings"><a href="../../controller/controlAdministrador.php?action=lo">Listar Noticias</a></li>
 		</ul>
 		<h3>Comentarios</h3>
 		<ul class="toggle">

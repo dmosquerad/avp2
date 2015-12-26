@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="menu-item green">
-                            <a href="../../view/layouts/noticias.php" data-toggle="modal">
+                            <a href="../../controller/controlListaNot.php" data-toggle="modal">
                                 <i class="fa fa-newspaper-o"></i>
                                 <p>Noticias</p>
                             </a>
